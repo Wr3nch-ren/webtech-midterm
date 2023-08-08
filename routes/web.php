@@ -24,8 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
-// Route::get('/activities/{activity}/detail', [ActivityController::class, 'showDetail'])->name("activities.index");
+// รายละเอียด Route::get('/activities/{activity}/detail', [ActivityController::class, 'showDetail'])->name("activities.index");
 Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
+// แบบฟอร์มสมัคร Route::get('/activities/{activity}/apply', [ActivityController::class, 'apply'])->name("activities.apply");
+Route::get('/activities/apply', [ActivityController::class, 'apply'])->name("activities.apply");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

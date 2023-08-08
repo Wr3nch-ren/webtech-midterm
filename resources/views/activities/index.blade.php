@@ -7,7 +7,7 @@
             <h1 class="mb-2 text-2xl font-bold">กิจกรรมทั้งหมด</h1>
             <hr class="h-px my-2 bg-gray-800 border-0 w-4/5">
 
-            <a href="#" class="flex flex-col items-center bg-white border border-gray-800 rounded-lg shadow md:flex-row md:max-w-3xl hover:bg-gray-100 h-full md:h-48 md:justify-around">
+            <a href="#" class="flex flex-col items-center bg-white border border-gray-800 rounded-lg shadow md:flex-row md:max-w-3xl hover:bg-gray-100 h-full md:h-48 md:justify-around transition-colors">
                 <img class="object-cover w-full rounded-t-lg h-48 md:h-full md:w-2/3 md:rounded-none md:rounded-l-lg" src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="">
                 <div class="flex justify-around py-6 md:p-0">
                     
