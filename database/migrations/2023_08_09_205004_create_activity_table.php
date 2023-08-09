@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('activity', function (Blueprint $table) {
             $table->id();
             $table->string('activity_name');
-            $table->date('dateline');
+            $table->date('deadline');
             $table->string('activity_type');
             $table->unsignedInteger('activity_hours');
             $table->date('activity_date');
