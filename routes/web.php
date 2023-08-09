@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+// Route::get('/', function () {
+//     return view('home.index');
+// });
 
-// Route::resource('/', HomeController::class);
+Route::resource('/', HomeController::class);
 
 Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
 

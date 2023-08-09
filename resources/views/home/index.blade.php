@@ -67,7 +67,7 @@
 
             <div class="mt-10 flex flex-wrap justify-center gap-4">
                 <a class="block w-full rounded-full bg-transparent border-black border hover:border-transparent px-10 py-3 text-base font-semibold text-black shadow hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-                    href="/get-started">
+                    href="{{ route('activities.index') }}">
                     All Activity
                 </a>
             </div>
