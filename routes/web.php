@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,11 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-return view('home.index');
-});
+// Route::get('/', function () {
+//     return view('home.index');
+// });
 
-// Route::resource('/', HomeController::class);
+Route::resource('/', HomeController::class);
+
+Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
+
+Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
+
+Route::get('user/profile', [UserController::class, 'profile'])->name("user.profile");
+Route::get('user/activities', [UserController::class, 'activities'])->name("user.activities");
+Route::get('user/certificates', [UserController::class, 'certificates'])->name("user.certificates");
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -47,5 +56,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/account', [ActivityController::class, 'index'])->name("activities.index");
 
 require __DIR__ . '/auth.php';
