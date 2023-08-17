@@ -22,9 +22,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('user.activities') }}"
+                <a href="{{ route('user.participatingEvents') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 group hover:text-violet-700 hover:translate-x-1 transition-all duration-300 ease-in-out
-                    {{ Route::is('user.activities') ? 'font-semibold' : 'font-medium' }}">
+                    {{ Route::is('user.participatingEvents') ? 'font-semibold' : 'font-medium' }}">
                     <span class="ml-3">กิจกรรมที่เข้าร่วม</span>
                 </a>
             </li>

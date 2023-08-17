@@ -29,7 +29,7 @@ Route::get('/activities', [ActivityController::class, 'index'])->name("activitie
 Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
 
 Route::get('user/profile', [UserController::class, 'profile'])->name("user.profile");
-Route::get('user/activities', [UserController::class, 'activities'])->name("user.activities");
+Route::get('user/events', [UserController::class, 'participatingEvents'])->name("user.participatingEvents");
 Route::get('user/certificates', [UserController::class, 'certificates'])->name("user.certificates");
 
 // Route::get('/dashboard', function () {
@@ -55,7 +55,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/account', [ActivityController::class, 'index'])->name("activities.index");
 
 require __DIR__ . '/auth.php';

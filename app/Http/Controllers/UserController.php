@@ -11,9 +11,9 @@ class UserController extends Controller
         return view('user.profile');
     }
 
-    public function activities()
+    public function participatingEvents()
     {
-        return view('user.activities');
+        return view('user.events');
     }
 
     public function certificates()
