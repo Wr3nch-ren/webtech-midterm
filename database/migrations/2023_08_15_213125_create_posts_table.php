@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Activity;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('post_content');
             $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Activity::class);
             $table->timestamps();
         });
     }
