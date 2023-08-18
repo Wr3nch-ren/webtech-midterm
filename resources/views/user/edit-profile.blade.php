@@ -9,6 +9,7 @@
             <h1 class="text-3xl font-semibold pb-6">แก้ไขข้อมูลส่วนตัว</h1>
             <form action="POST" class="grid grid-cols-2 gap-x-5">
                 @csrf
+                <label for="" class="block mb-2">แก้ไขรูปโปรไฟล์</label>
                 <div class="col-span-2 mb-4 bg-white p-3 border-gray-800 border rounded-md">
                     <input type="file">
                 </div>
