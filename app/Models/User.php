@@ -70,6 +70,11 @@ class User extends Authenticatable
 
     public function isOrganizer() : bool
     {
-        return $this->role === 'ORGANIZER';
+        return  $this->role === RoleAccessibility::ORGANIZER;
+    }
+
+    public function isStaff() : bool
+    {
+        return  $this->role === RoleAccessibility::STAFF;
     }
 }
