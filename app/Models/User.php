@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -64,6 +65,11 @@ class User extends Authenticatable
     public function campus() : BelongsTo
     {
         return $this->belongsTo(Campus::class);
+    }
+
+    public function certificate() : HasMany
+    {
+        return $this->hasMany(Certificate::class);
     }
 
     public function isOrganizer() : bool
