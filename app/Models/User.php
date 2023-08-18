@@ -6,6 +6,7 @@ namespace App\Models;
 use App\Models\Enum\RoleAccessibility;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -62,6 +63,11 @@ class User extends Authenticatable
         'password' => 'hashed',
         'role' => RoleAccessibility::class, //based on saacsos' work
     ];
+
+    public function activities(): BelongsToMany
+    {
+        return $this->belongsToMany(Activity::class);
+    }
 
     public function campus() : BelongsTo
     {

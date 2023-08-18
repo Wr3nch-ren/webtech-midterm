@@ -10,7 +10,7 @@ class Activity extends Model
 {
     use HasFactory;
 
-    public function user(): BelongsToMany
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
     }
