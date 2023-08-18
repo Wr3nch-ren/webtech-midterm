@@ -28,6 +28,7 @@ return new class extends Migration
             // $table->foreignIdFor(\App\Models\Campus::class);
             $table->string('faculty')->nullable();
             $table->string('department')->nullable();
+            $table->integer('year')->nullable();
             $table->string('phone')->nullable();
             $table->string('line_id')->nullable();
             $table->string('facebook')->nullable();
