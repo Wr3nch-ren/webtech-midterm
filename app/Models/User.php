@@ -29,7 +29,7 @@ class User extends Authenticatable
         'student_code',
         'nickname',
         'date_of_birth',
-        //'campus_id',
+        'campus_id',
         'phone',
         'line_id',
         'facebook',
