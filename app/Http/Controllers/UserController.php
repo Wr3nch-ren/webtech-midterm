@@ -20,4 +20,8 @@ class UserController extends Controller
     {
         return view('user.certificates');
     }
+
+    public function editProfile() {
+        return view('user.edit-profile');
+    }
 }

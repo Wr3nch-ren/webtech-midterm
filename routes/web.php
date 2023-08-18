@@ -31,6 +31,7 @@ Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->nam
 Route::get('user/profile', [UserController::class, 'profile'])->name("user.profile");
 Route::get('user/events', [UserController::class, 'participatingEvents'])->name("user.participatingEvents");
 Route::get('user/certificates', [UserController::class, 'certificates'])->name("user.certificates");
+Route::get('user/profile/edit', [UserController::class, 'editProfile'])->name("user.editProfile");
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
