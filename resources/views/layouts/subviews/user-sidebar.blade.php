@@ -15,6 +15,13 @@
                 
             </li>
             <li>
+                <a href="{{ route('user.notification') }}"
+                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 group hover:text-violet-700 hover:translate-x-1 transition-all duration-300 ease-in-out
+                    {{ Route::is('user.notification') ? 'font-semibold' : 'font-medium' }}">
+                    <span class="ml-3">การแจ้งเตือนผลการสมัคร</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('user.certificates') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 group hover:text-violet-700 hover:translate-x-1 transition-all duration-300 ease-in-out
                     {{ Route::is('user.certificates') ? 'font-semibold' : 'font-medium' }}">

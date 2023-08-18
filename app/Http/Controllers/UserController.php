@@ -24,4 +24,8 @@ class UserController extends Controller
     public function editProfile() {
         return view('user.edit-profile');
     }
+
+    public function notification() {
+        return view('user.notification');
+    }
 }
