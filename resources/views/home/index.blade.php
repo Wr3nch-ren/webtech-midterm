@@ -10,44 +10,7 @@
 </head>
 
 <body>
-    <nav>
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center">
-                {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" /> --}}
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NSMTH</span>
-            </a>
-            <div class="flex md:order-2">
-                <button type="button"
-                    class="text-black hover:text-gray-600  bg-transparent focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log
-                    in
-                </button>
-                <button data-collapse-toggle="navbar-sticky" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-sticky" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-                <button type="button"
-                    class="text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Sign up</button>
-                <button data-collapse-toggle="navbar-sticky" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-sticky" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-            </div>
-        </div>
 
-    </nav>
     @include('layouts.subviews.home-navbar')
 
     {{-- banner --}}
@@ -128,10 +91,10 @@
     </div>
 
     {{-- monthly event --}}
-    <div class="bg-gray-800 pt-10 py-8 pb-5">
+    <div class="bg-gray-200 pt-10 py-8 pb-5">
 
         <div class="justify-center">
-            <h1 class=" text-white text-2xl font-bold text-center pb-10">
+            <h1 class=" text-black text-2xl font-bold text-center pb-10">
                 Monthly Event
             </h1>
         </div>
@@ -141,7 +104,7 @@
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                         src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-200 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
 
                     </div>
                     <div class="flex flex-col justify-between p-4 leading-normal">
@@ -172,7 +135,7 @@
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                         src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-200 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
 
                     </div>
                     <div class="flex flex-col justify-between p-4 leading-normal">
@@ -203,7 +166,7 @@
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                         src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-200 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
 
                     </div>
                     <div class="flex flex-col justify-between p-4 leading-normal">
@@ -234,7 +197,7 @@
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                         src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-200 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
 
                     </div>
                     <div class="flex flex-col justify-between p-4 leading-normal">
@@ -265,7 +228,7 @@
 
         <div class="flex justify-end p-8 pr-32">
             <button type="button"
-                class=" text-white bg-transparent border border-white hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-black font-medium  text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                class=" text-black bg-transparent border border-black hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium  text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 view all
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 14 10">
@@ -335,7 +298,7 @@
     <div class="flex px-16 py-4 sm:px-16 sm:py-12 lg:px-32 lg:py-32">
         <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
             <div class="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
-                <h2 class="text-3xl text-red-700 font-bold sm:text-4xl">Find your Event</h2>
+                <h2 class="text-3xl text-black font-bold sm:text-4xl">Find your Event</h2>
 
                 <p class="mt-4 text-gray-600">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero
