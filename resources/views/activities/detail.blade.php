@@ -12,31 +12,29 @@
 
         <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="">
 
-        <button class="bg-black text-white p-3 hover:bg-violet-900 transition-colors duration-300">สมัครเลย!</button>
-        
         <div class="grid grid-cols-2">
-            <div>
-                <div class="p-5">
-                    <h3 class="font-semibold">รูปแบบกิจกรรม</h3>
-                    <p>Lorem ipsum dolor sit amet</p>
+                <div>
+                    <div class="p-5">
+                        <h3 class="font-semibold">รูปแบบกิจกรรม</h3>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold">ชั่วโมงจิตอาสา</h3>
+                        <p>ด้านจิตอาสา 10 ชม.</p>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold">จำนวนที่รับ</h3>
+                        <p>1,000,000 คน</p>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold">สถานที่จัดกิจกรรม</h3>
+                        <p>คณะวิทยาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์</p>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold">ผู้จัดกิจกรรม</h3>
+                        <p>ภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์</p>
+                    </div>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-semibold">ชั่วโมงจิตอาสา</h3>
-                    <p>ด้านจิตอาสา 10 ชม.</p>
-                </div>
-                <div class="p-5">
-                    <h3 class="font-semibold">จำนวนที่รับ</h3>
-                    <p>1,000,000 คน</p>
-                </div>
-                <div class="p-5">
-                    <h3 class="font-semibold">สถานที่จัดกิจกรรม</h3>
-                    <p>คณะวิทยาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์</p>
-                </div>
-                <div class="p-5">
-                    <h3 class="font-semibold">ผู้จัดกิจกรรม</h3>
-                    <p>ภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์</p>
-                </div>
-            </div>
                 <div>
                     <div class="p-5">
                         <h3 class="font-semibold">วันที่จัดกิจกรรม</h3>
@@ -70,5 +68,6 @@
         </div>
 
         <img src="https://images.unsplash.com/photo-1543487945-139a97f387d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=680&q=80" alt="">
-  
+    
+    </div>  
 @endsection
