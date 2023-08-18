@@ -5,14 +5,31 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NSMTH</span>
         </a>
         <div class="flex md:order-2">
-            <button type="button" onclick="window.location.href='{{ route('login') }}'"
-                class="text-black hover:text-gray-600  bg-transparent focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log
-                in
-            </button>
-            <button type="button" onclick="window.location.href='{{ route('register') }}'"
-                class="text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Sign up</button>
+            @if (Auth::check())
+                <div class="flex gap-2">
+                    <div class="mx-4">
+                        {{ Auth::user()->name }}
+
+                    </div>
+                    <div>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @else
+                <button type="button" onclick="window.location.href='{{ route('login') }}'"
+                    class="text-black hover:text-gray-600  bg-transparent focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log
+                    in
+                </button>
+                <button type="button" onclick="window.location.href='{{ route('register') }}'"
+                    class="text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Sign up</button>
         </div>
+        @endif
     </div>
 
 </nav>
