@@ -4,6 +4,7 @@ namespace App\Models\Enum;
 
 enum RoleAccessibility : string
 {
+    //Based on saacsos' work
     case NORMAL = "NORMAL";
     case ORGANIZER = "ORGANIZER";
     case STAFF = "STAFF";

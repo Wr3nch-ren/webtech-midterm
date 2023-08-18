@@ -60,7 +60,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        'role' => RoleAccessibility::class,
+        'role' => RoleAccessibility::class, //based on saacsos' work
     ];
 
     public function campus() : BelongsTo
