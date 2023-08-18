@@ -7,7 +7,7 @@
 <div>
      <a href="{{ route('activities.showDetail') }}" class="flex items-center bg-white border border-gray-800 rounded-lg shadow hover:bg-gray-100 h-full md:h-64">
                 
-                    <div class="flex-none border-y-1 w-48 h-full">
+                    <div class="flex-none border-y-1 w-36 hover:w-48 transition-all duration-200 h-full">
                         <img class="border-r border-gray-800 object-cover object-center rounded-t-lg md:rounded-none md:rounded-l-lg w-full h-full" src="{{ $imgPath }}" alt="">
                     </div>
 
