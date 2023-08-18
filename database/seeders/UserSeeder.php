@@ -22,6 +22,9 @@ class UserSeeder extends Seeder
         $user->date_of_birth = '1999-01-01';
         $user->student_code = 'B6012345';
         $user->nickname = 'สมชาย';
+        $user->faculty = 'วิทยาศาสตร์';
+        $user->department = 'วิทยาการคอมพิวเตอร์';
+        $user->department = 4;
         $user->phone = '0123456789';
         $user->line_id = 'user01';
         $user->facebook = 'user01';
