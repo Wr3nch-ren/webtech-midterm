@@ -12,6 +12,10 @@ class Activity extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $casts = [
+        'activity_date' => 'datetime',
+        'deadline' => 'datetime',
+    ];
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);

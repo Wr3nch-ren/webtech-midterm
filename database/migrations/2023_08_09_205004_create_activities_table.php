@@ -21,7 +21,8 @@ return new class extends Migration
             $table->unsignedInteger('participant_number');
             $table->double('activity_fee');
             $table->string('activity_place');
-            $table->foreignIdFor(\App\Models\User::class);
+            // $table->foreignIdFor(\App\Models\User::class);
+            $table->unsignedInteger('organizer_id');  // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
             $table->string('description');
             $table->string('contact');
             $table->string('poster');
