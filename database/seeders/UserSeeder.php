@@ -33,6 +33,48 @@ class UserSeeder extends Seeder
         $user->allergy = 'ไม่มี';
         $user->role = 'NORMAL';
         $user->save();
+
+        $user = new User();
+        $user->name_title = 'นางสาว';
+        $user->name = 'สมาน';
+        $user->surname = 'ชาญสมร';
+        $user->email = 'user02@test.com';
+        $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+        $user->date_of_birth = '1999-01-01';
+        $user->student_code = 'B6012345';
+        $user->faculty = 'วิทยาศาสตร์';
+        $user->department = 'วิทยาการคอมพิวเตอร์';
+        $user->nickname = 'สมาน';
+        $user->faculty = 'วิทยาศาสตร์';
+        $user->department = 'วิทยาการคอมพิวเตอร์';
+        $user->year = 4;
+        $user->phone = '0234567891';
+        $user->line_id = 'user02';
+        $user->facebook = 'user02';
+        $user->allergy = 'ไม่มี';
+        $user->role = 'ORGANIZER';
+        $user->save();
+
+        $user = new User();
+        $user->name_title = 'นาง';
+        $user->name = 'เสมียน';
+        $user->surname = 'เชียรชัย';
+        $user->email = 'user03@test.com';
+        $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+        $user->date_of_birth = '1999-01-01';
+        $user->student_code = 'B6012345';
+        $user->faculty = 'วิทยาศาสตร์';
+        $user->department = 'วิทยาการคอมพิวเตอร์';
+        $user->nickname = 'สมาน';
+        $user->faculty = null;
+        $user->department = null;
+        $user->year = null;
+        $user->phone = '0234567891';
+        $user->line_id = null;
+        $user->facebook = null;
+        $user->allergy = 'ไม่มี';
+        $user->role = 'STAFF';
+        $user->save();
     }
 
 }
