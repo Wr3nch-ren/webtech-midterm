@@ -21,6 +21,7 @@ class ActivitySeeder extends Seeder
         $activity->activity_date = '30-03-2024';
         $activity->participant_number = 30;
         $activity->activity_fee = 100;
+        $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
         $activity->activity_place = 'ทดสอบ';
         $activity->description = 'ทดสอบ';
         $activity->contact = '0812345678';

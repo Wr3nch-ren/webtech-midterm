@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('activity', function (Blueprint $table) {
+        Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->string('activity_name');
             $table->date('deadline');
@@ -21,7 +21,8 @@ return new class extends Migration
             $table->unsignedInteger('participant_number');
             $table->double('activity_fee');
             $table->string('activity_place');
-            $table->foreignIdFor(\App\Models\User::class);
+            // $table->foreignIdFor(\App\Models\User::class);
+            $table->unsignedInteger('organizer_id');  // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
             $table->string('description');
             $table->string('contact');
             $table->string('poster');
@@ -38,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('activity');
+        Schema::dropIfExists('activities');
     }
 };
