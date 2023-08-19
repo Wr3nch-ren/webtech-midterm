@@ -18,15 +18,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home.index');
-// });
+Route::get('/', function () {
+    return view('home.index');
+});
 
-Route::resource('/', HomeController::class);
+// Route::resource('/', HomeController::class);
 
 Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
 
 Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
+
+Route::get(
+    '/register/create',
+    function () {
+        return view('register.create');
+    }
+);
 
 Route::get('user/profile', [UserController::class, 'profile'])->name("user.profile");
 Route::get('user/events', [UserController::class, 'participatingEvents'])->name("user.participatingEvents");

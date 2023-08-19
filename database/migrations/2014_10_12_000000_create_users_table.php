@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('student_code')->nullable();
             $table->string('nickname')->nullable();
             // $table->foreignIdFor(\App\Models\Activity::class);
-            // $table->foreignIdFor(\App\Models\Campus::class);
+            // // $table->foreignIdFor(\App\Models\Campus::class);
             $table->string('faculty')->nullable();
             $table->string('department')->nullable();
             $table->integer('year')->nullable();

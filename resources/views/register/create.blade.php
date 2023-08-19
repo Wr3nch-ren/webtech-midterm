@@ -51,15 +51,15 @@
                 </div>
 
                 <div class="flex items-center justify-end mt-8">
-                    <x-secondary-button onclick="window.location.href='{{ url('/register/create') }}'"
-                        class="w-full bg-black justify-center py-3">
-                        {{ __('Register') }}
-                    </x-secondary-button>
+                    <x-primary-button class="w-full bg-black justify-center py-3">
+
+                        {{ __('Next') }}
+                    </x-primary-button>
                 </div>
                 <div class="flex justify-center mt-3">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        href="{{ route('login') }}">
-                        {{ __('Already registered?') }}
+                        href="{{ url('/register/create') }}">
+                        {{ __('skip') }}
                     </a>
                 </div>
             </form>
