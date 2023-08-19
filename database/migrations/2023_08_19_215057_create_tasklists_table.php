@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('tasklists', function (Blueprint $table) {
             $table->id();
+            $table->string('tasklist_content');
+            $table->boolean('tasklist_status')->default(false);
             $table->timestamps();
         });
     }
