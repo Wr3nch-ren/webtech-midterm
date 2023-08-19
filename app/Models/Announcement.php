@@ -14,4 +14,8 @@ class Announcement extends Model
     public function activity(): BelongsTo{
         return $this->belongsTo(Activity::class);
     }
+
+    public function user(): BelongsTo{
+        return $this->belongsTo(User::class);
+    }
 }
