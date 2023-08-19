@@ -239,60 +239,7 @@
         </div>
 
     </div>
-    {{-- cat --}}
-    {{-- <div class="pt-16 pb-20">
-        <div class="justify-center">
-            <h1 class=" text-black text-2xl font-bold text-center pb-5">
-                Categories
-            </h1>
-        </div>
-        <div>
-            <div class="flex justify-item-between border-b border-black mx-48 py-2">
-                <button type="button"
-                    class=" text-black bg-transparent hover:bg-transparent hover:border-2  hover:border-red-500 focus:ring-4 focus:outline-none focus:ring-black font-medium text-xl px-5 py-2.5 text-center inline-flex items-center justify-between w-full">
-                    category 01
-                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </button>
-            </div>
-            <div class="flex justify-item-between border-b border-black mx-48 py-2">
-                <button type="button"
-                    class=" text-black bg-transparent hover:bg-transparent hover:border-2  hover:border-black focus:ring-4 focus:outline-none focus:ring-black font-medium text-xl px-5 py-2.5 text-center inline-flex items-center justify-between w-full">
-                    category 02
-                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </button>
-            </div>
-            <div class="flex justify-item-between border-b border-black mx-48 py-2">
-                <button type="button"
-                    class=" text-black bg-transparent hover:bg-transparent hover:border-2  hover:border-black focus:ring-4 focus:outline-none focus:ring-black font-medium text-xl px-5 py-2.5 text-center inline-flex items-center justify-between w-full">
-                    category 03
-                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </button>
-            </div>
-            <div class="flex justify-item-between  mx-48 py-2">
-                <button type="button"
-                    class=" text-black bg-transparent hover:bg-transparent hover:border-2  hover:border-black focus:ring-4 focus:outline-none focus:ring-black font-medium text-xl px-5 py-2.5 text-center inline-flex items-center justify-between w-full">
-                    category 04
-                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div> --}}
+
 
     {{-- cat block --}}
     <div class="flex px-16 py-4 sm:px-16 sm:py-12 lg:px-32 lg:py-32">

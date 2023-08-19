@@ -21,11 +21,18 @@ class UserController extends Controller
         return view('user.certificates');
     }
 
-    public function editProfile() {
+    public function editProfile()
+    {
         return view('user.edit-profile');
     }
 
-    public function notification() {
+    public function notification()
+    {
         return view('user.notification');
+    }
+
+    public function organize()
+    {
+        return view('user.organize');
     }
 }
