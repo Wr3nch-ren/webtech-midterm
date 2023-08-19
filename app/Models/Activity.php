@@ -10,6 +10,10 @@ class Activity extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'activity_date' => 'datetime',
+        'deadline' => 'datetime',
+    ];
     public function user(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
