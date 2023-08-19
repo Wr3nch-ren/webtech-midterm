@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('announcements', function (Blueprint $table) {
             $table->id();
             $table->string('announcements_content');
+            $table->string('announcements_image_path')->nullable();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Activity::class);
             $table->timestamps();
