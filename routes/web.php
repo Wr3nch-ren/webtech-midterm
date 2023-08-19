@@ -29,7 +29,7 @@ return view('home.index');
 
 Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
 // รายละเอียด Route::get('/activities/{activity}/detail', [ActivityController::class, 'showDetail'])->name("activities.index");
-Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
+Route::get('/activities/{activity}/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
 // แบบฟอร์มสมัคร Route::get('/activities/{activity}/apply', [ActivityController::class, 'apply'])->name("activities.apply");
 Route::get('/activities/apply', [ActivityController::class, 'apply'])->name("activities.apply");
 
