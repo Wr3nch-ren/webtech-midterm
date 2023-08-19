@@ -18,4 +18,8 @@ class EventOrganizeController extends Controller
     {
         return view('organize.tasks');
     }
+    public function info()
+    {
+        return view('organize.info');
+    }
 }

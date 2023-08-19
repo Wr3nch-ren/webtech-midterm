@@ -23,7 +23,8 @@
                 </svg>
                 ประกาศ
             </a>
-            <a href="#" class="flex items-center px-4 py-2 mt-2 text-black hover:bg-gray-100">
+            <a href="{{ route('organize.info') }}"
+                class="flex items-center px-4 py-2 mt-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
                     viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                     <path
