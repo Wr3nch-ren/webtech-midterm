@@ -6,6 +6,7 @@ namespace App\Models;
 use App\Models\Enum\RoleAccessibility;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -63,6 +64,11 @@ class User extends Authenticatable
         'role' => RoleAccessibility::class, //based on saacsos' work
     ];
 
+    public function activities(): BelongsToMany
+    {
+        return $this->belongsToMany(Activity::class);
+    }
+
     public function campus() : BelongsTo
     {
         return $this->belongsTo(Campus::class);
@@ -70,6 +76,11 @@ class User extends Authenticatable
 
     public function isOrganizer() : bool
     {
-        return $this->role === 'ORGANIZER';
+        return  $this->role === RoleAccessibility::ORGANIZER;
+    }
+
+    public function isStaff() : bool
+    {
+        return  $this->role === RoleAccessibility::STAFF;
     }
 }
