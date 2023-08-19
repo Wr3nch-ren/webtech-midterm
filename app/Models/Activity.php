@@ -22,6 +22,11 @@ class Activity extends Model
         return $this->hasMany(Post::class);
     }
 
+    public function announcements(): HasMany
+    {
+        return $this->hasMany(Announcement::class);
+    }
+
     public function getName()
     {
         return $this->activity_name;
