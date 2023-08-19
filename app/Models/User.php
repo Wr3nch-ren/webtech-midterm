@@ -7,6 +7,7 @@ use App\Models\Enum\RoleAccessibility;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -72,6 +73,16 @@ class User extends Authenticatable
     public function campus() : BelongsTo
     {
         return $this->belongsTo(Campus::class);
+    }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function comments(): HasMany     //User has many Comment
+    {
+        return $this->hasMany(Comment::class);
     }
 
     public function isOrganizer() : bool
