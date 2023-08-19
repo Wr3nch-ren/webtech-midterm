@@ -85,6 +85,11 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function isHost() : bool
+    {
+        return  $this->role === RoleAccessibility::HOST;
+    }
+
     public function isOrganizer() : bool
     {
         return  $this->role === RoleAccessibility::ORGANIZER;
