@@ -30,6 +30,7 @@ class UserSeeder extends Seeder
         $user->phone = '0123456789';
         $user->line_id = 'user01';
         $user->facebook = 'user01';
+        $user->congenital_disease = 'ไม่มี';
         $user->allergy = 'ไม่มี';
         // $user->role = 'NORMAL';
         $user->save();
@@ -51,6 +52,7 @@ class UserSeeder extends Seeder
         $user->phone = '0234567891';
         $user->line_id = 'user02';
         $user->facebook = 'user02';
+        $user->congenital_disease = 'ไม่มี';
         $user->allergy = 'ไม่มี';
         // $user->role = 'ORGANIZER';
         $user->save();
@@ -72,6 +74,7 @@ class UserSeeder extends Seeder
         $user->phone = '0234567891';
         $user->line_id = null;
         $user->facebook = null;
+        $user->congenital_disease = 'ไม่มี';
         $user->allergy = 'ไม่มี';
         // $user->role = 'STAFF';
         $user->save();
