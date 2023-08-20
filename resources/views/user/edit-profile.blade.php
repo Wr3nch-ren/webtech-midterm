@@ -7,12 +7,12 @@
       
       <div class="w-1/2">
             <h1 class="text-3xl font-semibold pb-6">แก้ไขข้อมูลส่วนตัว</h1>
-            <form action="{{ route('user.update', ['user' => $user]) }}" class="grid grid-cols-2 gap-x-5" method="POST">
+            <form action="{{ route('user.update', ['user' => $user]) }}" class="grid grid-cols-2 gap-x-5" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <h3 class="block mb-2">แก้ไขรูปโปรไฟล์</h3>
                 <div class="col-span-2 mb-4 bg-white p-3 border-gray-800 border rounded-md">
-                    <input type="file">
+                    <input type="file" name="image">
                 </div>
                 <div class="col-span-2 my-4">
                     <h2 class="text-xl font-semibold">ข้อมูลส่วนตัว</h1>

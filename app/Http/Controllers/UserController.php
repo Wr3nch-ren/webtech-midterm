@@ -18,7 +18,8 @@ class UserController extends Controller
         return view('register.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $email = $request->get('email');
         $user = User::where('email', $email)->first();
         $user->name_title = $request->get('name_title');
@@ -52,7 +53,8 @@ class UserController extends Controller
         return view('user.certificates');
     }
 
-    public function editProfile() {
+    public function editProfile()
+    {
 
         $education = array(
             'คณะเกษตร' => array(
@@ -106,14 +108,21 @@ class UserController extends Controller
             ),
         );
 
-        return view('user.edit-profile',[
+        return view('user.edit-profile', [
             'education' => $education,
             'user' => Auth::user()
         ]);
     }
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $userDetail = Auth::user();
         $user = User::find($userDetail->id);
+
+        $image = $request->file('image');
+        $file_name = $request->name . "." . $image->getClientOriginalExtension();
+        $file_path = 'storage/' . $request->email . '/' . $file_name;
+        $image->storeAs('public/' . $request->email . '/' . $file_name);
+
         $user->name_title = $request->get('name_title');
         $user->name = $request->get('name');
         $user->surname = $request->get('surname');
@@ -130,6 +139,7 @@ class UserController extends Controller
         $user->line_id = $request->get('line_id');
         $user->facebook = $request->get('facebook');
         $user->allergy = $request->get('allergy');
+        $user->image_path = $file_path;
         $user->save();
         return redirect()->route('user.profile');
     }

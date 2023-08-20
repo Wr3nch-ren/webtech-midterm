@@ -12,12 +12,12 @@
                 </a>
             </div>
 
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}"  enctype="multipart/form-data">
                 @csrf
                 <div class="grid grid-cols-2 gap-x-2">
                         <h3 class="block mb-2">รูปโปรไฟล์</h3>
                         <div class="col-span-2 mb-4 bg-white p-3 border-gray-800 border rounded-md">
-                            <input type="file">
+                            <input type="file" name="image"/>
                         </div>
                         <div class="col-span-2 my-4">
                             <h2 class="text-xl font-semibold">ข้อมูลส่วนตัว</h1>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="my-2 flex flex-col">            
                             <label for="department" class="block mb-2">สาขา</label>
-                            <select id="department" name="department" class="rounded-md" action="{{ route('user.editProfile') }}">
+                            <select id="department" name="department" class="rounded-md">
                             <!-- department -->
                             @foreach ($education as $faculty)
                                 @foreach ($faculty as $department)

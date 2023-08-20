@@ -85,11 +85,11 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $image = $request->file('image');
+        $file_name = $request->name . "." . $image->getClientOriginalExtension();
+        $file_path = 'storage/' . $request->email . '/' . $file_name;
+        $image->storeAs('public/' . $request->email . '/' . $file_name);
+        $year = (int) $request->get('year');
 
         $user = User::create([
             'name' => $request->name,
@@ -97,15 +97,17 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'name_title' => $request->name_title,
             'surname' => $request->surname,
+            'nickname' => $request->nickname,
             'date_of_birth' => $request->date_of_birth,
             'student_code' => $request->student_code,
             'faculty' => $request->faculty,
             'department' => $request->department,
-            'year' => $request->year,
+            'year' => $year,
             'phone' => $request->phone,
             'line_id' => $request->line_id,
             'facebook' => $request->facebook,
-            'allergy' => $request->allergy
+            'allergy' => $request->allergy,
+            'image_path' => $file_path
         ]);
 
         event(new Registered($user));

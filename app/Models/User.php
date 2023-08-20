@@ -63,6 +63,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
         'role' => RoleAccessibility::class, //based on saacsos' work
+        'year' => 'integer'
     ];
 
     public function activities(): BelongsToMany
