@@ -22,4 +22,8 @@ class EventOrganizeController extends Controller
     {
         return view('organize.info');
     }
+    public function create()
+    {
+        return view('organize.create');
+    }
 }

@@ -47,6 +47,7 @@ Route::get('organize/home', [EventOrganizeController::class, 'home'])->name("org
 Route::get('organize/dashboard', [EventOrganizeController::class, 'dashboard'])->name("organize.dashboard");
 Route::get('organize/tasks', [EventOrganizeController::class, 'tasks'])->name("organize.tasks");
 Route::get('organize/info', [EventOrganizeController::class, 'info'])->name("organize.info");
+Route::get('organize/create', [EventOrganizeController::class, 'create'])->name("organize.create");
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
