@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function profile()
+    public function profile(User $user)
     {
-        return view('user.profile');
+        return view('user.profile', ['user' => Auth::user()]);
     }
 
     public function participatingEvents()
@@ -22,7 +24,85 @@ class UserController extends Controller
     }
 
     public function editProfile() {
-        return view('user.edit-profile');
+
+        $education = array(
+            'คณะเกษตร' => array(
+                'สำนักงานเลขานุการ',
+                'ภาควิชากีฏวิทยา',
+                'ภาควิชาเกษตรกลวิธาน',
+                'ภาควิชาคหกรรมศาสตร์',
+                'ภาควิชาปฐพีวิทยา',
+                'ภาควิชาพืชไร่นา',
+                'ภาควิชาพืชสวน',
+                'ภาควิชาโรคพืช',
+                'ภาควิชาส่งเสริมและนิเทศศาสตร์เกษตร',
+                'ภาควิชาสัตวบาล',
+                'ศูนย์วิจัยข้าวโพดและข้าวฟ่างแห่งชาติ',
+                'ศูนย์วิจัยและถ่ายทอดเทคโนโลยีการเกษตร',
+                'โครงการหลักสูตรวิทยาศาสตรบัณฑิต สาขาเกษตรเขตร้อน (หลักสูตรนานาชาติ) ภาคพิเศษ',
+                'โครงการเปิดสอนระดับปริญญาโท สาขาการสื่อสารเพื่อการพัฒนา (หลักสูตรนานาชาติ) ภาคพิเศษ',
+                'โครงการหลักสูตรวิทยาศาสตรมหาบัณฑิต สาขาเกษตรเขตร้อน ภาคพิเศษ-หลักสูตรนานาชาติ',
+                'โครงการปริญญาโทส่งเสริมการเกษตรสำหรับผู้บริหาร (ภาคพิเศษ)',
+                'โครงการหลักสูตรวิทยาศาสตรมหาบัณฑิต สาขาคหกรรมศาสตร์ (ภาคพิเศษ)',
+                'โครงการหลักสูตรวิทยาศาสตรมหาบัณฑิต สาขาเกษตรเขตร้อน (ภาคพิเศษ)-หลักสูตรไทย',
+                'โครงการหลักสูตรวิทยาศาสตรมหาบัณฑิต สาขาเกษตรยั่งยืน (หลักสูตรนานาชาติ)',
+                'โครงการหลักสูตรวิทยาศาสตรมหาบัณฑิต สาขาวิชาพลังงานชีวภาพ (ภาคพิเศษ)',
+                'โครงการหลักสูตรวิทยาศาสตรดุษฎีบัณฑิต สาขาเกษตรเขตร้อน ภาคพิเศษ -หลักสูตรนานาชาติ',
+                'โครงการหลักสูตรปรัชญาดุษฎีบัณฑิต สาขาวิชาเกษตรเขตร้อน ภาคพิเศษ -หลักสูตรไทย'
+            ),
+            'คณะบริหารธุรกิจ' => array(
+                'ภาควิชาการเงิน',
+                'ภาควิชาการจัดการ',
+                'ภาควิชาการจัดการการผลิต',
+                'ภาควิชาการตลาด',
+                'ภาควิชาบัญชี'
+            ),
+            'คณะประมง' => array(
+                'ภาควิชาการจัดการประมง',
+                'ภาควิชาชีววิทยาประมง',
+                'ภาควิชาผลิตภัณฑ์ประมง',
+                'ภาควิชาเพาะเลี้ยงสัตว์น้ำ',
+                'ภาควิชาวิทยาศาสตร์ทางทะเล'
+            ),
+            'คณะมนุษยศาสตร์' => array(
+                'ภาควิชาดนตรี',
+                'ภาควิชานิเทศศาสตร์และสารสนเทศศาสตร์',
+                'ภาควิชาภาษาต่างประเทศ',
+                'ภาควิชาวรรณคดี',
+                'ภาควิชาภาษาศาสตร์',
+                'ภาควิชาภาษาไทย',
+                'ภาควิชาภาษาตะวันออก',
+                'ภาควิชาปรัชญาและศาสนา',
+                'ภาควิชาอุตสาหกรรมท่องเที่ยวและบริการ'
+            ),
+        );
+
+        return view('user.edit-profile',[
+            'education' => $education,
+            'user' => Auth::user()
+        ]);
+    }
+    public function update(Request $request) {
+        $userDetail = Auth::user();
+        $user = User::find($userDetail->id);
+        $user->name_title = $request->get('name_title');
+        $user->name = $request->get('name');
+        $user->surname = $request->get('surname');
+        $user->date_of_birth = $request->get('date_of_birth');
+        $user->student_code = $request->get('student_code');
+        $user->faculty = $request->get('faculty');
+        $user->department = $request->get('department');
+        $user->email = $request->get('email');
+        $user->nickname = $request->get('nickname');
+        $user->faculty = $request->get('faculty');
+        $user->department = $request->get('department');
+        $user->year = $request->get('year');
+        $user->phone = $request->get('phone');
+        $user->line_id = $request->get('line_id');
+        $user->facebook = $request->get('facebook');
+        $user->allergy = $request->get('allergy');
+        $user->save();
+        return redirect()->route('user.profile');
     }
 
     public function notification() {

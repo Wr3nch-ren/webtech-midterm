@@ -39,6 +39,7 @@ Route::get('user/profile', [UserController::class, 'profile'])->name("user.profi
 Route::get('user/events', [UserController::class, 'participatingEvents'])->name("user.participatingEvents");
 Route::get('user/certificates', [UserController::class, 'certificates'])->name("user.certificates");
 Route::get('user/profile/edit', [UserController::class, 'editProfile'])->name("user.editProfile");
+Route::put('user/profile/edit', [UserController::class, 'update'])->name("user.update");
 Route::get('user/notification', [UserController::class, 'notification'])->name("user.notification");
 
 // Route::get('/dashboard', function () {

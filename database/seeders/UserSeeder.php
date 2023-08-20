@@ -75,6 +75,10 @@ class UserSeeder extends Seeder
         $user->allergy = 'ไม่มี';
         // $user->role = 'STAFF';
         $user->save();
+
+        User::factory(10)->create();
     }
+
+
 
 }
