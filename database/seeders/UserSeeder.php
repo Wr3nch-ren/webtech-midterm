@@ -33,6 +33,10 @@ class UserSeeder extends Seeder
         $user->allergy = 'ไม่มี';
         $user->role = 'NORMAL';
         $user->save();
+
+        User::factory(10)->create();
     }
+
+
 
 }
