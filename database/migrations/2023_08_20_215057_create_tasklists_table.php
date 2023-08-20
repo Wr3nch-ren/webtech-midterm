@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('tasklists', function (Blueprint $table) {
             $table->id();
             $table->string('tasklist_name');
-            
+
             $table->unsignedBigInteger('team_id');
-            $table->foreign('team_id')->references('id')->on('teams');     
+            $table->foreign('team_id')->references('id')->on('teams');
             $table->timestamps();
         });
     }
