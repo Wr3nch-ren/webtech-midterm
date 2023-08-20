@@ -18,11 +18,11 @@ return new class extends Migration
             // $table->foreignIdFor(User::class);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-
+            // $table->boolean('is_notified')->nullable(); // สำหรับแจ้งเตือน user (ยังไม่แน่ใจ)
             // $table->foreignIdFor(Activity::class);
             $table->unsignedBigInteger('activity_id');
             $table->foreign('activity_id')->references('id')->on('activities');
-
+            $table->boolean('is_participant')->default(false);
             $table->boolean('is_organizer')->nullable();
             $table->timestamps();
         });
