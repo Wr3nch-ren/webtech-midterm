@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('registries', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('status');       //"REGISTERED"  "CONFIRM" "DECLINE"

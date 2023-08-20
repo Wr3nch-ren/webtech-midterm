@@ -18,5 +18,17 @@ class AnnouncementSeeder extends Seeder
         $announcement->organizer_id = 2;
         $announcement->announcement_content = 'This is a test announcement.';
         $announcement->save();
+
+        $announcement = new Announcement();
+        $announcement->team_id = 1;
+        $announcement->organizer_id = 2;
+        $announcement->announcement_content = 'พรุ่งนี้รวมตัว9โมง สำคัญมากๆ';
+        $announcement->save();
+
+        $announcement = new Announcement();
+        $announcement->team_id = 1;
+        $announcement->organizer_id = 2;
+        $announcement->announcement_content = 'อาทิตย์หน้า ถึงกำหนดค่าย';
+        $announcement->save();
     }
 }

@@ -14,14 +14,14 @@ class TeamSeeder extends Seeder
     public function run(): void
     {
         $team = new Team();
-        $team->name_activity_team = 'ค่ายอาสา ทีม ทดสอบ';
-        $team->organizer_id = 3;        // user id ที่ 3 เป็น หัวหน้าใหญ่ Team นี้
+        $team->name_activity_team = 'ค่ายอาสา ทีม ทดสอบ1';
+        $team->organizer_id = 2;        // user id ที่ 3 เป็น หัวหน้าใหญ่ Team นี้
         $team->activity_id = 1;
         $team->save();
 
         $team = new Team();
         $team->name_activity_team = 'ค่ายอาสา ทีม ทดสอบ2';
-        $team->organizer_id = 3;        // user id ที่ 3 เป็น หัวหน้าใหญ่ Team นี้
+        $team->organizer_id = 2;        // user id ที่ 3 เป็น หัวหน้าใหญ่ Team นี้
         $team->activity_id = 2;
         $team->save();
     }

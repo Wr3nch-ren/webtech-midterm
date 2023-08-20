@@ -16,7 +16,7 @@ class CommentSeeder extends Seeder
         $comment = new Comment();
         
         $comment->comment_content = 'This is a test comment.';
-        $comment->user_id = 2;
+        $comment->user_id = 4;
         $comment->post_id = 1;
 
         $comment->save();
