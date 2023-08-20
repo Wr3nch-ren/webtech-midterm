@@ -75,20 +75,27 @@ class User extends Authenticatable
     //     return $this->belongsToMany(Role::class);
     // }
 
-    // public function campus() : BelongsTo
-    // {
-    //     return $this->belongsTo(Campus::class);
-    // }
+
 
     public function teams(): HasMany
     {
         return $this->hasMany(Team::class);
     }
 
-    // public function teamMembers(): HasMany
-    // {
-    //     return $this->hasMany(TeamMember::class);
-    // }
+    public function teamMembers(): HasMany
+    {
+        return $this->hasMany(TeamMember::class);
+    }
+
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function announments(): HasMany
+    {
+        return $this->hasMany(Announcement::class);
+    }
 
     public function posts(): HasMany
     {

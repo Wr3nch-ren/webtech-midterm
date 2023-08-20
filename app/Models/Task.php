@@ -18,4 +18,8 @@ class Task extends Model
     public function tasklist(): BelongsTo{
         return $this->belongsTo(Tasklist::class);
     }
+
+    public function user(): BelongsTo{
+        return $this->belongsTo(User::class);
+    }
 }
