@@ -41,7 +41,7 @@ class User extends Authenticatable
         'allergy',
         'activity',
         'image_path',
-        'role',
+        // 'role',
     ];
 
     /**
@@ -62,7 +62,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        'role' => RoleAccessibility::class, //based on saacsos' work
+        // 'role' => RoleAccessibility::class, //based on saacsos' work
     ];
 
     public function activities(): BelongsToMany
@@ -70,10 +70,25 @@ class User extends Authenticatable
         return $this->belongsToMany(Activity::class);
     }
 
-    public function campus() : BelongsTo
+    // public function roles(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(Role::class);
+    // }
+
+    // public function campus() : BelongsTo
+    // {
+    //     return $this->belongsTo(Campus::class);
+    // }
+
+    public function teams(): HasMany
     {
-        return $this->belongsTo(Campus::class);
+        return $this->hasMany(Team::class);
     }
+
+    // public function teamMembers(): HasMany
+    // {
+    //     return $this->hasMany(TeamMember::class);
+    // }
 
     public function posts(): HasMany
     {

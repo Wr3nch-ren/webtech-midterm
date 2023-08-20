@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Announcement extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     public function activity(): BelongsTo{
         return $this->belongsTo(Activity::class);

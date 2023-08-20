@@ -14,8 +14,11 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         $post = new Post();
-        $post->user_id = 1;
+        
         $post->post_content = 'This is a test post.';
+        $post->user_id = 1;
+        $post->activity_id = 3;
+
         $post->save();
     }
 }

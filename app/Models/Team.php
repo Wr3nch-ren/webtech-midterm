@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
-class Post extends Model
+class Team extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,12 +19,17 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function activity(): BelongsTo{
-        return $this->belongsTo(Activity::class);
+    public function team_members(): HasMany
+    {
+        return $this->hasMany(Team_Member::class);
     }
 
-    public function comments(): HasMany
+    public function tasklist(): HasOne
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasOne(Tasklist::class);
+    }
+
+    public function activity(): BelongsTo{
+        return $this->belongsTo(Activity::class);
     }
 }

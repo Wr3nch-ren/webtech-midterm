@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
         $user->line_id = 'user01';
         $user->facebook = 'user01';
         $user->allergy = 'ไม่มี';
-        $user->role = 'NORMAL';
+        // $user->role = 'NORMAL';
         $user->save();
 
         $user = new User();
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
         $user->line_id = 'user02';
         $user->facebook = 'user02';
         $user->allergy = 'ไม่มี';
-        $user->role = 'ORGANIZER';
+        // $user->role = 'ORGANIZER';
         $user->save();
 
         $user = new User();
@@ -73,7 +73,7 @@ class UserSeeder extends Seeder
         $user->line_id = null;
         $user->facebook = null;
         $user->allergy = 'ไม่มี';
-        $user->role = 'STAFF';
+        // $user->role = 'STAFF';
         $user->save();
     }
 
