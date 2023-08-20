@@ -16,8 +16,16 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->string('comment_content');
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Post::class);
+            // $table->foreignIdFor(User::class);
+            // $table->foreignIdFor(Post::class);
+
+
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
+            
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            
             $table->timestamps();
         });
     }

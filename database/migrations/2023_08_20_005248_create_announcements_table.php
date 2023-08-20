@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Activity;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,10 +16,17 @@ return new class extends Migration
     {
         Schema::create('announcements', function (Blueprint $table) {
             $table->id();
-            $table->string('announcements_content');
-            $table->string('announcements_image_path')->nullable();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Activity::class);
+            $table->string('announcement_content');
+            $table->string('announcement_image_path')->nullable();
+            // $table->foreignIdFor(User::class);
+            // $table->foreignIdFor(Team::class);
+
+            $table->unsignedBigInteger('organizer_id');
+            $table->foreign('organizer_id')->references('id')->on('users'); //หัวหน้าใหญ่ประกาศ
+
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');     
+
             $table->timestamps();
         });
     }

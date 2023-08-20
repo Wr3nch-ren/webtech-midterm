@@ -22,15 +22,15 @@ class Activity extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function posts(): HasMany
-    {
-        return $this->hasMany(Post::class);
-    }
+    // public function posts(): HasMany
+    // {
+    //     return $this->hasMany(Post::class);
+    // }
 
-    public function announcements(): HasMany
-    {
-        return $this->hasMany(Announcement::class);
-    }
+    // public function announcements(): HasMany
+    // {
+    //     return $this->hasMany(Announcement::class);
+    // }
 
     public function team(): HasOne
     {

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Comment;
 use App\Models\Role;
 use App\Models\Tasklist;
 use Illuminate\Database\Seeder;
@@ -23,10 +24,14 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(UserSeeder::class);
         $this->call(ActivitySeeder::class);
-        $this->call(PostSeeder::class);
-
 
         $this->call(TeamSeeder::class);
+
+
+        $this->call(AnnouncementSeeder::class);
+        $this->call(PostSeeder::class);
+        $this->call(CommentSeeder::class);
+
 
         $this->call(TeamMemberSeeder::class);
 

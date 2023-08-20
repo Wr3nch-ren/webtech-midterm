@@ -11,8 +11,8 @@ class Announcement extends Model
 {
     use HasFactory;
 
-    public function activity(): BelongsTo{
-        return $this->belongsTo(Activity::class);
+    public function team(): BelongsTo{
+        return $this->belongsTo(Team::class);
     }
 
     public function user(): BelongsTo{

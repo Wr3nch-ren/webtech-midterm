@@ -14,8 +14,8 @@ class AnnouncementSeeder extends Seeder
     public function run(): void
     {
         $announcement = new Announcement();
-        $announcement->activity_id = 1;
-        $announcement->user_id = 2;
+        $announcement->team_id = 1;
+        $announcement->organizer_id = 2;
         $announcement->announcement_content = 'This is a test announcement.';
         $announcement->save();
     }

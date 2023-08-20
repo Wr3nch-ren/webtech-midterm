@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Activity;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,8 +18,15 @@ return new class extends Migration
             $table->id();
             $table->string('post_content');
             $table->string('post_image_path')->nullable();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Activity::class);
+            // $table->foreignIdFor(User::class);
+            // $table->foreignIdFor(Team::class);
+
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');
+            
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            
             $table->timestamps();
         });
     }

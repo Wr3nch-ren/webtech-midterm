@@ -32,4 +32,14 @@ class Team extends Model
     public function activity(): BelongsTo{
         return $this->belongsTo(Activity::class);
     }
+
+    public function announcements(): HasMany
+    {
+        return $this->hasMany(Announcement::class);
+    }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
 }

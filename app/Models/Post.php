@@ -18,8 +18,8 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function activity(): BelongsTo{
-        return $this->belongsTo(Activity::class);
+    public function team(): BelongsTo{
+        return $this->belongsTo(Team::class);
     }
 
     public function comments(): HasMany
