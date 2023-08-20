@@ -7,6 +7,7 @@ use App\Models\Enum\RoleAccessibility;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -14,7 +15,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, softDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -74,9 +75,14 @@ class User extends Authenticatable
         return $this->belongsTo(Campus::class);
     }
 
-    public function certificate() : HasMany
+    public function posts(): HasMany
     {
-        return $this->hasMany(Certificate::class);
+        return $this->hasMany(Post::class);
+    }
+
+    public function comments(): HasMany     //User has many Comment
+    {
+        return $this->hasMany(Comment::class);
     }
 
     public function isOrganizer() : bool
