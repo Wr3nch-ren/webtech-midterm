@@ -41,6 +41,10 @@ Route::get('user/events', [UserController::class, 'participatingEvents'])->name(
 Route::get('user/certificates', [UserController::class, 'certificates'])->name("user.certificates");
 Route::get('user/profile/edit', [UserController::class, 'editProfile'])->name("user.editProfile");
 Route::put('user/profile/edit', [UserController::class, 'update'])->name("user.update");
+
+Route::get('register/create', [UserController::class, 'create'])->name("register.create");
+Route::post('register/create', [UserController::class, 'store'])->name("user.store");
+
 Route::get('user/notification', [UserController::class, 'notification'])->name("user.notification");
 Route::get('user/organize', [UserController::class, 'organize'])->name("user.organize");
 

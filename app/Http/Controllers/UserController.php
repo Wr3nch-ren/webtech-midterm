@@ -8,9 +8,38 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function profile(User $user)
+    public function profile()
     {
         return view('user.profile', ['user' => Auth::user()]);
+    }
+
+    public function create(Request $request)
+    {
+        return view('register.create');
+    }
+
+    public function store(Request $request){
+        $email = $request->get('email');
+        $user = User::where('email', $email)->first();
+        $user->name_title = $request->get('name_title');
+        $user->name = $request->get('name');
+        $user->surname = $request->get('surname');
+        $user->date_of_birth = $request->get('date_of_birth');
+        $user->student_code = $request->get('student_code');
+        $user->faculty = $request->get('faculty');
+        $user->department = $request->get('department');
+        $user->email = $request->get('email');
+        $user->nickname = $request->get('nickname');
+        $user->faculty = $request->get('faculty');
+        $user->department = $request->get('department');
+        $user->year = $request->get('year');
+        $user->phone = $request->get('phone');
+        $user->line_id = $request->get('line_id');
+        $user->facebook = $request->get('facebook');
+        $user->allergy = $request->get('allergy');
+        $user->save();
+
+        return redirect()->route('login');
     }
 
     public function participatingEvents()

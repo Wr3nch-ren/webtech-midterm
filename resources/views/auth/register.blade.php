@@ -50,11 +50,13 @@
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
 
-                <div class="flex items-center justify-end mt-8">
-                    <x-secondary-button onclick="window.location.href='{{ url('/register/create') }}'"
-                        class="w-full bg-black justify-center py-3">
-                        {{ __('Register') }}
-                    </x-secondary-button>
+                <div class="flex items-center mt-8">
+                    <a href="{{ route('register.create') }}" class="w-full">
+                         <x-secondary-button class="w-full bg-black justify-center py-3">
+                            {{ __('Register') }}
+                        </x-secondary-button>
+                    </a>
+                   
                 </div>
                 <div class="flex justify-center mt-3">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
