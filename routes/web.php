@@ -39,6 +39,7 @@ Route::get(
 Route::get('user/profile', [UserController::class, 'profile'])->name("user.profile");
 Route::get('user/events', [UserController::class, 'participatingEvents'])->name("user.participatingEvents");
 Route::get('user/certificates', [UserController::class, 'certificates'])->name("user.certificates");
+Route::post('user/certificates', [UserController::class, 'storeCertificate'])->name("user.storeCertificate");
 Route::get('user/profile/edit', [UserController::class, 'editProfile'])->name("user.editProfile");
 Route::put('user/profile/edit', [UserController::class, 'update'])->name("user.update");
 

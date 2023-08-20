@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
             // Getting image path of the certificate from the storage
+            $table->string('name');
             $table->string('certificate_path');
             $table->foreignIdFor(\App\Models\User::class);
             $table->timestamps();
