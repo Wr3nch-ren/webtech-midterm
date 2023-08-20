@@ -1,5 +1,5 @@
 <!-- sidebar -->
-<aside id="default-sidebar" class=" w-72 pl-28 h-screen transition-transform -translate-x-full sm:translate-x-0"
+<aside id="default-sidebar" class=" w-96 pl-28 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
 
     <div class="h-full py-8 overflow-y-auto flex flex-col items-center">

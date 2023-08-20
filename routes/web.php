@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventOrganizeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -25,9 +26,9 @@ Route::get('/', function () {
 
 // Route::resource('/', HomeController::class);
 
-Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
+// Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
 
-Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
+// Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->name("activities.showDetail");
 
 Route::get(
     '/register/create',
@@ -53,6 +54,9 @@ Route::get('organize/dashboard', [EventOrganizeController::class, 'dashboard'])-
 Route::get('organize/tasks', [EventOrganizeController::class, 'tasks'])->name("organize.tasks");
 Route::get('organize/info', [EventOrganizeController::class, 'info'])->name("organize.info");
 Route::get('organize/create', [EventOrganizeController::class, 'create'])->name("organize.create");
+
+Route::resource('/events', EventController::class);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

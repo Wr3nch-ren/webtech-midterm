@@ -1,4 +1,4 @@
-<nav class=" bg-white border-black border-b pb-1">
+<nav class=" bg-white shadow-xl border-b pb-1">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
 
         {{-- <div class="md:order-2 w-2/4">
