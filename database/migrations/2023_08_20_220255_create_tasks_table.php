@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_tasks');
             $table->string('detail_tasks');
-            $table->boolean('is_finish');
+            $table->boolean('is_finish')->default(false);
 
             $table->unsignedBigInteger('tasklist_id');
             $table->foreign('tasklist_id')->references('id')->on('tasklists');

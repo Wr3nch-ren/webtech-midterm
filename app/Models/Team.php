@@ -42,4 +42,9 @@ class Team extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function registry(): HasOne
+    {
+        return $this->hasOne(Registry::class);
+    }
 }

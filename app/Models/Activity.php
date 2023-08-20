@@ -32,6 +32,11 @@ class Activity extends Model
     //     return $this->hasMany(Announcement::class);
     // }
 
+    public function budget(): HasOne
+    {
+        return $this->hasOne(Budget::class);
+    }
+
     public function team(): HasOne
     {
         return $this->hasOne(Team::class);

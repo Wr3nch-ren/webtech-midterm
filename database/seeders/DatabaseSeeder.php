@@ -25,18 +25,18 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(ActivitySeeder::class);
 
-        $this->call(TeamSeeder::class);
+        // $this->call(TeamSeeder::class);
 
 
-        $this->call(AnnouncementSeeder::class);
-        $this->call(PostSeeder::class);
-        $this->call(CommentSeeder::class);
+        // $this->call(AnnouncementSeeder::class);
+        // $this->call(PostSeeder::class);
+        // $this->call(CommentSeeder::class);
 
 
-        $this->call(TeamMemberSeeder::class);
+        // $this->call(TeamMemberSeeder::class);
 
-        $this->call(TasklistSeeder::class);
-        $this->call(TaskSeeder::class);
+        // $this->call(TasklistSeeder::class);
+        // $this->call(TaskSeeder::class);
 
 
     }
