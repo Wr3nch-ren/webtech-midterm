@@ -14,9 +14,9 @@ class EventOrganizeController extends Controller
         $this->middleware('auth');
     }
 
-    public function home()
+    public function home(Activity $event)
     {
-        return view('organize.index');
+        return view('organize.index', ['event' => $event]);
     }
     public function dashboard()
     {
@@ -26,9 +26,9 @@ class EventOrganizeController extends Controller
     {
         return view('organize.tasks');
     }
-    public function info()
+    public function info(Activity $event)
     {
-        return view('organize.info');
+        return view('organize.info', ['event' => $event]);
     }
     public function create()
     {
@@ -60,6 +60,12 @@ class EventOrganizeController extends Controller
 
         $activity->save();
 
-        return redirect()->route('organize.home');
+        return redirect()->route('organize.home', ['event' => $activity]);
+    }
+
+    public function destroy(Activity $event) {
+        $event->delete();
+        $events = Activity::get()->where('organizer_id', Auth::user()->id);
+                return redirect()->route('user.organize', ['events' => $events]);
     }
 }

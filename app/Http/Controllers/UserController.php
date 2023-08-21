@@ -185,6 +185,7 @@ class UserController extends Controller
 
     public function organize()
     {
-        return view('user.organize');
+        $events = Activity::get()->where('organizer_id', Auth::user()->id);
+        return view('user.organize', ['events' => $events]);
     }
 }
