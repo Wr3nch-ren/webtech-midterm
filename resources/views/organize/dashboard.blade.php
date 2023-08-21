@@ -42,14 +42,14 @@
                             surname="{{ Auth::user()->surname }}"></x-register-event-list>
                     @endfor
                 </div>
-                <div class="hidden flex-col space-y-3"" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                <div class="hidden flex-col space-y-3" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                     @for ($i = 0; $i < 3; $i++)
                         <x-accept-decline-register-event nametitle="{{ Auth::user()->name_title }}"
                             name="{{ Auth::user()->name }}"
                             surname="{{ Auth::user()->surname }}"></x-accept-decline-register-event>
                     @endfor
                 </div>
-                <div class="hidden flex-col space-y-3"" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                <div class="hidden flex-col space-y-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                     @for ($i = 0; $i < 2; $i++)
                         <x-accept-decline-register-event nametitle="{{ Auth::user()->name_title }}"
                             name="{{ Auth::user()->name }}"

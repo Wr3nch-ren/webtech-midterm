@@ -24,23 +24,23 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(UserSeeder::class);
-        $this->call(ActivitySeeder::class);
+        // $this->call(ActivitySeeder::class);
 
-        $this->call(BudgetSeeder::class);
-        $this->call(ItemSeeder::class);
+        // $this->call(BudgetSeeder::class);
+        // $this->call(ItemSeeder::class);
 
-        $this->call(TeamSeeder::class);
-        $this->call(RegistrySeeder::class);
+        // $this->call(TeamSeeder::class);
+        // $this->call(RegistrySeeder::class);
 
-        $this->call(AnnouncementSeeder::class);
-        $this->call(PostSeeder::class);
-        $this->call(CommentSeeder::class);
+        // $this->call(AnnouncementSeeder::class);
+        // $this->call(PostSeeder::class);
+        // $this->call(CommentSeeder::class);
 
 
-        $this->call(TeamMemberSeeder::class);
+        // $this->call(TeamMemberSeeder::class);
 
-        $this->call(TasklistSeeder::class);
-        $this->call(TaskSeeder::class);
+        // $this->call(TasklistSeeder::class);
+        // $this->call(TaskSeeder::class);
 
 
     }

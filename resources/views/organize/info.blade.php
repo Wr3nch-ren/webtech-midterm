@@ -55,7 +55,7 @@
                             surname="{{ Auth::user()->surname }}"></x-register-event-list>
                     @endfor
                 </div>
-                <div class="hidden flex-col space-y-3"" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                <div class="hidden flex-col space-y-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                     <x-budget-list></x-budget-list>
                 </div>
             </div>
