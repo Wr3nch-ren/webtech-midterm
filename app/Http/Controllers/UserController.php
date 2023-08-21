@@ -48,7 +48,11 @@ class UserController extends Controller
 
     public function participatingEvents()
     {
-        return view('user.events');
+        $user = Auth::user();
+        $events = $user->Activities;
+        return view('user.events', [
+            'events' => $events
+        ]);
     }
 
     public function certificates()
