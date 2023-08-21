@@ -15,7 +15,7 @@ class ActivitySeeder extends Seeder
     { //
         //$activity = new Activity();  //id = 1
         //$activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
-        //$activity->deadline = '30-02-2024';
+        //$activity->deadline = '2015-01-23';
         //$activity->activity_type = 'ค่ายอาสา';
         //$activity->activity_hours = 3;
         //$activity->activity_date = '30-03-2024';
@@ -33,7 +33,7 @@ class ActivitySeeder extends Seeder
         //
         //$activity = new Activity();      //id = 2
         //$activity->activity_name = 'กิจกรรมทดสอบ2';
-        //$activity->deadline = '30-02-2024';
+        //$activity->deadline = '2015-01-23';
         //$activity->activity_type = 'ทดสอบ2';
         //$activity->activity_hours = 3;
         //$activity->activity_date = '30-03-2024';
@@ -51,7 +51,7 @@ class ActivitySeeder extends Seeder
         //
         //$activity = new Activity();      //id = 3
         //$activity->activity_name = 'กิจกรรมทดสอบความกล้า_';
-        //$activity->deadline = '30-02-2024';
+        //$activity->deadline = '2015-01-23';
         //$activity->activity_type = 'ทดสอบจิตใจ';
         //$activity->activity_hours = 9;
         //$activity->activity_date = '30-03-2024';
@@ -68,57 +68,78 @@ class ActivitySeeder extends Seeder
         //$activity->save();
         {
             $activity = new Activity();  //id = 1
+            $activity->id = '1';
             $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
-            $activity->deadline = '30-02-2024';
-            $activity->activity_type = 'ค่ายอาสา';
+            $activity->deadline = '2015-01-23';
+            $activity->activity_type = 'อาสา';
+            $activity->activity_category = 'อาสา';
             $activity->activity_hours = 3;
-            $activity->activity_date = '30-03-2024';
+            // $activity->activity_start = '2015-01-23';
+            // $activity->activity_end = '2015-01-23';
             $activity->participant_number = 30;
             $activity->activity_fee = 100;
+            $activity->organizer_name = 'ชมรมทำดี';
             // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
             $activity->activity_place = 'เขาใหญ่';
             $activity->description = 'ทำประโยชน์กันเถอะ';
             $activity->contact = '0812345678';
-            $activity->poster = 'ทดสอบ';
+            $activity->poster_path = 'ทดสอบ';
             $activity->budget = 1000;
-            $activity->working_team_number = 3;
+            $activity->budget = 1000;
+            $activity->is_posted = false;
+            // $activity->working_team_number = 3;
             $activity->verify = false;
+            $activity->user_id = '1';
             $activity->save();
 
-            $activity = new Activity();      //id = 2
-            $activity->activity_name = 'กิจกรรมทดสอบ2';
-            $activity->deadline = '30-02-2024';
-            $activity->activity_type = 'ทดสอบ2';
+            $activity = new Activity();  //id = 1
+            $activity->id = '2';
+            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ2';
+            $activity->deadline = '2015-01-23';
+            $activity->activity_type = 'อาสา';
+            $activity->activity_category = 'อาสา';
             $activity->activity_hours = 3;
-            $activity->activity_date = '30-03-2024';
+            // $activity->activity_start = '2015-01-23';
+            // $activity->activity_end = '2015-01-23';
             $activity->participant_number = 30;
             $activity->activity_fee = 100;
+            $activity->organizer_name = 'ชมรมทำดี';
             // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'ทดสอบ2';
-            $activity->description = 'ทดสอบ2';
+            $activity->activity_place = 'เขาใหญ่';
+            $activity->description = 'ทำประโยชน์กันเถอะ';
             $activity->contact = '0812345678';
-            $activity->poster = 'ทดสอบ2';
+            $activity->poster_path = 'ทดสอบ';
             $activity->budget = 1000;
-            $activity->working_team_number = 3;
+            $activity->budget = 1000;
+            $activity->is_posted = false;
+            // $activity->working_team_number = 3;
             $activity->verify = true;
+            $activity->user_id = '2';
             $activity->save();
 
-            $activity = new Activity();      //id = 3
-            $activity->activity_name = 'กิจกรรมทดสอบความกล้า';
-            $activity->deadline = '30-02-2024';
-            $activity->activity_type = 'ทดสอบจิตใจ';
-            $activity->activity_hours = 9;
-            $activity->activity_date = '30-03-2024';
+            $activity = new Activity();  //id = 1
+            $activity->id = '3';
+            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ2';
+            $activity->deadline = '2015-01-23';
+            $activity->activity_type = 'อาสา';
+            $activity->activity_category = 'อาสา';
+            $activity->activity_hours = 3;
+            // $activity->activity_start = '30-03-2024';
+            // $activity->activity_end = '2015-01-23';
             $activity->participant_number = 30;
-            $activity->activity_fee = 500;
+            $activity->activity_fee = 100;
+            $activity->organizer_name = 'ชมรมทำดี';
             // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'ทดสอบ2';
-            $activity->description = 'มาทดสอบจิตใจ';
+            $activity->activity_place = 'เขาใหญ่';
+            $activity->description = 'ทำประโยชน์กันเถอะ';
             $activity->contact = '0812345678';
-            $activity->poster = 'ทดสอบ3';
+            $activity->poster_path = 'ทดสอบ';
             $activity->budget = 1000;
-            $activity->working_team_number = 3;
+            $activity->budget = 1000;
+            $activity->is_posted = false;
+            // $activity->working_team_number = 3;
             $activity->verify = true;
+            $activity->user_id = '2';
             $activity->save();
         }
     }

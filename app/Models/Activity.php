@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -17,9 +18,18 @@ class Activity extends Model
         'activity_date' => 'datetime',
         'deadline' => 'datetime',
     ];
-    public function users(): BelongsToMany
+    // public function users(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(User::class);
+    // }
+    public function user(): BelongsTo
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function registeredList(): BelongsToMany
+    {
+        return $this->belongsToMany(RegisteredList::class);
     }
 
     // public function posts(): HasMany
