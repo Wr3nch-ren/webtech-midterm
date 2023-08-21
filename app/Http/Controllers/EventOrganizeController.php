@@ -70,6 +70,8 @@ class EventOrganizeController extends Controller
     }
     public function info(Activity $event)
     {   
+        // Gate::authorize('viewAny', Activity::class); //ไม่ใช่ organizer ไม่ให้เข้า
+        
         $team = Team::get()->where('activity_id', $event->id)->first();
         $team_members = TeamMember::get()->where('team_id', $team->id);
         $user = array();
