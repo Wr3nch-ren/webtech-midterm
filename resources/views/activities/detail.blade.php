@@ -30,7 +30,7 @@
 
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
                             <dt class="font-medium text-gray-900">รูปแบบ</dt>
-                            <dd class="text-gray-700 sm:col-span-2">John Frusciante</dd>
+                            <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_type }}</dd>
                         </div>
 
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
@@ -74,7 +74,7 @@
                             <dt class="font-medium text-gray-900">หมวดหมู่</dt>
                             <dd class="text-gray-700 sm:col-span-2">
                                 <span
-                                    class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full border border-gray-800">อาสา</span>
+                                    class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full border border-gray-800">{{ $event->activity_category}}</span>
                             </dd>
                         </div>
                     </dl>
@@ -86,8 +86,7 @@
                             <p class="font-medium text-sm text-gray-700">จัดโดย</p>
                         </div>
                         <div class="item-center">
-                            <p class="text-gray-700 text-sm ml-2">ภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์
-                                มหาวิทยาลัยเกษตรศาสตร์
+                            <p class="text-gray-700 text-sm ml-2">{{ $event->organizer_name }}
                             </p>
 
                         </div>

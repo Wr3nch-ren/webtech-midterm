@@ -77,8 +77,8 @@
                         </select>
                         </div>
                         <div class="my-2 flex flex-col">            
-                            <label for="year_study" class="block mb-2">ชั้นปี</label>
-                            <select id="year_study" name="year_study" class="rounded-md">
+                            <label for="year" class="block mb-2">ชั้นปี</label>
+                            <select id="year" name="year" class="rounded-md">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
