@@ -40,7 +40,7 @@
 
             <div id="myTabContent">
                 <div class="hidden flex-col space-y-3"" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <x-event-info-org :event="$event"></x-event-info-org>
+                    <x-event-info-org></x-event-info-org>
                 </div>
                 <div class="hidden flex-col space-y-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="flex justify-end">
