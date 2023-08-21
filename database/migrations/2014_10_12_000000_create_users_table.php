@@ -32,6 +32,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('line_id')->nullable();
             $table->string('facebook')->nullable();
+            $table->string('congenital_disease')->nullable();
             $table->string('allergy')->nullable();
             $table->string('image_path')->nullable();
             $table->string('role')->default('NORMAL');

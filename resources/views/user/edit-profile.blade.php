@@ -7,12 +7,12 @@
       
       <div class="w-1/2">
             <h1 class="text-3xl font-semibold pb-6">แก้ไขข้อมูลส่วนตัว</h1>
-            <form action="{{ route('user.update', ['user' => $user]) }}" class="grid grid-cols-2 gap-x-5" method="POST">
+            <form action="{{ route('user.update', ['user' => $user]) }}" class="grid grid-cols-2 gap-x-5" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <h3 class="block mb-2">แก้ไขรูปโปรไฟล์</h3>
                 <div class="col-span-2 mb-4 bg-white p-3 border-gray-800 border rounded-md">
-                    <input type="file">
+                    <input type="file" name="image">
                 </div>
                 <div class="col-span-2 my-4">
                     <h2 class="text-xl font-semibold">ข้อมูลส่วนตัว</h1>
@@ -115,12 +115,12 @@
 
                 <div class="my-2 flex flex-col">            
                     <label for="" class="block mb-2">โรคประจำตัว</label>
-                    <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" value="{{ $user->allegy }}">
+                    <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" value="{{ $user->congenital_disease }}">
                 </div>
             
                 <div class="my-2 flex flex-col ">            
                     <label for="" class="block mb-2">อาหารที่แพ้</label>
-                    <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" value="{{ $user->allegy }}">
+                    <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" value="{{ $user->allergy }}">
                 </div>
              
                 <button class="col-span-2 bg-black text-white p-3 hover:bg-violet-900 transition-colors duration-300 w-1/2 mx-auto mt-5">Submit</button>

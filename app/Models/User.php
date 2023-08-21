@@ -38,6 +38,7 @@ class User extends Authenticatable
         'phone',
         'line_id',
         'facebook',
+        'congenital_disease',
         'allergy',
         'activity',
         'image_path',
@@ -63,6 +64,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
         'role' => RoleAccessibility::class, //based on saacsos' work
+        'year' => 'integer'
     ];
 
     public function activities(): BelongsToMany
