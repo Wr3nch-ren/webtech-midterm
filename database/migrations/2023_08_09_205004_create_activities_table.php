@@ -15,20 +15,23 @@ return new class extends Migration
             $table->id();
             $table->string('activity_name');
             $table->date('deadline'); // วันที่ปิดการลงทะเบียน
-            $table->string('activity_type');
-            $table->unsignedInteger('activity_hours');
-            $table->date('activity_date'); // วันที่จัดกิจกรรม
+            $table->string('activity_type'); //รูปแบบจัดกิจกรรม
+            $table->string('activity_category'); //ประเภทจัดกิจกรรม
+            $table->unsignedInteger('activity_hours')->default(1);
+            $table->date('activity_start'); // วันที่เริ่มจัดกิจกรรม
+            $table->date('activity_end'); // วันที่สิ้นสุดจัดกิจกรรม
             $table->unsignedInteger('participant_number');
             $table->double('activity_fee'); // ค่าลงทะเบียน
             $table->string('activity_place');
-            // $table->foreignIdFor(\App\Models\User::class);
-            // $table->unsignedInteger('organizer_id');  // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+            //$table->foreignIdFor(\App\Models\User::class);
+            $table->unsignedInteger('organizer_id'); // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+            $table->string('organizer_name'); //ผู้จัดกิจกรรม ที่ไม่ใช่จาก organizer_id
             $table->string('description');
             $table->string('contact'); // ช่องทางติดต่อ, ใส่เป็น string เพื่อเพิ่มความยืดหยุ่นในการใส่ข้อมูล
-            $table->string('poster'); // ผู้โพสต์ (host)
+            $table->string('poster_path'); // ผู้โพสต์ (host)
             $table->boolean('is_posted')->default(false); // โพสต์แล้วหรือยัง (ป้องกันการโพสต์ซ้ำ)
-            $table->double('budget'); // งบประมาณของกิจกรรม
-            $table->unsignedInteger('working_team_number');
+            $table->double('budget')->default(1000.0); // งบประมาณของกิจกรรม
+            $table->unsignedInteger('working_team_number')->default(1);
             $table->boolean('verify')->default(false);
             $table->timestamps();
         });

@@ -51,6 +51,7 @@ Route::get('organize/dashboard', [EventOrganizeController::class, 'dashboard'])-
 Route::get('organize/tasks', [EventOrganizeController::class, 'tasks'])->name("organize.tasks");
 Route::get('organize/info', [EventOrganizeController::class, 'info'])->name("organize.info");
 Route::get('organize/create', [EventOrganizeController::class, 'create'])->name("organize.create");
+Route::post('organize', [EventOrganizeController::class, 'store'])->name("organize.store");
 
 Route::resource('/events', EventController::class);
 
