@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->double('activity_fee'); // ค่าลงทะเบียน
             $table->string('activity_place');
             //$table->foreignIdFor(\App\Models\User::class);
-            $table->unsignedInteger('organizer_id'); // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+            // $table->unsignedInteger('organizer_id'); // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
             $table->string('organizer_name'); //ผู้จัดกิจกรรม ที่ไม่ใช่จาก organizer_id
             $table->string('description');
             $table->string('contact'); // ช่องทางติดต่อ, ใส่เป็น string เพื่อเพิ่มความยืดหยุ่นในการใส่ข้อมูล
@@ -33,6 +34,8 @@ return new class extends Migration
             $table->double('budget')->default(1000.0); // งบประมาณของกิจกรรม
             $table->unsignedInteger('working_team_number')->default(1);
             $table->boolean('verify')->default(false);
+
+            // $table->foreignIdFor(User::class)->comment();
             $table->timestamps();
         });
     }

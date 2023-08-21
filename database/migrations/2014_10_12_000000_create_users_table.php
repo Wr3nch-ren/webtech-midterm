@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Activity;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -36,10 +37,14 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->string('role')->default('NORMAL');
             $table->foreignIdFor(\App\Models\Certificate::class)->nullable();
+            
+            // $table->foreignIdFor(Activity::class)->comment('')
 
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
+
+
         });
     }
 
