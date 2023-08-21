@@ -93,32 +93,32 @@
                         <label for="activity_place" class="text-sm font-medium text-gray-900 block mb-2">สถานที่จัดกิจกรรม</label>
                         <input type="text" name="activity_place" id="activity_place"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
-                            placeholder="Apple" required="">
+                            placeholder="สถานที่จัดกิจกรรม" required="">
                     </div>
                     <div class="col-span-6 sm:col-span-2">
                         <label for="organizer_name" class="text-sm font-medium text-gray-900 block mb-2">ผู้จัดกิจกรรม</label>
                         <input type="text" name="organizer_name" id="organizer_name"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
-                            placeholder="Apple" required="">
+                            placeholder="ชื่อผู้จัดกิจกรรม เช่น ชมรม, คณะ, ภาควิชา" required="">
                     </div>
 
                     <div class="col-span-6 sm:col-span-2">
                         <label for="participant_number" class="text-sm font-medium text-gray-900 block mb-2">จำนวนที่รับ (คน)</label>
-                        <input type="number" name="participant_number" id="participant_number"
+                        <input type="number" min="1" name="participant_number" id="participant_number"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
-                            placeholder="" required="">
+                            placeholder="จำนวนที่รับได้ทั้งหมด" required="">
                     </div>
                     <div class="col-span-6 sm:col-span-2">
                         <label for="activity_fee" class="text-sm font-medium text-gray-900 block mb-2">ค่าใช้จ่าย (฿)</label>
-                        <input type="number" name="activity_fee" id="activity_fee"
+                        <input type="number" min="0" name="activity_fee" id="activity_fee"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
-                            placeholder="" required="">
+                            placeholder="ค่าสมัครกิจกรรมต่อคน" required="">
                     </div>
                     <div class="col-span-6 sm:col-span-2">
                         <label for="contact" class="text-sm font-medium text-gray-900 block mb-2">ช่องทางการติดต่อ</label>
                         <input type="text" name="contact" id="contact"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
-                            placeholder="Apple" required="">
+                            placeholder="ช่องทางการติดต่อ เช่น email, line, สำนักงาน" required="">
                     </div>
 
                     <div class="col-span-4">
@@ -126,7 +126,7 @@
                             class="text-sm font-medium text-gray-900 block mb-2">คำอธิบายกิจกรรม</label>
                         <textarea id="description" rows="4" name="description"
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-4"
-                            placeholder="รายละเอียด"></textarea>
+                            placeholder="รายละเอียดกิจกรรม"></textarea>
                     </div>
                     <div class="col-span-6 sm:col-span-2">
                         <label for="poster" class="text-sm font-medium text-gray-500 block mb-2">poster</label>
