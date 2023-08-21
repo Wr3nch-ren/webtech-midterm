@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {       //1 Activity has 1 team
             $table->id();
-            $table->string('name_activity_team');
+            $table->string('name_activity_team')->nullable();
             $table->unsignedBigInteger('organizer_id');
             $table->foreign('organizer_id')->references('id')->on('users');     //หัวหน้าใหญ่1คน
 

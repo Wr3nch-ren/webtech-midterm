@@ -43,8 +43,8 @@ class Team extends Model
         return $this->hasMany(Post::class);
     }
 
-    public function registry(): HasOne
+    public function registries(): HasMany
     {
-        return $this->hasOne(Registry::class);
+        return $this->hasMany(Registry::class);
     }
 }

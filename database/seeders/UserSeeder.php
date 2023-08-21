@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Activity;
+use App\Models\Registry;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,7 +23,7 @@ class UserSeeder extends Seeder
         $activity->deadline = '30-02-2024';
         $activity->activity_type = 'ค่ายอาสา';
         $activity->activity_category = 'ค้างคืน';
-        $activity->organizer_id = 4;
+        $activity->organizer_id = 1;
         $activity->organizer_name = "comsci";
         $activity->activity_hours = 3;
         $activity->activity_start = '2024-03-3';
@@ -60,33 +62,41 @@ class UserSeeder extends Seeder
         $user->role = 'NORMAL';
         $user->save();
 
-        $activity->users()->attach($user->id);
-        // // $activity->save();
+        // $activity->users()->attach($user->id);
+        $activity->users()->attach($user->id, ['is_organizer' => true]);
+
         // // // $user()->activities()->attach($activity->id );
 
-        $activity = new Activity();         //id = 1
-        $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ222222';
-        $activity->deadline = '30-02-2024';
-        $activity->activity_type = 'ค่ายอาสา';
-        $activity->activity_category = 'ค้างคืน';
-        $activity->organizer_id = 4;
-        $activity->organizer_name = "comsci";
-        $activity->activity_hours = 3;
-        $activity->activity_start = '2024-03-3';
-        $activity->activity_end = '2024-03-3';
-        $activity->participant_number = 30;
-        $activity->activity_fee = 100;
-        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-        $activity->activity_place = 'เขาใหญ่';
-        $activity->description = 'ทำประโยชน์กันเถอะ';
-        $activity->contact = '0812345678';
-        $activity->poster_path = 'ทดสอบ';
-        $activity->budget = 1000;
-        $activity->working_team_number = 3;
-        $activity->verify = false;
-        $activity->save();
+        // $activity = new Activity();         //id = 1
+        // $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ222222';
+        // $activity->deadline = '30-02-2024';
+        // $activity->activity_type = 'ค่ายอาสา';
+        // $activity->activity_category = 'ค้างคืน';
+        // $activity->organizer_id = 4;
+        // $activity->organizer_name = "comsci";
+        // $activity->activity_hours = 3;
+        // $activity->activity_start = '2024-03-3';
+        // $activity->activity_end = '2024-03-3';
+        // $activity->participant_number = 30;
+        // $activity->activity_fee = 100;
+        // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        // $activity->activity_place = 'เขาใหญ่';
+        // $activity->description = 'ทำประโยชน์กันเถอะ';
+        // $activity->contact = '0812345678';
+        // $activity->poster_path = 'ทดสอบ';
+        // $activity->budget = 1000;
+        // $activity->working_team_number = 3;
+        // $activity->verify = false;
+        // $activity->save();
 
-        $activity->users()->attach($user->id);
+        // $activity->users()->attach($user->id);
+
+        $team = new Team();
+        $team->organizer_id = 1;
+        $team->activity_id = 1;
+        $team->save();
+
+
 
         $user = new User();
         $user->name_title = 'นางสาว';
@@ -155,6 +165,24 @@ class UserSeeder extends Seeder
         $user->save();
 
         User::factory(10)->create();
+
+        $registry = new Registry();
+        $registry->team_id = 1;
+        $registry->user_id = 5;
+        $registry->status = "REGISTERED";
+        $registry->save();
+
+        $registry = new Registry();
+        $registry->team_id = 1;
+        $registry->user_id = 6;
+        $registry->status = "CONFIRM";
+        $registry->save();
+
+        $registry = new Registry();
+        $registry->team_id = 1;
+        $registry->user_id = 7;
+        $registry->status = "DECLINE";
+        $registry->save();
     }
 
 

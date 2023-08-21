@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Registry;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class EventOrganizeController extends Controller
 {
@@ -20,7 +23,38 @@ class EventOrganizeController extends Controller
     }
     public function dashboard()
     {
-        return view('organize.dashboard');
+        $user = Auth::user();
+        // $events = $user->Activities->where('is_organizer', true);
+        $event = Activity::whereHas('users', function ($query) use ($user) {
+            $query->where('is_organizer', true);
+        })->first();        //หา activity ที่ คนนี้จัดการอยู่
+
+        $team = $user->Team;    // team ที่คนนี้ดูแล
+
+        $registries = $team->registries();
+        // $registry = Registry::whereHas('team', function ($query) use ($team){});
+
+        $users_registered_ids = $registries->pluck('user_id')->where('status', 'REGISTERED');
+        $users_confirm_ids = $registries->pluck('user_id')->where('status', 'CONFIRM');
+        $users_decline_ids = $registries->pluck('user_id')->where('status', 'DECLINE');
+
+        // $users_registered_ids = DB::table('registries')->pluck('user_id')->where('status', 'REGISTERED');
+        // $users_confirm_ids = DB::table('registries')->pluck('user_id')->where('status', 'CONFIRM');
+        // $users_decline_ids = DB::table('registries')->pluck('user_id')->where('status', 'DECLINE');
+        
+        $users_registereds = User::whereIn('id', $users_registered_ids)->get();
+        $users_confirms = User::whereIn('id', $users_confirm_ids)->get();
+        $users_declines = User::whereIn('id', $users_decline_ids)->get();
+
+
+        return view('organize.dashboard', [
+            // 'event' => $event,
+            // 'team' => $team,
+            // 'registry' => $registry,
+            'users_registereds' => $users_registereds,
+            'users_confirms' => $users_confirms,
+            'users_declines' => $users_declines
+        ]);
     }
     public function tasks()
     {
