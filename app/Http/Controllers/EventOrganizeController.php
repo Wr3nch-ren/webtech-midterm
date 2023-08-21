@@ -47,7 +47,7 @@ class EventOrganizeController extends Controller
         // $users_registered_ids = DB::table('registries')->pluck('user_id')->where('status', 'REGISTERED');
         // $users_confirm_ids = DB::table('registries')->pluck('user_id')->where('status', 'CONFIRM');
         // $users_decline_ids = DB::table('registries')->pluck('user_id')->where('status', 'DECLINE');
-        
+
         $users_registereds = User::whereIn('id', $users_registered_ids)->get();
         $users_confirms = User::whereIn('id', $users_confirm_ids)->get();
         $users_declines = User::whereIn('id', $users_decline_ids)->get();
@@ -69,9 +69,9 @@ class EventOrganizeController extends Controller
         return view('organize.tasks');
     }
     public function info(Activity $event)
-    {   
+    {
         // Gate::authorize('viewAny', Activity::class); //ไม่ใช่ organizer ไม่ให้เข้า
-        
+
         $team = Team::get()->where('activity_id', $event->id)->first();
         $team_members = TeamMember::get()->where('team_id', $team->id);
         $user = array();

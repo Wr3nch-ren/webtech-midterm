@@ -84,5 +84,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('/activities', PlaylistController::class);
 });
 
+Route::middleware(['role:staff'])->group(function () {
+    Route::get('staff/index', [UserController::class, 'index'])->name("staff.index");
+    Route::resource('/activities', ActivityController::class);
+});
 
 require __DIR__ . '/auth.php';
