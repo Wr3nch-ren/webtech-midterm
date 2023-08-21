@@ -1,5 +1,5 @@
-<nav class=" bg-white border-b border-black ">
-    <div class="flex flex-wrap items-center justify-between px-4 py-3">
+<nav class=" bg-white shadow-xl border-b pb-1">
+    <div class="flex flex-wrap items-center justify-between px-6 py-3">
 
         <div class="flex md:order-2">
             @if (Auth::check())
@@ -38,6 +38,21 @@
                         {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" /> --}}
                         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NSMTH</span>
                     </a>
+                </li>
+                <li>
+                    <a href="/"
+                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                        aria-current="page">หน้าหลัก</a>
+                </li>
+                <li>
+                    <a href="{{ route('events.index') }}"
+                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                        aria-current="page">กิจกรรมทั้งหมด</a>
+                </li>
+                <li>
+                    <a href="{{ route('organize.create') }}"
+                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                        aria-current="page">สร้างกิจกรรม</a>
                 </li>
                 {{-- <li>
                     <a href="/"

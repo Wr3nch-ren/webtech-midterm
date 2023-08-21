@@ -64,26 +64,27 @@ class UserController extends Controller
         ]);
     }
 
-    public function storeCertificate(Request $request) {
+    public function storeCertificate(Request $request)
+    {
 
         $user =  Auth::user();
 
         $image = $request->file('certiImage');
 
-        if(is_null($image)){
+        if (is_null($image)) {
             return redirect()->back();
         }
-        
-        $file_name = now()->getTimestamp().".".$image->getClientOriginalExtension();
-        $file_path = 'storage/'.$user->id.'/certificate/'.$file_name;
-        $image->storeAs('public/'.$user->id.'/certificate/'.$file_name);
+
+        $file_name = now()->getTimestamp() . "." . $image->getClientOriginalExtension();
+        $file_path = 'storage/' . $user->id . '/certificate/' . $file_name;
+        $image->storeAs('public/' . $user->id . '/certificate/' . $file_name);
 
         $certificate = new Certificate();
         $certificate->certificate_path = $file_path;
         $certificate->name = $request->get('certiName');
         $certificate->user_id = $user->id;
         $certificate->save();
-        
+
         return redirect()->route('user.certificates');
     }
 
@@ -147,6 +148,7 @@ class UserController extends Controller
             'user' => Auth::user()
         ]);
     }
+
     public function update(Request $request)
     {
         $userDetail = Auth::user();
@@ -175,7 +177,7 @@ class UserController extends Controller
         $user->allergy = $request->get('allergy');
         $user->image_path = $file_path;
         $user->save();
-        return redirect()->route('user.profile');
+        return redirect()->route('account.index');
     }
 
     public function notification()

@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Budget;
 use App\Models\Comment;
+use App\Models\Major;
 use App\Models\Role;
 use App\Models\Tasklist;
 use Illuminate\Database\Seeder;
@@ -39,9 +40,7 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(TeamMemberSeeder::class);
 
-        // $this->call(TasklistSeeder::class);
-        // $this->call(TaskSeeder::class);
-
-
+        $this->call(TasklistSeeder::class);
+        $this->call(TaskSeeder::class);
     }
 }

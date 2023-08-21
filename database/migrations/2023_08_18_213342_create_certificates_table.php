@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('certificate_path');
             $table->foreignIdFor(\App\Models\User::class);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

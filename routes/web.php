@@ -1,8 +1,8 @@
 <?php
 
-
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventOrganizeController;
 use App\Http\Controllers\UserController;
@@ -57,7 +57,8 @@ Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->
 Route::post('organize/{event}', [EventOrganizeController::class, 'addUser'])->name("organize.addUser");
 
 Route::resource('/events', EventController::class);
-
+Route::resource('/account', AccountController::class);
+Route::resource('/certificate', CertificateController::class);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -15,10 +15,18 @@
 
         <!-- Main content -->
         <div class="flex flex-col flex-1 overflow-y-auto">
-            @include('layouts.subviews.organize-navbar')
+            @if (Route::is('organize.*'))
+                @include('layouts.subviews.organize-navbar')
+            @else
+                @include('layouts.subviews.navbar')
+            @endif
             <div class="flex h-fit bg-white">
 
-                @include('layouts.subviews.organize-sidebar')
+                @if (Route::is('organize.*'))
+                    @include('layouts.subviews.organize-sidebar')
+                @else
+                    @include('layouts.subviews.user-sidebar')
+                @endif
                 @yield('content')
 
             </div>

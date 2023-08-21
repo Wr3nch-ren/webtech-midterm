@@ -1,11 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.organize')
 
 @section('content')
-<div class="flex justify-center container mt-20">
+    <div class="flex justify-center container mt-20">
 
-      @include('layouts.subviews.user-sidebar')
-
-      <div class="h-full w-3/5">
+        <div class="h-full  w-full px-16 pr-48">
 
             <h1 class="text-3xl font-semibold pb-6">กิจกรรมที่เข้าร่วม</h1>
 
@@ -23,9 +21,9 @@
         
       </div>
 
-     
-      
-</div>
+        </div>
 
 
+
+    </div>
 @endsection
