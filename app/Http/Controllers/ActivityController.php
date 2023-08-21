@@ -15,7 +15,6 @@ class ActivityController extends Controller
 
     public function showDetail(Activity $event)
     {
-
         return view('activities.detail', ['event' => $event]);
     }
 
