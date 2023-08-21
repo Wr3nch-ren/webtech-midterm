@@ -21,11 +21,10 @@ return new class extends Migration
             $table->string('name_title');
             $table->string('name');
             $table->string('surname');
-
             $table->string('student_code')->nullable();
             $table->string('nickname')->nullable();
-            // $table->foreignIdFor(\App\Models\Activity::class);
-            // // $table->foreignIdFor(\App\Models\Campus::class);
+            // $table->foreignIdFor(\App\Models\Activity::class)->nullable();
+            // $table->string('notification')->nullable(); // ยังไม่แน่ใจ
             $table->string('faculty')->nullable();
             $table->string('department')->nullable();
             $table->integer('year')->nullable();

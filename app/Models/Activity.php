@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Activity extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $casts = [
         'activity_date' => 'datetime',
@@ -21,14 +22,24 @@ class Activity extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function posts(): HasMany
+    // public function posts(): HasMany
+    // {
+    //     return $this->hasMany(Post::class);
+    // }
+
+    // public function announcements(): HasMany
+    // {
+    //     return $this->hasMany(Announcement::class);
+    // }
+
+    public function budget(): HasOne
     {
-        return $this->hasMany(Post::class);
+        return $this->hasOne(Budget::class);
     }
 
-    public function announcements(): HasMany
+    public function team(): HasOne
     {
-        return $this->hasMany(Announcement::class);
+        return $this->hasOne(Team::class);
     }
 
     public function getName()
