@@ -126,7 +126,7 @@ class EventOrganizeController extends Controller
     }
 
     public function addUser(Request $request, Activity $event) {
-        $user = User::get()->where('user_email', $request->email)->first();
+        $user = User::get()->where('email', $request->get("e-mail"))->first();
         $user->role = RoleAccessibility::ORGANIZER;
         $team = Team::get()->where('activity_id', $event->id)->first();
         $team_member = new TeamMember();
@@ -134,7 +134,13 @@ class EventOrganizeController extends Controller
         $team_member->user_id = $user->id;
         $team_member->role_in_team = $request->role;
         $team_member->save();
-        
+        return redirect()->route('organize.info', ['event' => $event]);
+    }
+
+    public function deleteUser(Activity $event, string $name) {
+        $user = User::get()->where('name', $name)->first();
+        $team_mem = $event->team->team_members->where('user_id', $user->id)->first();
+        $team_mem->delete();
         return redirect()->route('organize.info', ['event' => $event]);
     }
 }

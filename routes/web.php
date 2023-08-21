@@ -55,9 +55,9 @@ Route::get('organize/create', [EventOrganizeController::class, 'create'])->name(
 Route::post('organize', [EventOrganizeController::class, 'store'])->name("organize.store");
 Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->name("organize.destroy");
 Route::post('organize/{event}', [EventOrganizeController::class, 'addUser'])->name("organize.addUser");
+Route::delete('organize/{event}/{user}', [EventOrganizeController::class, 'deleteUser'])->name("organize.deleteUser");
 
 Route::resource('/events', EventController::class);
-
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
