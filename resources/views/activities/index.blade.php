@@ -1,20 +1,34 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="flex">
-        @include('layouts.subviews.all-event-navbar')
-        <div class="flex w-full pr-40 justify-center">
-            <div class="flex flex-col items-center gap-5 p-8 w-full ml-20 bg-white h-screen">
+    <div class="flex ">
+        @include('layouts.subviews.event-post-sidebar')
+        <div class="flex w-full justify-center">
+            <div class="flex flex-col items-center gap-5 p-8 w-10/12 bg-transparent h-full min-h-screen">
                 <!-- title -->
-                <h1 class="mb-2 text-2xl font-bold">กิจกรรมทั้งหมด</h1>
-                <hr class="h-px my-2 bg-gray-800 border-0 w-4/5">
+                {{-- <h1 class="mb-1 text-2xl font-bold">กิจกรรมทั้งหมด</h1>
+                <hr class="h-px my-2 bg-gray-800 border-0 w-4/5"> --}}
 
 
-                <div class="flex-col space-y-5 w-11/12">
+                {{-- <div class="flex-col space-y-5 w-11/12"> --}}
+                <div class="grid grid-cols-2 gap-8">
+                    @foreach ($events as $event)
+                        <x-event-post :event="$event"></x-event-post>
+                    @endforeach
+                    @foreach ($events as $event)
+                        <x-event-post :event="$event"></x-event-post>
+                    @endforeach
+                    @foreach ($events as $event)
+                        <x-event-post :event="$event"></x-event-post>
+                    @endforeach
+                    @foreach ($events as $event)
+                        <x-event-post :event="$event"></x-event-post>
+                    @endforeach
                     @foreach ($events as $event)
                         <x-event-post :event="$event"></x-event-post>
                     @endforeach
                 </div>
+                {{-- </div> --}}
                 {{-- <a href="#"
                     class="flex items-center bg-white border border-gray-800 rounded-lg shadow md:max-w-3xl hover:bg-gray-100 h-full md:h-64 md:justify-around">
     

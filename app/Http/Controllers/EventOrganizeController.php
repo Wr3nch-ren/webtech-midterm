@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class EventOrganizeController extends Controller
 {
+    public function __construct()
+    {
+        // $this-> middleware('auth')->only(['index', 'store']);
+        $this->middleware('auth');
+    }
+
     public function home()
     {
         return view('organize.index');
@@ -24,6 +30,7 @@ class EventOrganizeController extends Controller
     }
     public function create()
     {
+
         return view('organize.create');
     }
 }
