@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class EventOrganizeController extends Controller
 {
@@ -22,6 +23,8 @@ class EventOrganizeController extends Controller
 
     public function home(Activity $event)
     {
+        // Gate::authorize('viewAny', Activity::class); //ไม่ใช่ organizer ไม่ให้เข้า
+
         return view('organize.index', ['event' => $event]);
     }
     public function dashboard()
@@ -61,6 +64,8 @@ class EventOrganizeController extends Controller
     }
     public function tasks()
     {
+        // Gate::authorize('viewAny', Activity::class); //ไม่ใช่ organizer ไม่ให้เข้า
+
         return view('organize.tasks');
     }
     public function info(Activity $event)
@@ -120,6 +125,8 @@ class EventOrganizeController extends Controller
     }
 
     public function destroy(Activity $event) {
+        // Gate::authorize('delete', Auth::user(), $event); //ไม่ใช่ organizer ไม่ให้เข้าไปลบ
+
         $event->delete();
         $events = Activity::get()->where('organizer_id', Auth::user()->id);
                 return redirect()->route('user.organize', ['events' => $events]);
