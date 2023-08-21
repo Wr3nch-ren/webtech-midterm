@@ -47,12 +47,14 @@ Route::put('user/profile/edit', [UserController::class, 'update'])->name("user.u
 Route::get('user/notification', [UserController::class, 'notification'])->name("user.notification");
 Route::get('user/organize', [UserController::class, 'organize'])->name("user.organize");
 
-Route::get('organize/home', [EventOrganizeController::class, 'home'])->name("organize.home");
+Route::get('organize/{event}/home', [EventOrganizeController::class, 'home'])->name("organize.home");
 Route::get('organize/dashboard', [EventOrganizeController::class, 'dashboard'])->name("organize.dashboard");
 Route::get('organize/tasks', [EventOrganizeController::class, 'tasks'])->name("organize.tasks");
-Route::get('organize/info', [EventOrganizeController::class, 'info'])->name("organize.info");
+Route::get('organize/{event}/info', [EventOrganizeController::class, 'info'])->name("organize.info");
 Route::get('organize/create', [EventOrganizeController::class, 'create'])->name("organize.create");
 Route::post('organize', [EventOrganizeController::class, 'store'])->name("organize.store");
+Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->name("organize.destroy");
+
 
 Route::resource('/events', EventController::class);
 

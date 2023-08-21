@@ -6,24 +6,24 @@
     <div class="flex h-fit justify-between items-center  px-7 py-4 bg-slate-50 border-b border-black">
         {{-- <div class="w-10 h-10 bg-gray-200">
             </div> --}}
-        <span class="text-black font-bold uppercase">ค่ายอาสาพัฒนาชุมชนหนองจอก</span>
+        <span class="text-black font-bold uppercase">{{ $event->activity_name }}</span>
         <svg xmlns="http://www.w3.org/2000/svg" height="1em"
-            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            viewBox="0 0 512 512">
             <path
                 d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
         </svg>
     </div>
     <div class="flex flex-col flex-1 overflow-y-auto">
         <nav class="flex-1 px-2 py-4 bg-slate-50">
-            <a href="{{ route('organize.home') }}" class="flex items-center px-4 py-2 text-black hover:bg-gray-100">
+            <a href="{{ route('organize.home', ['event' => $event]) }}" class="flex items-center px-4 py-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
-                    viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    viewBox="0 0 576 512">
                     <path
                         d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                 </svg>
                 ประกาศ
             </a>
-            <a href="{{ route('organize.info') }}"
+            <a href="{{ route('organize.info', ['event' => $event]) }}"
                 class="flex items-center px-4 py-2 mt-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
                     viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -51,6 +51,15 @@
                 จัดการงาน
             </a>
 
+             <form class="px-3 py-3" action="{{ route('organize.destroy', ['event' => $event]) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="">
+                    <svg class="inline w-7 mb-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 9.5L12 14.5M12 9.5L7 14.5M19.4922 13.9546L16.5608 17.7546C16.2082 18.2115 16.032 18.44 15.8107 18.6047C15.6146 18.7505 15.3935 18.8592 15.1583 18.9253C14.8928 19 14.6042 19 14.0271 19H6.2C5.07989 19 4.51984 19 4.09202 18.782C3.71569 18.5903 3.40973 18.2843 3.21799 17.908C3 17.4802 3 16.9201 3 15.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.07989 5 6.2 5H14.0271C14.6042 5 14.8928 5 15.1583 5.07467C15.3935 5.14081 15.6146 5.2495 15.8107 5.39534C16.032 5.55998 16.2082 5.78846 16.5608 6.24543L19.4922 10.0454C20.0318 10.7449 20.3016 11.0947 20.4054 11.4804C20.4969 11.8207 20.4969 12.1793 20.4054 12.5196C20.3016 12.9053 20.0318 13.2551 19.4922 13.9546Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    ลบกิจกรรม
+                </button>
+            </form>
+            
         </nav>
     </div>
 </div>
