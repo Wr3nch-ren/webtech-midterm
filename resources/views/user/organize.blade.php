@@ -1,9 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.organize')
 
 @section('content')
     <div class="flex justify-center container mt-20">
-
-        @include('layouts.subviews.user-sidebar')
 
         <div class="h-full w-3/5">
 

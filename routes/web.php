@@ -1,8 +1,8 @@
 <?php
 
-
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventOrganizeController;
 use App\Http\Controllers\UserController;
@@ -54,7 +54,8 @@ Route::get('organize/info', [EventOrganizeController::class, 'info'])->name("org
 Route::get('organize/create', [EventOrganizeController::class, 'create'])->name("organize.create");
 
 Route::resource('/events', EventController::class);
-
+Route::resource('/account', AccountController::class);
+Route::resource('/certificate', CertificateController::class);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

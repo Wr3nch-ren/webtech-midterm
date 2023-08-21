@@ -46,7 +46,7 @@ class ActivitySeeder extends Seeder
         $activity->poster = 'ทดสอบ2';
         $activity->budget = 1000;
         $activity->working_team_number = 3;
-        $activity->verify = false;
+        $activity->verify = true;
         $activity->save();
 
         $activity = new Activity();      //id = 3
@@ -64,7 +64,7 @@ class ActivitySeeder extends Seeder
         $activity->poster = 'ทดสอบ3';
         $activity->budget = 1000;
         $activity->working_team_number = 3;
-        $activity->verify = false;
+        $activity->verify = true;
         $activity->save();
     }
 }

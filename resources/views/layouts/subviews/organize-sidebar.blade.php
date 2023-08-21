@@ -1,9 +1,9 @@
 {{-- <div class="flex h-screen bg-white"> --}}
 
 <!-- sidebar -->
-<div class="hidden md:flex flex-col w-1/5 bg-gray-800 border-r border-black">
+<div class="hidden md:flex flex-col w-1/5 shadow-md">
 
-    <div class="flex h-fit justify-between items-center  px-7 py-4 bg-slate-50 border-b border-black">
+    <div class="flex h-fit justify-between items-center  px-7 py-4 bg-white border-b-2 border-gray-200">
         {{-- <div class="w-10 h-10 bg-gray-200">
             </div> --}}
         <span class="text-black font-bold uppercase">ค่ายอาสาพัฒนาชุมชนหนองจอก</span>
@@ -14,7 +14,7 @@
         </svg>
     </div>
     <div class="flex flex-col flex-1 overflow-y-auto">
-        <nav class="flex-1 px-2 py-4 bg-slate-50">
+        <nav class="flex-1 px-2 py-4 bg-white">
             <a href="{{ route('organize.home') }}" class="flex items-center px-4 py-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
                     viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->

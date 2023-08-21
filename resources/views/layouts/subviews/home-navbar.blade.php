@@ -20,7 +20,7 @@
             @if (Auth::check())
                 <div class="flex gap-2">
                     <div class="mx-4">
-                        <a href="{{ route('user.profile') }}">{{ Auth::user()->name }}</a>
+                        <a href="{{ route('account.index') }}">{{ Auth::user()->name }}</a>
 
                     </div>
                     <div>
@@ -67,7 +67,7 @@
                 <li>
                     <a href="{{ route('organize.create') }}"
                         class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
-                        aria-current="page">สร้างอีเว้นท์</a>
+                        aria-current="page">สร้างกิจกรรม</a>
                 </li>
                 {{-- <li>
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"

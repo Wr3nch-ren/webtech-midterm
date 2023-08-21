@@ -42,17 +42,15 @@ class UserSeeder extends Seeder
         $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
         $user->date_of_birth = '1999-01-01';
         $user->student_code = 'B6012345';
-        $user->faculty = 'วิทยาศาสตร์';
-        $user->department = 'วิทยาการคอมพิวเตอร์';
         $user->nickname = 'สมชาย';
         $user->faculty = 'วิทยาศาสตร์';
-        $user->department = 'วิทยาการคอมพิวเตอร์';
+        $user->major = 'วิทยาการคอมพิวเตอร์';
         $user->year = 4;
         $user->phone = '0123456789';
         $user->line_id = 'user01';
         $user->facebook = 'user01';
-        $user->congenital_disease = 'ไม่มี';
-        $user->allergy = 'ไม่มี';
+        $user->congenital_disease = '-';
+        $user->allergy = '-';
         $user->role = 'NORMAL';
         $user->save();
 
@@ -68,17 +66,15 @@ class UserSeeder extends Seeder
         $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
         $user->date_of_birth = '1999-01-01';
         $user->student_code = 'B6012345';
-        $user->faculty = 'วิทยาศาสตร์';
-        $user->department = 'วิทยาการคอมพิวเตอร์';
         $user->nickname = 'สมาน';
         $user->faculty = 'วิทยาศาสตร์';
-        $user->department = 'วิทยาการคอมพิวเตอร์';
+        $user->major = 'วิทยาการคอมพิวเตอร์';
         $user->year = 4;
         $user->phone = '0234567891';
         $user->line_id = 'user02';
         $user->facebook = 'user02';
-        $user->congenital_disease = 'ไม่มี';
-        $user->allergy = 'ไม่มี';
+        $user->congenital_disease = '-';
+        $user->allergy = '-';
         $user->role = 'ORGANIZER';
         $user->save();
 
@@ -90,17 +86,15 @@ class UserSeeder extends Seeder
         $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
         $user->date_of_birth = '1999-01-01';
         $user->student_code = 'B6012345';
-        $user->faculty = 'วิทยาศาสตร์';
-        $user->department = 'วิทยาการคอมพิวเตอร์';
         $user->nickname = 'สมาน';
-        $user->faculty = null;
-        $user->department = null;
-        $user->year = null;
+        $user->faculty = '-';
+        $user->major = '-';
+        $user->year = '-';
         $user->phone = '0234567891';
-        $user->line_id = null;
-        $user->facebook = null;
-        $user->congenital_disease = 'ไม่มี';
-        $user->allergy = 'ไม่มี';
+        $user->line_id = '-';
+        $user->facebook = '-';
+        $user->congenital_disease = '-';
+        $user->allergy = '-';
         $user->role = 'STAFF';
         $user->save();
 
@@ -112,23 +106,18 @@ class UserSeeder extends Seeder
         $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
         $user->date_of_birth = '1999-01-01';
         $user->student_code = 'B6012345';
-        $user->faculty = 'วิทยาศาสตร์';
-        $user->department = 'วิทยาการคอมพิวเตอร์';
         $user->nickname = 'สุดใจ';
         $user->faculty = 'วิทยาศาสตร์';
-        $user->department = 'วิทยาการคอมพิวเตอร์';
+        $user->major = 'วิทยาการคอมพิวเตอร์';
         $user->year = 4;
         $user->phone = '0123456789';
         $user->line_id = 'user04';
         $user->facebook = 'user04';
-        $user->congenital_disease = 'ไม่มี';
-        $user->allergy = 'ไม่มี';
+        $user->congenital_disease = '-';
+        $user->allergy = '-';
         $user->role = 'NORMAL';
         $user->save();
 
         User::factory(10)->create();
     }
-
-
-
 }
