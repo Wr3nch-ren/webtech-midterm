@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Post;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('comment_content');
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Post::class);
+            $table->unsignedBigInteger('budget_id');
+            $table->foreign('budget_id')->references('id')->on('budgets');
+
+            $table->string('product_name');
+            $table->unsignedBigInteger('quantity');
+            $table->unsignedBigInteger('price_per_one');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('items');
     }
 };

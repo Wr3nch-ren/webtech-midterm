@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Comment extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable;
 
     public function user(): BelongsTo{
         return $this->belongsTo(User::class);

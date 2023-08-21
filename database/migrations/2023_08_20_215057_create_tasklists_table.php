@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Activity;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_activity', function (Blueprint $table) {
+        Schema::create('tasklists', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Activity::class);
+            $table->string('tasklist_name');
+
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_activity');
+        Schema::dropIfExists('tasklists');
     }
 };

@@ -42,7 +42,7 @@ class User extends Authenticatable
         'allergy',
         'activity',
         'image_path',
-        'role',
+        // 'role',
     ];
 
     /**
@@ -72,9 +72,31 @@ class User extends Authenticatable
         return $this->belongsToMany(Activity::class);
     }
 
-    public function campus() : BelongsTo
+    // public function roles(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(Role::class);
+    // }
+
+
+
+    public function teams(): HasMany
     {
-        return $this->belongsTo(Campus::class);
+        return $this->hasMany(Team::class);
+    }
+
+    public function teamMembers(): HasMany
+    {
+        return $this->hasMany(TeamMember::class);
+    }
+
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function announcements(): HasMany
+    {
+        return $this->hasMany(Announcement::class);
     }
 
     public function posts(): HasMany
@@ -85,6 +107,11 @@ class User extends Authenticatable
     public function comments(): HasMany     //User has many Comment
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function isHost() : bool
+    {
+        return  $this->role === RoleAccessibility::HOST;
     }
 
     public function isOrganizer() : bool
