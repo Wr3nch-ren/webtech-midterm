@@ -70,7 +70,7 @@ class RegisteredController extends Controller
 
     public function addEvent(Activity $event)
     {
-        $registered_list = RegisteredList::with('activities')->whereBelongsTo(Auth::user());
+        $registered_list = RegisteredList::with('activities')->whereBelongsTo(Auth::user())->get()->first();
         $registered_list->activities()->attach($event->id);
         return redirect()->route('registered.index');
     }
