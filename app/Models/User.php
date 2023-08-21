@@ -3,21 +3,19 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-// use App\Models\Enum\RoleAccessibility;
+use App\Models\Enum\RoleAccessibility;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Permissions\HasPermissionsTrait;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasPermissionsTrait;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -65,6 +63,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'role' => RoleAccessibility::class, //based on saacsos' work
         'year' => 'integer'
     ];
 
@@ -73,10 +72,12 @@ class User extends Authenticatable
         return $this->belongsToMany(Activity::class);
     }
 
-//    public function roles(): BelongsToMany
-//    {
-//        return $this->belongsToMany(Role::class);
-//    }
+    // public function roles(): BelongsToMany
+    // {
+    //     return $this->belongsToMany(Role::class);
+    // }
+
+
 
     public function teams(): HasMany
     {
@@ -108,18 +109,18 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    // public function isHost() : bool
-    // {
-    //     return  $this->role === RoleAccessibility::HOST;
-    // }
+    public function isHost() : bool
+    {
+        return  $this->role === RoleAccessibility::HOST;
+    }
 
-    // public function isOrganizer() : bool
-    // {
-    //     return  $this->role === RoleAccessibility::ORGANIZER;
-    // }
+    public function isOrganizer() : bool
+    {
+        return  $this->role === RoleAccessibility::ORGANIZER;
+    }
 
-    // public function isStaff() : bool
-    // {
-    //     return  $this->role === RoleAccessibility::STAFF;
-    // }
+    public function isStaff() : bool
+    {
+        return  $this->role === RoleAccessibility::STAFF;
+    }
 }
