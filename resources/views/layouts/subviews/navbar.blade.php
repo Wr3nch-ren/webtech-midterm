@@ -1,4 +1,4 @@
-<nav class=" bg-white border-black border-b pb-1">
+<nav class=" bg-white shadow-xl border-b pb-1">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
 
         {{-- <div class="md:order-2 w-2/4">
@@ -58,6 +58,11 @@
                     <a href="/"
                         class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
                         aria-current="page">หน้าหลัก</a>
+                </li>
+                <li>
+                    <a href="{{ route('events.index') }}"
+                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                        aria-current="page">กิจกรรมทั้งหมด</a>
                 </li>
                 <li>
                     <a href="{{ route('organize.create') }}"

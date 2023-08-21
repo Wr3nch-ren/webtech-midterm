@@ -31,7 +31,6 @@ return new class extends Migration
             $table->unsignedInteger('working_team_number');
             $table->boolean('verify')->default(false);
             $table->timestamps();
-
         });
     }
 

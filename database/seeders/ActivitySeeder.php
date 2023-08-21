@@ -31,8 +31,6 @@ class ActivitySeeder extends Seeder
         $activity->verify = false;
         $activity->save();
 
-
-
         $activity = new Activity();      //id = 2
         $activity->activity_name = 'กิจกรรมทดสอบ2';
         $activity->deadline = '30-02-2024';
