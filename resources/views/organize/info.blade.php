@@ -40,20 +40,29 @@
 
             <div id="myTabContent">
                 <div class="hidden flex-col space-y-3"" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <x-event-info-org></x-event-info-org>
+                    <x-event-info-org :event="$event" :team="$team"></x-event-info-org>
                 </div>
                 <div class="hidden flex-col space-y-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="flex justify-end">
-                        <button class="rounded-md py-2 pb-4"><svg xmlns="http://www.w3.org/2000/svg" height="1em" class=""
-                                viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                <path
-                                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
-                            </svg></button>
+                    <div class="flex flex-col w-full">
+                        <form method="POST" action="{{ route('organize.addUser',[ 'event' => $event]) }}">
+                            @csrf
+                            <input type="text" class="" placeholder="email" name="e-mail">
+                            <input type="text" class="" placeholder="หน้าที่" name="role">
+                            <button type="submit" class="bg-black text-white rounded-md p-4 py-2">เพิ่มสมาชิก</button>
+                        </form>
+                            <div class="flex flex-col w-full gap-5 pt-10">
+                                 <x-register-event-list nameTitle="{{ Auth::user()->name_title }}" name="{{ Auth::user()->name }}" surname="{{ Auth::user()->surname }}" role="HOST" />
+                                @for ($i = 0;$i < sizeof($team);$i++)
+                                    <x-register-event-list 
+                                    nameTitle="{{ $team[$i]->name_title }}" 
+                                    name="{{ $team[$i]->name }}" 
+                                    surname="{{ $team[$i]->surname }}" 
+                                    role="{{ $team_member[$i]->role_in_team }}" 
+                                    /> 
+                                @endfor
+                            </div>
                     </div>
-                    @for ($i = 0; $i < 5; $i++)
-                        <x-register-event-list nametitle="{{ Auth::user()->name_title }}" name="{{ Auth::user()->name }}"
-                            surname="{{ Auth::user()->surname }}"></x-register-event-list>
-                    @endfor
+                    
                 </div>
                 <div class="hidden flex-col space-y-3"" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                     <x-budget-list></x-budget-list>

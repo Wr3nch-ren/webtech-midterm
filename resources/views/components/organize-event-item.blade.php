@@ -14,7 +14,7 @@
                 <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900">{{ $eventName }}</h5>
 
                 <div>
-                 
+                    
                 </div>
             </div>
 
