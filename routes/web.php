@@ -56,6 +56,7 @@ Route::post('organize', [EventOrganizeController::class, 'store'])->name("organi
 Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->name("organize.destroy");
 Route::post('organize/{event}', [EventOrganizeController::class, 'addUser'])->name("organize.addUser");
 Route::delete('organize/{event}/{user}', [EventOrganizeController::class, 'deleteUser'])->name("organize.deleteUser");
+Route::get('user/verify', [UserController::class, 'verify'])->name("user.verify");
 
 Route::resource('/events', EventController::class);
 

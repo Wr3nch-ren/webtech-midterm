@@ -128,7 +128,6 @@ class EventOrganizeController extends Controller
 
     public function destroy(Activity $event) {
         // Gate::authorize('delete', Auth::user(), $event); //ไม่ใช่ organizer ไม่ให้เข้าไปลบ
-
         $event->delete();
         $events = Activity::get()->where('organizer_id', Auth::user()->id);
                 return redirect()->route('user.organize', ['events' => $events]);
@@ -152,4 +151,5 @@ class EventOrganizeController extends Controller
         $team_mem->delete();
         return redirect()->route('organize.info', ['event' => $event]);
     }
+    
 }

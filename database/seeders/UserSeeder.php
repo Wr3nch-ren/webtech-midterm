@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Activity;
+use App\Models\Enum\RoleAccessibility;
 use App\Models\Registry;
 use App\Models\Team;
 use App\Models\User;
@@ -16,7 +17,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-
 
         $activity = new Activity();         //id = 1
         $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
@@ -59,7 +59,7 @@ class UserSeeder extends Seeder
         $user->facebook = 'user01';
         $user->congenital_disease = 'ไม่มี';
         $user->allergy = 'ไม่มี';
-        $user->role = 'NORMAL';
+        $user->role = RoleAccessibility::ADMIN;
         $user->save();
 
         // $activity->users()->attach($user->id);
