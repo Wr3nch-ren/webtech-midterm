@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventOrganizeController;
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,7 @@ Route::get('organize/create', [EventOrganizeController::class, 'create'])->name(
 Route::post('organize', [EventOrganizeController::class, 'store'])->name("organize.store");
 Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->name("organize.destroy");
 Route::post('organize/{event}', [EventOrganizeController::class, 'addUser'])->name("organize.addUser");
+Route::get('/roles', [PermissionController::class,'Permission']);
 
 Route::resource('/events', EventController::class);
 
