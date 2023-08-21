@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('congenital_disease')->nullable();
             $table->string('allergy')->nullable();
             $table->string('image_path')->nullable();
-            $table->string('role')->default('NORMAL');
+            //$table->string('role')->default('NORMAL'); // ไม่ได้ใช้แล้ว
             $table->foreignIdFor(\App\Models\Certificate::class)->nullable();
 
             $table->rememberToken();

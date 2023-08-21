@@ -55,6 +55,7 @@ Route::get('organize/create', [EventOrganizeController::class, 'create'])->name(
 Route::post('organize', [EventOrganizeController::class, 'store'])->name("organize.store");
 Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->name("organize.destroy");
 
+Route::get('/roles', [PermissionController::class,'Permission']);
 
 Route::resource('/events', EventController::class);
 
