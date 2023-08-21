@@ -115,7 +115,7 @@
 
                 <div class="my-2 flex flex-col">            
                     <label for="" class="block mb-2">โรคประจำตัว</label>
-                    <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" value="{{ $user->allegy }}">
+                    <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" value="{{ $user->congenital_disease }}">
                 </div>
             
                 <div class="my-2 flex flex-col ">            

@@ -13,7 +13,7 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
-        $activity = new Activity();         //id = 1
+        $activity = new Activity();  //id = 1
         $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
         $activity->deadline = '30-02-2024';
         $activity->activity_type = 'ค่ายอาสา';
