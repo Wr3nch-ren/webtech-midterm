@@ -47,6 +47,7 @@ class UserFactory extends Factory
             'phone' => fake()->phoneNumber(),
             'line_id' => fake()->userName(),
             'facebook' => fake()->userName(),
+            'congenital_disease' => fake()->randomElement(['ไม่มี','มี']),
             'allergy' => fake()->randomElement(['ไม่มี','มี']),
             'role' => fake()->randomElement(['NORMAL','ORGANIZER','STAFF']),
         ];

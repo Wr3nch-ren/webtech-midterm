@@ -37,6 +37,7 @@ class UserController extends Controller
         $user->phone = $request->get('phone');
         $user->line_id = $request->get('line_id');
         $user->facebook = $request->get('facebook');
+        $user->congenital_disease = $request->get('congenital_disease');
         $user->allergy = $request->get('allergy');
         $user->save();
 

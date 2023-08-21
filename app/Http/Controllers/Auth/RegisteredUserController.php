@@ -106,6 +106,7 @@ class RegisteredUserController extends Controller
             'phone' => $request->phone,
             'line_id' => $request->line_id,
             'facebook' => $request->facebook,
+            'congenital_disease' => $request->congenital_disease,
             'allergy' => $request->allergy,
             'image_path' => $file_path
         ]);

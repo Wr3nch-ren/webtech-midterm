@@ -47,7 +47,7 @@
                   <td class="px-6 py-3 max-w-sm">สาขา:     {{$user->department }}</td>
                </tr>
                <tr>
-                  <td class="px-6 py-3 max-w-sm">โรคประจำตัว:     {{ $user->allergy }}</td>
+                  <td class="px-6 py-3 max-w-sm">โรคประจำตัว:     {{ $user->congenital_disease }}</td>
                   <td class="px-6 py-3 max-w-sm">อาหารที่แพ้:      {{ $user->allergy }}</td>
                </tr>
                <tr>
