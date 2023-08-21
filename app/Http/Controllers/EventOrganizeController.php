@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Enum\RoleAccessibility;
+use App\Models\Team;
+use App\Models\TeamMember;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,9 +31,18 @@ class EventOrganizeController extends Controller
         return view('organize.tasks');
     }
     public function info(Activity $event)
-    {
-        return view('organize.info', ['event' => $event]);
+    {   
+        $team = Team::get()->where('activity_id', $event->id)->first();
+        $team_members = TeamMember::get()->where('team_id', $team->id);
+        $user = array();
+
+        foreach($team_members as $member){
+            array_push($user,User::get()->where('id',$member->user_id)->first());
+        }
+
+        return view('organize.info', ['event' => $event, 'team' => $user, 'team_member' => $team_members]);
     }
+
     public function create()
     {
         return view('organize.create');
@@ -60,6 +73,16 @@ class EventOrganizeController extends Controller
 
         $activity->save();
 
+        $team = new Team();
+        $team->activity_id = $activity->id;
+        $team->name_activity_team = $activity->activity_name;
+        $team->organizer_id = Auth::user()->id;
+        $team->save();
+
+        $user = Auth::user();
+        $user->role = RoleAccessibility::HOST;
+        $user->save();
+
         return redirect()->route('organize.home', ['event' => $activity]);
     }
 
@@ -67,5 +90,18 @@ class EventOrganizeController extends Controller
         $event->delete();
         $events = Activity::get()->where('organizer_id', Auth::user()->id);
                 return redirect()->route('user.organize', ['events' => $events]);
+    }
+
+    public function addUser(Request $request, Activity $event) {
+        $user = User::get()->where('user_email', $request->email)->first();
+        $user->role = RoleAccessibility::ORGANIZER;
+        $team = Team::get()->where('activity_id', $event->id)->first();
+        $team_member = new TeamMember();
+        $team_member->team_id = $team->id;
+        $team_member->user_id = $user->id;
+        $team_member->role_in_team = $request->role;
+        $team_member->save();
+        
+        return redirect()->route('organize.info', ['event' => $event]);
     }
 }
