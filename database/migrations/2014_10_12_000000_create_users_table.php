@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('allergy')->nullable();
             $table->string('image_path')->nullable();
             $table->string('role')->default('NORMAL');
+            $table->foreignIdFor(\App\Models\Certificate::class)->nullable();
 
             $table->rememberToken();
             $table->timestamps();

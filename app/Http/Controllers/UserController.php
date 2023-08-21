@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificate;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -51,7 +52,34 @@ class UserController extends Controller
 
     public function certificates()
     {
-        return view('user.certificates');
+        $user = Auth::user();
+        $certificates = Certificate::get()->where('user_id', $user->id);
+        return view('user.certificates', [
+            'certificates' => $certificates
+        ]);
+    }
+
+    public function storeCertificate(Request $request) {
+
+        $user =  Auth::user();
+
+        $image = $request->file('certiImage');
+
+        if(is_null($image)){
+            return redirect()->back();
+        }
+        
+        $file_name = now()->getTimestamp().".".$image->getClientOriginalExtension();
+        $file_path = 'storage/'.$user->id.'/certificate/'.$file_name;
+        $image->storeAs('public/'.$user->id.'/certificate/'.$file_name);
+
+        $certificate = new Certificate();
+        $certificate->certificate_path = $file_path;
+        $certificate->name = $request->get('certiName');
+        $certificate->user_id = $user->id;
+        $certificate->save();
+        
+        return redirect()->route('user.certificates');
     }
 
     public function editProfile()
