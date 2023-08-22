@@ -1,3 +1,50 @@
+## Project Setup
+1. Clone the repository
+2. Copy ".env.example" data to ".env"
+3. Run these scripts in your terminal
+
+3.1 เมื่อคอมพิวเตอร์มี Docker Desktop แล้ว ให้ cd เข้าไปในที่ โฟลเดอร์ที่โคลนมา แล้วใช้คำสั่ง
+```
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+3.2 เมื่อทำคำสั่งข้างบนเสร็จแล้ว ให้ใช้คำสั่ง
+```
+sail up -d
+```
+
+3.3 เมื่อทำคำสั่งข้างบนเสร็จแล้ว ให้ใช้คำสั่ง
+```
+sail yarn install
+```
+
+3.4 เมื่อทำคำสั่งข้างบนเสร็จแล้ว ให้ใช้คำสั่ง
+```
+sail npm install -D flowbite
+```
+
+3.5 เมื่อทำคำสั่งข้างบนเสร็จแล้ว ให้ใช้คำสั่ง
+```
+sail yarn dev
+```
+
+3.6 เปิดไปที่เว็บ Browser ที่ URL Address bar พิมพ์ localhost 
+
+## User Example Data
+
+ตัวอย่างข้อมูลผู้ใช้
+Email:  user01@test.com
+Password:   password
+
+4.1 สามารถกดที่ปุ่ม Log in พิมพ์ Email และ Password ตามช่องที่ระบุไว้ กด Log in เข้าใช้งานได้
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -65,35 +112,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## Project Setup
-1. Clone the repository
-2. Copy ".env.example" data to ".env"
-3. Run these scripts in your terminal
 
-3.1
-```
-docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v "$(pwd):/var/www/html" \
-    -w /var/www/html \
-    laravelsail/php82-composer:latest \
-    composer install --ignore-platform-reqs
-```
-3.2
-```
-sail up -d
-```
-3.3
-```
-sail yarn install
-```
-3.4
-```
-sail npm install -D flowbite
-```
-3.5
-```
-sail yarn dev
-```
-
-## User Example Data
