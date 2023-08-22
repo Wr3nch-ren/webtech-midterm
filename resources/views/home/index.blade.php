@@ -39,55 +39,53 @@
     </div>
 
     {{-- all activity --}}
-    <div class="flex flex-nowrap justify-around p-4 px-44 w-full mb-10">
+    <div class="justify-around p-4 px-44 w-full mb-10">
+        <div class="flex flex-row justify-center space-x-6 overflow-scroll">
+            @foreach ($events as $event)
+                <div
+                    class=" max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        {{-- <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" /> --}}
+                        <div class="flex w-full h-44 bg-gray-200">
+                            <img src="https://marketplace.canva.com/EAE9LRMRVKU/1/0/1131w/canva-orange-white-creative-we%27re-hiring-poster-tyRJAGIzvq8.jpg"
+                                class=" object-cover w-full h-full" alt="">
+                        </div>
+                    </a>
+                    <div class="p-2 text-start">
+                        <a href="#">
+                            <h5 class=" text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                {{ $event->activity_name }}</h5>
+                        </a>
 
-        <div class=" max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                {{-- <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" /> --}}
-                <div class="flex w-full h-44 bg-gray-200">
-
+                    </div>
                 </div>
-            </a>
-            <div class="p-2 text-start">
-                <a href="#">
-                    <h5 class=" text-lg font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology acquisitions 2021</h5>
-                </a>
+            @endforeach
+            @foreach ($events as $event)
+                <div
+                    class=" max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        {{-- <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" /> --}}
+                        <div class="flex w-full h-44 bg-gray-200">
+                            <img src="https://marketplace.canva.com/EAE9LRMRVKU/1/0/1131w/canva-orange-white-creative-we%27re-hiring-poster-tyRJAGIzvq8.jpg"
+                                class=" object-cover w-full h-full" alt="">
+                        </div>
+                    </a>
+                    <div class="p-2 text-start">
+                        <a href="#">
+                            <h5 class=" text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                {{ $event->activity_name }}</h5>
+                        </a>
 
-            </div>
-        </div>
-        <div class=" max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                {{-- <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" /> --}}
-                <div class="flex w-full h-44 bg-gray-200">
-
+                    </div>
                 </div>
-            </a>
-            <div class="p-2 text-start">
-                <a href="#">
-                    <h5 class=" text-lg font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology acquisitions 2021</h5>
-                </a>
+            @endforeach
 
-            </div>
         </div>
-        <div class=" max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                {{-- <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" /> --}}
-                <div class="flex w-full h-44 bg-gray-200">
-
-                </div>
-            </a>
-            <div class="p-2 text-start">
-                <a href="#">
-                    <h5 class=" text-lg font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology acquisitions 2021</h5>
-                </a>
-
-            </div>
-        </div>
-
     </div>
+
+
+
+
 
     {{-- monthly event --}}
     {{-- <div class="bg-gray-100 pt-10 pb-3">

@@ -15,12 +15,13 @@
                 <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-2">
                         <label for="activity_name" class="text-sm font-medium text-gray-900 block mb-2">ชื่อกิจกรรม</label>
-                        <input type="text" name="activity_name" id="activity_name"
+                        <input required type="text" name="activity_name" id="activity_name"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
                             placeholder="ชื่อกิจกรรม" required="">
                     </div>
                     <div class="col-span-6 sm:col-span-2">
-                        <label for="activity_type" class="text-sm font-medium text-gray-900 block mb-2">รูปแบบกิจกรรม</label>
+                        <label for="activity_type"
+                            class="text-sm font-medium text-gray-900 block mb-2">รูปแบบกิจกรรม</label>
                         <select id="activity_type" name="activity_type"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5">
                             <option value="วันเดียว">วันเดียว</option>
@@ -90,57 +91,64 @@
 
                     </div>
                     <div class="col-span-6 sm:col-span-2">
-                        <label for="activity_place" class="text-sm font-medium text-gray-900 block mb-2">สถานที่จัดกิจกรรม</label>
-                        <input type="text" name="activity_place" id="activity_place"
+                        <label for="activity_place"
+                            class="text-sm font-medium text-gray-900 block mb-2">สถานที่จัดกิจกรรม</label>
+                        <input required type="text" name="activity_place" id="activity_place"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
                             placeholder="สถานที่จัดกิจกรรม" required="">
                     </div>
                     <div class="col-span-6 sm:col-span-2">
-                        <label for="organizer_name" class="text-sm font-medium text-gray-900 block mb-2">ผู้จัดกิจกรรม</label>
-                        <input type="text" name="organizer_name" id="organizer_name"
+                        <label for="organizer_name"
+                            class="text-sm font-medium text-gray-900 block mb-2">ผู้จัดกิจกรรม</label>
+                        <input required type="text" name="organizer_name" id="organizer_name"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
                             placeholder="ชื่อผู้จัดกิจกรรม เช่น ชมรม, คณะ, ภาควิชา" required="">
                     </div>
 
-                    <div class="col-span-6 sm:col-span-2">
-                        <label for="participant_number" class="text-sm font-medium text-gray-900 block mb-2">จำนวนที่รับ (คน)</label>
+                    <div class="col-span-6 sm:col-span-1">
+                        <label for="participant_number" class="text-sm font-medium text-gray-900 block mb-2">จำนวนที่รับ
+                            (คน)</label>
                         <input type="number" min="1" name="participant_number" id="participant_number"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
                             placeholder="จำนวนที่รับได้ทั้งหมด" required="">
                     </div>
-                    <div class="col-span-6 sm:col-span-2">
-                        <label for="activity_fee" class="text-sm font-medium text-gray-900 block mb-2">ค่าใช้จ่าย (฿)</label>
+                    <div class="col-span-6 sm:col-span-1">
+                        <label for="activity_fee" class="text-sm font-medium text-gray-900 block mb-2">ค่าใช้จ่าย
+                            (฿)</label>
                         <input type="number" min="0" name="activity_fee" id="activity_fee"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
                             placeholder="ค่าสมัครกิจกรรมต่อคน" required="">
                     </div>
                     <div class="col-span-6 sm:col-span-2">
-                        <label for="contact" class="text-sm font-medium text-gray-900 block mb-2">ช่องทางการติดต่อ</label>
-                        <input type="text" name="contact" id="contact"
+                        <label for="contact"
+                            class="text-sm font-medium text-gray-900 block mb-2">ช่องทางการติดต่อ</label>
+                        <input required type="text" name="contact" id="contact"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-2.5"
                             placeholder="ช่องทางการติดต่อ เช่น email, line, สำนักงาน" required="">
                     </div>
-
                     <div class="col-span-4">
                         <label for="description"
                             class="text-sm font-medium text-gray-900 block mb-2">คำอธิบายกิจกรรม</label>
-                        <textarea id="description" rows="4" name="description"
+                        <textarea required id="description" rows="4" name="description"
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-transparent focus:border-2 focus:border-gray-700 block w-full p-4"
                             placeholder="รายละเอียดกิจกรรม"></textarea>
                     </div>
+
+
+
                     <div class="col-span-6 sm:col-span-2">
                         <label for="poster" class="text-sm font-medium text-gray-500 block mb-2">poster</label>
                         <div class="col-span-2 mb-4 bg-gray-50 p-3 border-gray-300 border rounded-md">
-                            <input type="file" name="poster">
+                            <input required type="file" name="poster">
                         </div>
                     </div>
 
 
                 </div>
-                
-                <div class="flex p-3 px-6 border-t border-gray-200 rounded-b justify-end">
+
+                <div class="flex p-3 px-6 border-t border-gray-200 rounded-b justify-end mt-6">
                     <button
-                        class="text-white bg-black hover:bg-yellow-300 focus:ring-4 focus:ring-black font-medium rounded-lg text-sm px-6 py-2.5 text-center"
+                        class="text-white bg-black hover:bg-cyan-400 focus:ring-4 focus:ring-black font-medium rounded-lg text-sm px-6 py-2.5 text-center"
                         type="submit">สร้าง</button>
                 </div>
             </form>

@@ -13,4 +13,9 @@ class Registry extends Model
     public function team(): BelongsTo{
         return $this->belongsTo(Team::class);
     }
+
+    public function activity(): BelongsTo
+    {
+        return $this->belongsTo(Activity::class);
+    }
 }

@@ -25,16 +25,16 @@ return new class extends Migration
             $table->double('activity_fee'); // ค่าลงทะเบียน
             $table->string('activity_place');
             //$table->foreignIdFor(\App\Models\User::class);
-            // $table->unsignedInteger('organizer_id'); // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $table->string('organizer_name'); //ผู้จัดกิจกรรม ที่ไม่ใช่จาก organizer_id
+            $table->unsignedInteger('organizer_id')->nullable(); // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+            $table->string('organizer_name')->nullable(); //ผู้จัดกิจกรรม ที่ไม่ใช่จาก organizer_id
             $table->string('description');
             $table->string('contact'); // ช่องทางติดต่อ, ใส่เป็น string เพื่อเพิ่มความยืดหยุ่นในการใส่ข้อมูล
             $table->string('poster_path'); // ผู้โพสต์ (host)
             $table->boolean('is_posted')->default(false); // โพสต์แล้วหรือยัง (ป้องกันการโพสต์ซ้ำ)
             $table->double('budget')->default(1000.0); // งบประมาณของกิจกรรม
-            // $table->unsignedInteger('working_team_number')->default(1);
+            $table->unsignedInteger('working_team_number')->default(1);
             $table->boolean('verify')->default(false);
-            $table->foreignIdFor(User::class)->comment('user creator');
+            $table->foreignIdFor(User::class)->comment('user creator')->nullable();
 
             // $table->foreignIdFor(User::class)->comment();
             $table->timestamps();

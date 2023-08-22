@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Activity;
+use App\Models\OrganizerList;
+use App\Models\RegisteredList;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -66,156 +68,213 @@ class ActivitySeeder extends Seeder
         //$activity->working_team_number = 3;
         //$activity->verify = false;
         //$activity->save();
-        {
-            $activity = new Activity();  //id = 1
-            $activity->id = '1';
-            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
-            $activity->deadline = '2015-01-23';
-            $activity->activity_type = 'อาสา';
-            $activity->activity_category = 'อาสา';
-            $activity->activity_hours = 3;
-            $activity->activity_start = '2015-01-23';
-            $activity->activity_end = '2015-01-23';
-            $activity->participant_number = 30;
-            $activity->activity_fee = 100;
-            $activity->organizer_name = 'ชมรมทำดี';
-            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'เขาใหญ่';
-            $activity->description = 'ทำประโยชน์กันเถอะ';
-            $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
-            $activity->budget = 1000;
-            $activity->budget = 1000;
-            $activity->is_posted = false;
-            // $activity->working_team_number = 3;
-            $activity->verify = false;
-            $activity->user_id = '1';
-            $activity->save();
 
-            $activity = new Activity();  //id = 1
-            $activity->id = '2';
-            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ2';
-            $activity->deadline = '2015-01-23';
-            $activity->activity_type = 'อาสา';
-            $activity->activity_category = 'อาสา';
-            $activity->activity_hours = 3;
-            $activity->activity_start = '2015-01-23';
-            $activity->activity_end = '2015-01-23';
-            $activity->participant_number = 30;
-            $activity->activity_fee = 100;
-            $activity->organizer_name = 'ชมรมทำดี';
-            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'เขาใหญ่';
-            $activity->description = 'ทำประโยชน์กันเถอะ';
-            $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
-            $activity->budget = 1000;
-            $activity->budget = 1000;
-            $activity->is_posted = false;
-            // $activity->working_team_number = 3;
-            $activity->verify = true;
-            $activity->user_id = '2';
-            $activity->save();
+        $activity = new Activity();         //id = 1
+        $activity->activity_name = 'ค่ายอาสาเขาใหญ่';
+        $activity->deadline = '2024-02-23';
+        $activity->activity_type = 'ค่ายอาสา';
+        $activity->activity_category = 'ค้างคืน';
+        $activity->user_id = 1; //คนสร้าง
+        $activity->organizer_name = "วิทยาการคอมพิวเตอร์ เกษตรศาสตร์";
+        $activity->activity_hours = 3;
+        $activity->activity_start = '2015-01-23';
+        $activity->activity_end = '2015-01-23';
+        $activity->participant_number = 30;
+        $activity->activity_fee = 100;
+        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        $activity->activity_place = 'เขาใหญ่';
+        $activity->description = 'ทำประโยชน์กันเถอะ';
+        $activity->contact = '0812345678';
+        $activity->poster_path = '';
+        $activity->budget = 1000;
+        $activity->working_team_number = 3;
+        $activity->verify = false;
+        $activity->save();
 
-            $activity = new Activity();  //id = 1
-            $activity->id = '4';
-            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ4';
-            $activity->deadline = '2015-01-23';
-            $activity->activity_type = 'วิชาการ';
-            $activity->activity_category = 'ค้างคืน';
-            $activity->activity_hours = 3;
-            $activity->activity_start = '30-03-2024';
-            $activity->activity_end = '2015-01-23';
-            $activity->participant_number = 30;
-            $activity->activity_fee = 100;
-            $activity->organizer_name = 'ชมรมทำดี';
-            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'เขาใหญ่';
-            $activity->description = 'ทำประโยชน์กันเถอะ';
-            $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
-            $activity->budget = 1000;
-            $activity->budget = 1000;
-            $activity->is_posted = false;
-            // $activity->working_team_number = 3;
-            $activity->verify = true;
-            $activity->user_id = '2';
 
-            $activity->save();
-            $activity = new Activity();  //id = 1
-            $activity->id = '5';
-            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ5';
-            $activity->deadline = '2015-01-23';
-            $activity->activity_type = 'วิชาการ';
-            $activity->activity_category = 'อาสา';
-            $activity->activity_hours = 3;
-            $activity->activity_start = '30-03-2024';
-            $activity->activity_end = '2015-01-23';
-            $activity->participant_number = 30;
-            $activity->activity_fee = 100;
-            $activity->organizer_name = 'ชมรมทำดี';
-            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'เขาใหญ่';
-            $activity->description = 'ทำประโยชน์กันเถอะ';
-            $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
-            $activity->budget = 1000;
-            $activity->budget = 1000;
-            $activity->is_posted = false;
-            // $activity->working_team_number = 3;
-            $activity->verify = true;
-            $activity->user_id = '2';
-            $activity->save();
+        // $activity = new Activity();         //id = 2
+        // $activity->activity_name = 'ค่ายอาสากทม กวาดลานวัด';
+        // $activity->deadline = '20-02-2024';
+        // $activity->activity_type = 'ค่ายอาสา';
+        // $activity->activity_category = 'ค้างคืน';
+        // $activity->user_id = 1; //คนสร้าง
+        // $activity->organizer_name = "คณะเกษตร เกษตรศาสตร์";
+        // $activity->activity_hours = 3;
+        // $activity->activity_start = '2024-03-1';
+        // $activity->activity_end = '2024-03-5';
+        // $activity->participant_number = 50;
+        // $activity->activity_fee = 500;
+        // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        // $activity->activity_place = 'วัดป่า กทม';
+        // $activity->description = 'ทำประโยชน์กันเถอะ มีชั่วโมงกิจกรรม';
+        // $activity->contact = 'ภาควิชาคอมพิวเตอร์';
+        // $activity->poster_path = '';
+        // $activity->budget = 1000;
+        // $activity->working_team_number = 5;
+        // $activity->verify = false;
+        // $activity->save();
 
-            $activity = new Activity();  //id = 1
-            $activity->id = '6';
-            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ6';
-            $activity->deadline = '2015-01-23';
-            $activity->activity_type = 'สันทนาการ';
-            $activity->activity_category = 'อาสา';
-            $activity->activity_hours = 3;
-            // $activity->activity_start = '30-03-2024';
-            // $activity->activity_end = '2015-01-23';
-            $activity->participant_number = 30;
-            $activity->activity_fee = 100;
-            $activity->organizer_name = 'ชมรมทำดี';
-            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'เขาใหญ่';
-            $activity->description = 'ทำประโยชน์กันเถอะ';
-            $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
-            $activity->budget = 1000;
-            $activity->budget = 1000;
-            $activity->is_posted = false;
-            // $activity->working_team_number = 3;
-            $activity->verify = true;
-            $activity->user_id = '2';
-            $activity->save();
 
-            $activity = new Activity();  //id = 1
-            $activity->id = '7';
-            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ7';
-            $activity->deadline = '2015-01-23';
-            $activity->activity_type = 'สันทนาการ';
-            $activity->activity_category = 'อาสา';
-            $activity->activity_hours = 3;
-            // $activity->activity_start = '30-03-2024';
-            // $activity->activity_end = '2015-01-23';
-            $activity->participant_number = 30;
-            $activity->activity_fee = 100;
-            $activity->organizer_name = 'ชมรมทำดี';
-            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-            $activity->activity_place = 'เขาใหญ่';
-            $activity->description = 'ทำประโยชน์กันเถอะ';
-            $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
-            $activity->budget = 1000;
-            $activity->budget = 1000;
-            $activity->is_posted = true;
-            // $activity->working_team_number = 3;
-            $activity->verify = true;
-            $activity->user_id = '2';
-            $activity->save();
-        }
+        // $activity = new Activity();         //id = 3
+        // $activity->activity_name = 'ค่ายอาสากทม กวาดลานวัด ครั้งที่3';
+        // $activity->deadline = '20-02-2024';
+        // $activity->activity_type = 'ค่ายอาสา';
+        // $activity->activity_category = 'ค้างคืน';
+        // $activity->user_id = 1; //คนสร้าง
+        // $activity->organizer_name = "คณะเกษตร เกษตรศาสตร์";
+        // $activity->activity_hours = 3;
+        // $activity->activity_start = '2024-03-1';
+        // $activity->activity_end = '2024-03-5';
+        // $activity->participant_number = 50;
+        // $activity->activity_fee = 500;
+        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        // $activity->activity_place = 'วัดป่า กทม';
+        // $activity->description = 'ทำประโยชน์กันเถอะ มีชั่วโมงกิจกรรม';
+        // $activity->contact = 'ภาควิชาคอมพิวเตอร์';
+        // $activity->poster_path = '';
+        // $activity->budget = 10000;
+        // $activity->working_team_number = 5;
+        // $activity->verify = false;
+        // $activity->save();
+
+        // $activity = new Activity();         //id = 4
+        // $activity->activity_name = 'ถวายดวงใจ ครั้งที่4';
+        // $activity->deadline = '20-02-2024';
+        // $activity->activity_type = 'ค่ายอาสา';
+        // $activity->activity_category = 'ค้างคืน';
+        // $activity->user_id = 3; //คนสร้าง
+        // $activity->organizer_name = "คณะเกษตร เกษตรศาสตร์";
+        // $activity->activity_hours = 5;
+        // $activity->activity_start = '2024-03-1';
+        // $activity->activity_end = '2024-03-5';
+        // $activity->participant_number = 50;
+        // $activity->activity_fee = 200;
+        // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        // $activity->activity_place = 'ลานธรรมกาย';
+        // $activity->description = 'มาร่วมกันเยอะๆนะ มีชั่วโมงกิจกรรม';
+        // $activity->contact = 'line id: lovelove';
+        // $activity->poster_path = '';
+        // $activity->budget = 10000;
+        // $activity->working_team_number = 33;
+        // $activity->verify = false;
+        // $activity->save();
+
+        $activity = new Activity();  //id = 1
+        $activity->id = '2';
+        $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ2';
+        $activity->deadline = '2015-01-23';
+        $activity->activity_type = 'อาสา';
+        $activity->activity_category = 'อาสา';
+        $activity->activity_hours = 3;
+        $activity->activity_start = '2015-01-23';
+        $activity->activity_end = '2015-01-23';
+        $activity->participant_number = 30;
+        $activity->activity_fee = 100;
+        $activity->organizer_name = 'ชมรมทำดี';
+        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        $activity->activity_place = 'น้ำตกพลิ้ว';
+        $activity->description = 'ทำประโยชน์กันเถอะ มีชั่วโมงกิจกรรม';
+        $activity->contact = 'ภาควิชาคอมพิวเตอร์';
+        $activity->poster_path = '';
+        $activity->budget = 10000;
+        $activity->working_team_number = 33;
+        $activity->verify = false;
+        $activity->save();
+
+        $activity = new Activity();  //id = 1
+        $activity->id = '4';
+        $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ4';
+        $activity->deadline = '2015-01-23';
+        $activity->activity_type = 'วิชาการ';
+        $activity->activity_category = 'ค้างคืน';
+        $activity->activity_hours = 3;
+        $activity->activity_start = '2023-03-12';
+        $activity->activity_end = '2015-01-23';
+        $activity->participant_number = 30;
+        $activity->activity_fee = 100;
+        $activity->organizer_name = 'ชมรมทำดี';
+        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        $activity->activity_place = 'เขาใหญ่';
+        $activity->description = 'ทำประโยชน์กันเถอะ';
+        $activity->contact = '0812345678';
+        $activity->poster_path = 'ทดสอบ';
+        $activity->budget = 1000;
+        $activity->budget = 1000;
+        $activity->is_posted = false;
+        $activity->working_team_number = 3;
+        $activity->verify = true;
+        $activity->user_id = '2';
+
+        $activity->save();
+        $activity = new Activity();  //id = 1
+        $activity->id = '5';
+        $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ5';
+        $activity->deadline = '2015-01-23';
+        $activity->activity_type = 'วิชาการ';
+        $activity->activity_category = 'อาสา';
+        $activity->activity_hours = 3;
+        $activity->activity_start = '2023-03-12';
+        $activity->activity_end = '2015-01-23';
+        $activity->participant_number = 30;
+        $activity->activity_fee = 100;
+        $activity->organizer_name = 'ชมรมทำดี';
+        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        $activity->activity_place = 'เขาใหญ่';
+        $activity->description = 'ทำประโยชน์กันเถอะ';
+        $activity->contact = '0812345678';
+        $activity->poster_path = 'ทดสอบ';
+        $activity->budget = 1000;
+        $activity->budget = 1000;
+        $activity->is_posted = false;
+        $activity->working_team_number = 3;
+        $activity->verify = true;
+        $activity->user_id = '2';
+        $activity->save();
+
+        $activity = new Activity();  //id = 1
+        $activity->id = '6';
+        $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ6';
+        $activity->deadline = '2015-01-23';
+        $activity->activity_type = 'สันทนาการ';
+        $activity->activity_category = 'อาสา';
+        $activity->activity_hours = 3;
+        $activity->activity_start = '2023-03-12';
+        $activity->activity_end = '2015-01-23';
+        $activity->participant_number = 30;
+        $activity->activity_fee = 0;
+        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        $activity->activity_place = 'วัดป่า กทม';
+        $activity->description = 'มากันได้น้า รับจำนวนจำกัด รีบสมัครเลย ฟรี มีชั่วโมงกิจกรรม';
+        $activity->contact = 'คณะเศรษฐศาสตร์ ติดต่อสำนักงาน';
+        $activity->poster_path = '';
+        $activity->budget = 10000;
+        $activity->working_team_number = 15;
+        $activity->verify = false;
+        $activity->save();
+
+        $activity = new Activity();  //id = 1
+        $activity->id = '7';
+        $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ7';
+        $activity->deadline = '2015-01-23';
+        $activity->activity_type = 'สันทนาการ';
+        $activity->activity_category = 'อาสา';
+        $activity->activity_hours = 3;
+        $activity->activity_start = '2023-03-12';
+        $activity->activity_end = '2015-01-23';
+        $activity->participant_number = 30;
+        $activity->activity_fee = 100;
+        $activity->organizer_name = 'ชมรมทำดี';
+        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        $activity->activity_place = 'เขาใหญ่';
+        $activity->description = 'ทำประโยชน์กันเถอะ';
+        $activity->contact = '0812345678';
+        $activity->poster_path = 'ทดสอบ';
+        $activity->budget = 1000;
+        $activity->budget = 1000;
+        $activity->is_posted = true;
+        $activity->working_team_number = 3;
+        $activity->verify = true;
+        $activity->user_id = '2';
+        $activity->save();
     }
 }

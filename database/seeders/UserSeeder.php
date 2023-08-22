@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Activity;
 use App\Models\Enum\RoleAccessibility;
+use App\Models\OrganizerList;
+use App\Models\RegisteredList;
 use App\Models\Registry;
 use App\Models\Team;
 use App\Models\User;
@@ -17,71 +19,26 @@ class UserSeeder extends Seeder
          */
         public function run(): void
         {
+                // $user = new User();
+                // $user->name_title = 'นาย';
+                // $user->name = 'สมชาย';
+                // $user->surname = 'ใจดี';
+                // $user->email = 'user01@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1999-01-01';
+                // $user->student_code = 'B6012345';
+                // $user->nickname = 'สมชาย';
+                // $user->faculty = 'วิทยาศาสตร์';
+                // $user->major = 'วิทยาการคอมพิวเตอร์';
+                // $user->year = 4;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user01';
+                // $user->facebook = 'user01';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = 'NORMAL';
+                // $user->save();
 
-        // $activity = new Activity();         //id = 1
-        // $activity->activity_name = 'ค่ายอาสาเขาใหญ่';
-        // $activity->deadline = '30-02-2024';
-        // $activity->activity_type = 'ค่ายอาสา';
-        // $activity->activity_category = 'ค้างคืน';
-        // $activity->organizer_id = 1;
-        // $activity->organizer_name = "comsci";
-        // $activity->activity_hours = 3;
-        // $activity->activity_start = '2024-03-3';
-        // $activity->activity_end = '2024-03-3';
-        // $activity->participant_number = 30;
-        // $activity->activity_fee = 100;
-        // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-        // $activity->activity_place = 'เขาใหญ่';
-        // $activity->description = 'ทำประโยชน์กันเถอะ';
-        // $activity->contact = '0812345678';
-        // $activity->poster_path = 'ทดสอบ';
-        // $activity->budget = 1000;
-        // $activity->working_team_number = 3;
-        // $activity->verify = false;
-        // $activity->save();
-
-                // $activity = new Activity();         //id = 1
-                // $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
-                // $activity->deadline = '30-02-2024';
-                // $activity->activity_type = 'ค่ายอาสา';
-                // $activity->activity_category = 'ค้างคืน';
-                // // $activity->organizer_id = 1;
-                // $activity->organizer_name = "comsci";
-                // $activity->activity_hours = 3;
-                // $activity->activity_start = '2024-03-3';
-                // $activity->activity_end = '2024-03-3';
-                // $activity->participant_number = 30;
-                // $activity->activity_fee = 100;
-                // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-                // $activity->activity_place = 'เขาใหญ่';
-                // $activity->description = 'ทำประโยชน์กันเถอะ';
-                // $activity->contact = '0812345678';
-                // $activity->poster_path = 'ทดสอบ';
-                // $activity->budget = 1000;
-                // $activity->working_team_number = 3;
-                // $activity->verify = false;
-                // $activity->save();
-                // $activity = new Activity();         //id = 1
-                // $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
-                // $activity->deadline = '30-02-2024';
-                // $activity->activity_type = 'ค่ายอาสา';
-                // $activity->activity_category = 'ค้างคืน';
-                // $activity->organizer_id = 1;
-                // $activity->organizer_name = "comsci";
-                // $activity->activity_hours = 3;
-                // $activity->activity_start = '2024-03-3';
-                // $activity->activity_end = '2024-03-3';
-                // $activity->participant_number = 30;
-                // $activity->activity_fee = 100;
-                // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-                // $activity->activity_place = 'เขาใหญ่';
-                // $activity->description = 'ทำประโยชน์กันเถอะ';
-                // $activity->contact = '0812345678';
-                // $activity->poster_path = 'ทดสอบ';
-                // $activity->budget = 1000;
-                // $activity->working_team_number = 3;
-                // $activity->verify = false;
-                // $activity->save();
 
                 $user = new User();
                 $user->name_title = 'นาย';
@@ -90,7 +47,7 @@ class UserSeeder extends Seeder
                 $user->email = 'user01@test.com';
                 $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
                 $user->date_of_birth = '1999-01-01';
-                $user->student_code = 'B6012345';
+                $user->student_code = 'B6012345345';
                 $user->nickname = 'สมชาย';
                 $user->faculty = 'วิทยาศาสตร์';
                 $user->major = 'วิทยาการคอมพิวเตอร์';
@@ -100,31 +57,203 @@ class UserSeeder extends Seeder
                 $user->facebook = 'user01';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
-                $user->role = 'NORMAL';
+                $user->role = RoleAccessibility::NORMAL;
                 $user->save();
 
                 $user = new User();
                 $user->name_title = 'นาง';
                 $user->name = 'สมหมาย';
-                $user->surname = 'ใจดี';
-                $user->email = 'userจ/@test.com';
+                $user->surname = 'ใจดีมาก';
+                $user->email = 'user02@test.com';
                 $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
-                $user->date_of_birth = '1999-01-01';
-                $user->student_code = 'B6012345';
-                $user->nickname = 'สมชาย';
+                $user->date_of_birth = '2004-01-01';
+                $user->student_code = 'B60123456780';
+                $user->nickname = 'แบ้ง';
                 $user->faculty = 'วิทยาศาสตร์';
                 $user->major = 'วิทยาการคอมพิวเตอร์';
                 $user->year = 4;
-                $user->phone = '0123456789';
-                $user->line_id = 'user01';
-                $user->facebook = 'user01';
+                $user->phone = '0951236789';
+                $user->line_id = 'user02';
+                $user->facebook = 'user02';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
-                $user->role = 'NORMAL';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
-                $user->role = RoleAccessibility::ADMIN;
+                $user->role = RoleAccessibility::NORMAL;
                 $user->save();
+
+
+
+                // $user = new User();     //3
+                // $user->name_title = 'นางสาว';
+                // $user->name = 'สมหญิง';
+                // $user->surname = 'คงดี';
+                // $user->email = 'user03@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1995-01-01';
+                // $user->student_code = 'B6312345345';
+                // $user->nickname = 'สมหญิง';
+                // $user->faculty = 'วิทยาศาสตร์';
+                // $user->major = 'เคมี';
+                // $user->year = 2;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user03';
+                // $user->facebook = 'user03';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::NORMAL;
+                // $user->save();
+
+
+
+
+                // $user = new User();
+                // $user->name_title = 'นาง';
+                // $user->name = 'สุชาดา';
+                // $user->surname = 'คุ้มดี';
+                // $user->email = 'user04@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1985-01-01';
+                // $user->student_code = 'B6066677709';
+                // $user->nickname = 'สวย';
+                // $user->faculty = 'วิทยาศาสตร์';
+                // $user->major = 'วิทยาการคอมพิวเตอร์';
+                // $user->year = 4;
+                // $user->phone = '0823675555';
+                // $user->line_id = 'user04';
+                // $user->facebook = 'user04';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::NORMAL;
+                // $user->save();
+
+
+
+                // $user = new User();
+                // $user->name_title = 'นาย';
+                // $user->name = 'ชาติชาย';
+                // $user->surname = 'ชายหาด';
+                // $user->email = 'user05@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1999-01-01';
+                // $user->student_code = 'B6012345345';
+                // $user->nickname = 'ชาติชาย';
+                // $user->faculty = 'มนุษศาสตร์';
+                // $user->major = 'ภาษาอังกฤษ';
+                // $user->year = 3;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user05';
+                // $user->facebook = 'user05';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::NORMAL;
+                // $user->save();
+
+
+
+                // $user = new User();
+                // $user->name_title = 'นาย';
+                // $user->name = 'สมชาย';
+                // $user->surname = 'ใจดี';
+                // $user->email = 'user06@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1999-01-01';
+                // $user->student_code = 'B6012345345';
+                // $user->nickname = 'สมชาย';
+                // $user->faculty = 'วิทยาศาสตร์';
+                // $user->major = 'วิทยาการคอมพิวเตอร์';
+                // $user->year = 4;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user06';
+                // $user->facebook = 'user06';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::NORMAL;
+                // $user->save();
+
+
+
+                // $user = new User();
+                // $user->name_title = 'นาย';
+                // $user->name = 'สมชาย';
+                // $user->surname = 'ใจดี';
+                // $user->email = 'user07@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1999-01-01';
+                // // $user->student_code = 'B6012345345';
+                // $user->nickname = 'สมชาย';
+                // // $user->faculty = 'วิทยาศาสตร์';
+                // // $user->major = 'วิทยาการคอมพิวเตอร์';
+                // $user->year = 4;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user07';
+                // $user->facebook = 'user07';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::ADMIN;
+                // $user->save();
+
+
+                // $user = new User();
+                // $user->name_title = 'นาง';
+                // $user->name = 'รสริน';
+                // $user->surname = 'ใจดี';
+                // $user->email = 'user08@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1999-01-01';
+                // // $user->student_code = 'B6012345345';
+                // $user->nickname = 'สมชาย';
+                // // $user->faculty = 'วิทยาศาสตร์';
+                // // $user->major = 'วิทยาการคอมพิวเตอร์';
+                // $user->year = 3;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user08';
+                // $user->facebook = 'user08';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::STAFF;
+                // $user->save();
+
+
+                // $user = new User();
+                // $user->name_title = 'นาย';
+                // $user->name = 'จิตดี';
+                // $user->surname = 'ใจดี';
+                // $user->email = 'user09@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1999-01-01';
+                // $user->student_code = 'B6012345345';
+                // $user->nickname = 'สมชาย';
+                // $user->faculty = 'วิทยาศาสตร์';
+                // $user->major = 'วิทยาการคอมพิวเตอร์';
+                // $user->year = 4;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user09';
+                // $user->facebook = 'user09';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::NORMAL;
+                // $user->save();
+
+                // $user = new User();
+                // $user->name_title = 'นาย';
+                // $user->name = 'จิตใจดี';
+                // $user->surname = 'ใจดี';
+                // $user->email = 'user10@test.com';
+                // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+                // $user->date_of_birth = '1999-01-01';
+                // $user->student_code = 'B6012345345';
+                // $user->nickname = 'สมชาย';
+                // $user->faculty = 'วิทยาศาสตร์';
+                // $user->major = 'วิทยาการคอมพิวเตอร์';
+                // $user->year = 2;
+                // $user->phone = '0123456789';
+                // $user->line_id = 'user10';
+                // $user->facebook = 'user10';
+                // $user->congenital_disease = '-';
+                // $user->allergy = '-';
+                // $user->role = RoleAccessibility::NORMAL;
+                // $user->save();
 
                 // $activity->users()->attach($user->id);
                 // $activity->users()->attach($user->id, ['is_organizer' => true]);

@@ -34,7 +34,8 @@ class User extends Authenticatable
         'date_of_birth',
         //'campus_id',
         'faculty',
-        'department',
+        'major',
+        'year',
         'phone',
         'line_id',
         'facebook',
@@ -131,5 +132,10 @@ class User extends Authenticatable
     public function isStaff(): bool
     {
         return  $this->role === RoleAccessibility::STAFF;
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === RoleAccessibility::ADMIN;
     }
 }

@@ -63,6 +63,7 @@
                     <a href="{{ route('events.index') }}"
                         class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
                         aria-current="page">กิจกรรมทั้งหมด</a>
+
                 </li>
                 <li>
                     <a href="{{ route('organize.create') }}"

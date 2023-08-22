@@ -36,29 +36,30 @@ class EventOrganizeController extends Controller
         //     $query->where('is_organizer', true);
         // })->first();        //หา activity ที่ คนนี้จัดการอยู่
 
-        $team = $user->Team;    // team ที่คนนี้ดูแล
+        // $team = $user->Team;    // team ที่คนนี้ดูแล
 
-        $registries = $team->registries();
-        $registry = Registry::whereHas('team', function ($query) use ($team) {
-        });
+        // $registries = $team->registries();
+        // $registry = Registry::whereHas('team', function ($query) use ($team) {
+        // });
 
-        $users_registered_ids = $registries->pluck('user_id')->where('status', 'REGISTERED');
-        $users_confirm_ids = $registries->pluck('user_id')->where('status', 'CONFIRM');
-        $users_decline_ids = $registries->pluck('user_id')->where('status', 'DECLINE');
+        // $users_registered_ids = $registries->pluck('user_id')->where('status', 'REGISTERED');
+        // $users_confirm_ids = $registries->pluck('user_id')->where('status', 'CONFIRM');
+        // $users_decline_ids = $registries->pluck('user_id')->where('status', 'DECLINE');
 
-        $users_registered_ids = DB::table('registries')->pluck('user_id')->where('status', 'REGISTERED');
-        $users_confirm_ids = DB::table('registries')->pluck('user_id')->where('status', 'CONFIRM');
-        $users_decline_ids = DB::table('registries')->pluck('user_id')->where('status', 'DECLINE');
+        // $users_registered_ids = DB::table('registries')->pluck('user_id')->where('status', 'REGISTERED');
+        // $users_confirm_ids = DB::table('registries')->pluck('user_id')->where('status', 'CONFIRM');
+        // $users_decline_ids = DB::table('registries')->pluck('user_id')->where('status', 'DECLINE');
 
-        $users_registereds = User::whereIn('id', $users_registered_ids)->get();
-        $users_confirms = User::whereIn('id', $users_confirm_ids)->get();
-        $users_declines = User::whereIn('id', $users_decline_ids)->get();
+        // $users_registereds = User::whereIn('id', $users_registered_ids)->get();
+        // $users_confirms = User::whereIn('id', $users_confirm_ids)->get();
+        // $users_declines = User::whereIn('id', $users_decline_ids)->get();
 
 
         return view(
             'organize.dashboard',
             [
-                'event' => $event
+                // 'event' => $event,
+                'user' => $user
                 // 'team' => $team,
                 // 'registry' => $registry,
                 // 'users_registereds' => $users_registereds,

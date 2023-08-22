@@ -17,7 +17,7 @@
                 <div class="grid grid-cols-2 gap-x-2">
                         <h3 class="block mb-2">รูปโปรไฟล์</h3>
                         <div class="col-span-2 mb-4 bg-white p-3 border-gray-800 border rounded-md">
-                            <input type="file" name="image"/>
+                            <input required type="file" name="image"/>
                         </div>
                         <div class="col-span-2 my-4">
                             <h2 class="text-xl font-semibold">ข้อมูลส่วนตัว</h1>
@@ -32,15 +32,15 @@
                         </div>
                          <div class="my-2 flex flex-col ">            
                             <label for="surname" class="block mb-2">ชื่อ</label>
-                            <input type="text" name="name" id="name" placeholder="Name" class="rounded-md">
+                            <input required type="text" name="name" id="name" placeholder="Name" class="rounded-md">
                         </div>
                         <div class="my-2 flex flex-col ">            
                             <label for="surname" class="block mb-2">นามสกุล</label>
-                            <input type="text" name="surname" id="surname" placeholder="Surname" class="rounded-md">
+                            <input required type="text" name="surname" id="surname" placeholder="Surname" class="rounded-md">
                         </div>
                         <div class="my-2 flex flex-col ">            
                             <label for="nickname" class="block mb-2">ชื่อเล่น</label>
-                            <input type="text" name="nickname" id="nickname" placeholder="Nickname" class="rounded-md">
+                            <input required type="text" name="nickname" id="nickname" placeholder="Nickname" class="rounded-md">
                         </div>
                         <div class="my-2 flex flex-col">            
                             <label for="date_of_birth" class="block mb-2">วันเดือนปีเกิด</label>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="my-2 flex flex-col ">            
                             <label for="student_code" class="block mb-2">รหัสนิสิต</label>
-                            <input type="text" name="student_code" id="student_code" placeholder="64xxxxxxxx" class="rounded-md">
+                            <input required type="text" name="student_code" id="student_code" placeholder="64xxxxxxxx" class="rounded-md">
                         </div>
                         <div class="my-2 flex flex-col ">            
                             <label for="email" class="block mb-2">Email</label>
@@ -102,17 +102,17 @@
 
                     <div class="my-2 flex flex-col">            
                         <label for="phone" class="block mb-2">เบอร์โทร</label>
-                        <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="phone">
+                        <input required type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="phone">
                     </div>
 
                     <div class="my-2 flex flex-col ">            
                         <label for="line_id" class="block mb-2">ไลน์</label>
-                        <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="line_id">
+                        <input required type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="line_id">
                     </div>
 
                     <div class="my-2 flex flex-col ">            
                         <label for="facebook" class="block mb-2">เฟสบุ๊ค</label>
-                        <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="facebook">
+                        <input required type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="facebook">
                     </div>
 
                     <div class="col-span-2 my-4">
@@ -121,15 +121,15 @@
 
                     <div class="my-2 flex flex-col">            
                         <label for="congenital_disease" class="block mb-2">โรคประจำตัว</label>
-                        <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="congenital_disease">
+                        <input required type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="congenital_disease">
                     </div>
 
                     <div class="my-2 flex flex-col ">            
                         <label for="allergy" class="block mb-2">อาหารที่แพ้</label>
-                        <input type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="allergy">
+                        <input required type="text" placeholder="โปรดกรอก (ไม่มี  -)" class="rounded-md" name="allergy">
                     </div>
                     </div>
-                        <button class="col-span-2 bg-black text-white p-3 hover:bg-violet-900 transition-colors duration-300 w-full mx-auto mt-5">Submit</button>
+                        <button class="col-span-2 bg-black text-white p-3 hover:bg-cyan-400 transition-colors duration-300 w-full mx-auto mt-5">Submit</button>
                     </div>
 
             </form>
