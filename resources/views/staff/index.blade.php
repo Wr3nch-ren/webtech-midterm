@@ -13,7 +13,7 @@
                 {{-- <div class="flex-col space-y-5 w-11/12"> --}}
                 <div class="grid grid-cols-2 gap-8">
                     @foreach ($events as $event)
-                        <x-event-post :event="$event"></x-event-post>
+                        <x-staff-post :event="$event"></x-staff-post>
                     @endforeach
                 </div>
                 {{-- </div> --}}

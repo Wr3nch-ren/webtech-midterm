@@ -17,15 +17,6 @@
             </div>
             <div>
                 {{-- <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt=""> --}}
-                <div class="flex justify-center mb-6">
-                    <form action="{{ route('registered.add', ['activity' => $event]) }}" class="grid grid-cols-2 gap-x-5"
-                        method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <button type="submit"
-                            classs="bg-black rounded-md text-white p-2 px-12 self-center">สมัครเข้าร่วม</button>
-                    </form>
-                </div>
                 <div class="flow-root rounded-lg border border-gray-100 py-3 shadow-sm w-full">
                     <dl class="-my-3 divide-y divide-gray-100 text-sm">
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
@@ -61,8 +52,13 @@
                             <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_place }}</dd>
                         </div>
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                            <dt class="font-medium text-gray-900">ค่าใช้จ่าย</dt>
+                            <dt class="font-medium text-gray-900">ค่าใช้จ่ายในการเข้าร่วมกิจกรรม</dt>
                             <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_fee }} บาท</dd>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+                            <dt class="font-medium text-gray-900">งบประมาณสำหรับกิจกรรม</dt>
+                            <dd class="text-gray-700 sm:col-span-2">{{ $event->budget }} บาท</dd>
                         </div>
 
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
