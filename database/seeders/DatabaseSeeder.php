@@ -45,18 +45,22 @@ class DatabaseSeeder extends Seeder
                 // $this->call(TasklistSeeder::class);
                 // $this->call(TaskSeeder::class);
 
-                $this->call(BudgetSeeder::class);
-                $this->call(ItemSeeder::class);
+                // $this->call(BudgetSeeder::class);
+                // $this->call(ItemSeeder::class);
                 //$this->call(TeamSeeder::class);
-                //$this->call(RegistrySeeder::class);
-                //$this->call(AnnouncementSeeder::class);
-                //$this->call(PostSeeder::class);
-                //$this->call(CommentSeeder::class);
-                //$this->call(TeamMemberSeeder::class);
-                //$this->call(TasklistSeeder::class);
-                //$this->call(TaskSeeder::class);
 
-                $this->call(RegisteredListSeeder::class);
+
+                // $this->call(RegistrySeeder::class);
+
+
+                // $this->call(AnnouncementSeeder::class);
+                // $this->call(PostSeeder::class);
+                // $this->call(CommentSeeder::class);
+                // $this->call(TeamMemberSeeder::class);
+                // $this->call(TasklistSeeder::class);
+                // $this->call(TaskSeeder::class);
+
+                // $this->call(RegisteredListSeeder::class);
                 // $this->call(OrganizerListSeeder::class);
         }
 }

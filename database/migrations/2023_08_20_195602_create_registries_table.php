@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Activity;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('registries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('team_id');
-            $table->foreign('team_id')->references('id')->on('teams');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignIdFor(Activity::class);
+            // $table->unsignedBigInteger('team_id');
+            // $table->foreign('team_id')->references('id')->on('teams');
+            // $table->foreignIdFor(User::class);
+
             $table->string('status');       //"REGISTERED"  "CONFIRM" "DECLINE"
 
             $table->timestamps();

@@ -32,6 +32,16 @@ class Activity extends Model
         return $this->belongsToMany(RegisteredList::class);
     }
 
+    public function organizerList(): BelongsToMany
+    {
+        return $this->belongsToMany(RegisteredList::class);
+    }
+
+    public function registries(): HasMany
+    {
+        return $this->hasMany(Registry::class);
+    }
+
     // public function posts(): HasMany
     // {
     //     return $this->hasMany(Post::class);
@@ -50,6 +60,11 @@ class Activity extends Model
     public function team(): HasOne
     {
         return $this->hasOne(Team::class);
+    }
+
+    public function teammembers(): HasMany
+    {
+        return $this->hasMany(TeamMember::class);
     }
 
     // public function getName()
