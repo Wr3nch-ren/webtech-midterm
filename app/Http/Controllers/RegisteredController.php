@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\RegisteredList;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class RegisteredController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('home.index');
+        $user = Auth::user();
+        // $events = RegisteredList::with('activities')->whereBelongsTo($user)->get();
+        $events = Activity::get();
+        return view('user.events', [
+            'events' => $events
+        ]);
     }
 
     /**
@@ -49,9 +57,8 @@ class HomeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Activity $event)
     {
-        //
     }
 
     /**
@@ -60,5 +67,12 @@ class HomeController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function addEvent(Activity $event)
+    {
+        $registered_list = RegisteredList::with('activities')->whereBelongsTo(Auth::user());
+        $registered_list->activities()->attach($event->id);
+        return redirect()->route('registered.index');
     }
 }

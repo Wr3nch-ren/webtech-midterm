@@ -27,7 +27,8 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'date_of_birth' => fake()->date(),
             'student_code' => 'B' . fake()->numberBetween(1000000, 9999999),
-            'faculty' => fake()->randomElement(['คณะเกษตร',
+            'faculty' => fake()->randomElement([
+                'คณะเกษตร',
                 'คณะบริหารธุรกิจ',
                 'คณะประมง',
                 'คณะมนุษยศาสตร์',
@@ -41,15 +42,17 @@ class UserFactory extends Factory
                 'คณะสัตวแพทยศาสตร์',
                 'คณะอุตสาหกรรมเกษตร',
                 'คณะเทคนิคการสัตวแพทย์',
-                'คณะสิ่งแวดล้อม',]),
-            'department' => fake()->randomElement(['department_test1','department_test2','department_test3']),
+                'คณะสิ่งแวดล้อม',
+            ]),
+            'year' => '1',
+            'major' => fake()->randomElement(['department_test1', 'department_test2', 'department_test3']),
             'nickname' => fake()->name(),
             'phone' => fake()->phoneNumber(),
             'line_id' => fake()->userName(),
             'facebook' => fake()->userName(),
-            'congenital_disease' => fake()->randomElement(['ไม่มี','มี']),
-            'allergy' => fake()->randomElement(['ไม่มี','มี']),
-            'role' => fake()->randomElement(['NORMAL','ORGANIZER','STAFF']),
+            'congenital_disease' => fake()->randomElement(['ไม่มี', 'มี']),
+            'allergy' => fake()->randomElement(['ไม่มี', 'มี']),
+            'role' => fake()->randomElement(['NORMAL', 'ORGANIZER', 'STAFF']),
         ];
     }
 

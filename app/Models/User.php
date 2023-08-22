@@ -67,15 +67,24 @@ class User extends Authenticatable
         'year' => 'integer'
     ];
 
-    public function activities(): BelongsToMany
+    public function activities(): BelongsTo
     {
-        return $this->belongsToMany(Activity::class);
+        return $this->belongsTo(Activity::class);
     }
 
     // public function roles(): BelongsToMany
     // {
     //     return $this->belongsToMany(Role::class);
     // }
+
+    public function registeredList(): BelongsTo
+    {
+        return $this->belongsTo(RegisteredList::class);
+    }
+    public function organizerList(): BelongsTo
+    {
+        return $this->belongsTo(OrganizerList::class);
+    }
 
 
 
@@ -109,17 +118,17 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    public function isHost() : bool
+    public function isHost(): bool
     {
         return  $this->role === RoleAccessibility::HOST;
     }
 
-    public function isOrganizer() : bool
+    public function isOrganizer(): bool
     {
         return  $this->role === RoleAccessibility::ORGANIZER;
     }
 
-    public function isStaff() : bool
+    public function isStaff(): bool
     {
         return  $this->role === RoleAccessibility::STAFF;
     }

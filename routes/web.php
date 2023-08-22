@@ -1,12 +1,14 @@
 <?php
 
-
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventOrganizeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisteredController;
+use App\Models\RegisteredList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,7 +61,10 @@ Route::delete('organize/{event}/{user}', [EventOrganizeController::class, 'delet
 Route::get('user/verify', [UserController::class, 'verify'])->name("user.verify");
 
 Route::resource('/events', EventController::class);
-
+Route::resource('/account', AccountController::class);
+Route::resource('/certificate', CertificateController::class);
+Route::resource('/registered', RegisteredController::class);
+Route::put('/add', [RegisteredController::class, 'addEvent'])->name('registered.add');
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

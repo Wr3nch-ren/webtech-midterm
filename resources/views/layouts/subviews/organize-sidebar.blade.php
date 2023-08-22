@@ -1,9 +1,9 @@
 {{-- <div class="flex h-screen bg-white"> --}}
 
 <!-- sidebar -->
-<div class="hidden md:flex flex-col w-1/5 bg-gray-800 border-r border-black">
+<div class="hidden md:flex flex-col w-1/5 shadow-md">
 
-    <div class="flex h-fit justify-between items-center  px-7 py-4 bg-slate-50 border-b border-black">
+    <div class="flex h-fit justify-between items-center  px-7 py-4 bg-white border-b-2 border-gray-200">
         {{-- <div class="w-10 h-10 bg-gray-200">
             </div> --}}
         <span class="text-black font-bold uppercase">{{ $event->activity_name }}</span>

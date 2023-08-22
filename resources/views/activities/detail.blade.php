@@ -18,8 +18,13 @@
             <div>
                 {{-- <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt=""> --}}
                 <div class="flex justify-center mb-6">
-                    <button class="bg-black rounded-md text-white p-2 px-12 self-center">สมัครเข้าร่วม</button>
-
+                    <form action="{{ route('registered.add', ['activity' => $event]) }}" class="grid grid-cols-2 gap-x-5"
+                        method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit"
+                            classs="bg-black rounded-md text-white p-2 px-12 self-center">สมัครเข้าร่วม</button>
+                    </form>
                 </div>
                 <div class="flow-root rounded-lg border border-gray-100 py-3 shadow-sm w-full">
                     <dl class="-my-3 divide-y divide-gray-100 text-sm">
@@ -35,7 +40,8 @@
 
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
                             <dt class="font-medium text-gray-900">วันที่จัด</dt>
-                            <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_date }}</dd>
+                            <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_start }} -
+                                {{ $event->activity_end }} </dd>
                         </div>
 
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
@@ -74,7 +80,7 @@
                             <dt class="font-medium text-gray-900">หมวดหมู่</dt>
                             <dd class="text-gray-700 sm:col-span-2">
                                 <span
-                                    class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full border border-gray-800">{{ $event->activity_category}}</span>
+                                    class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full border border-gray-800">{{ $event->activity_category }}</span>
                             </dd>
                         </div>
                     </dl>

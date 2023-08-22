@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Activity;
+use App\Models\RegisteredList;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,14 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('certificates', function (Blueprint $table) {
+        Schema::create('activity_registered_list', function (Blueprint $table) {
             $table->id();
-            // Getting image path of the certificate from the storage
-            $table->string('name');
-            $table->string('certificate_path');
-            $table->foreignIdFor(\App\Models\User::class);
+            $table->foreignIdFor(RegisteredList::class);
+            $table->foreignIdFor(Activity::class);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('certificates');
+        Schema::dropIfExists('activity_registered_list');
     }
 };

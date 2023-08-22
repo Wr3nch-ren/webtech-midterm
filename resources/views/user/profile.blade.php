@@ -1,21 +1,20 @@
-@extends('layouts.main')
+@extends('layouts.organize')
 
 @section('content')
-    <div class="flex justify-center container mt-20">
-
-        @include('layouts.subviews.user-sidebar')
+    <div class="flex justify-center container pt-20 bg-white pr-20">
 
         <div class="flex flex-col">
 
-            <img class="rounded mb-4 border-black border-2" width="200px"
+            <img class="rounded w-48 h-48 mb-4 border-black border-2" src="{{ $user->image_path }}" alt="profile pics">
+            {{-- <img class="rounded mb-4 border-black border-2" width="200px"
                 src="{{ asset(Auth::user()->img_path) }}"
-                alt="Extra large avatar">
+                alt="Extra large avatar"> --}}
 
             <h2 class="text-2xl py-2 font-semibold">{{ Auth::user()->name }} {{ Auth::user()->surname }}</h2>
             <h4 class="text-xl py-2">{{ Auth::user()->email }}</h4>
             <button type="button"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-semibold rounded-full text-sm px-3 py-2.5 mr-2 my-3 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                <a href="{{ route('user.editProfile') }}" class="w-full h-full">
+                class="text-gray-900 bg-white border border-gray-800 focus:outline-none hover:bg-black hover:text-white hover:shadow-md focus:ring-4 focus:ring-gray-200 font-semibold rounded-full text-sm px-3 py-2.5 mr-2 my-3 ">
+                <a href="{{ route('account.edit', ['account' => $user]) }}" class="w-full h-full">
                     <div class="hover:translate-x-1 w-full ease-out transition-transform">
                         แก้ไขโปรไฟล์
                         <svg class="w-3.5 h-3.5 ml-2 mb-1 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -35,8 +34,7 @@
             <table class="table-fixed">
                 <tr>
                     <td class="p-6 py-3">คำนำหน้า: {{ $user->name_title }}</td>
-                    <td class="px-6 py-3">ชื่อ: {{ $user->name }}</td>
-                    <td class="px-6 py-3">นามสกุล: {{ $user->surname }}</td>
+                    <td class="px-6 py-3">ชื่อ: {{ $user->name }} {{ $user->surname }}</td>
                 </tr>
                 <tr>
                     <td class="px-6 py-3">ชื่อเล่น: {{ $user->nickname }}</td>
@@ -47,8 +45,8 @@
                     <td class="px-6 py-3">ชั้นปี: {{ $user->year }}</td>
                 </tr>
                 <tr>
-                    <td class="px-6 py-3">คณะ: {{ $user->faculty }}</td>
-                    <td class="px-6 py-3">สาขา: {{ $user->department }}</td>
+                    <td class="px-6 py-3">{{ $user->faculty }}</td>
+                    <td class="px-6 py-3">{{ $user->major }}</td>
                 </tr>
                 <tr>
                     <td class="px-6 py-3">โรคประจำตัว: {{ $user->allergy }}</td>

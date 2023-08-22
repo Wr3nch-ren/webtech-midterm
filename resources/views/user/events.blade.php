@@ -1,31 +1,27 @@
-@extends('layouts.main')
+@extends('layouts.organize')
 
 @section('content')
-<div class="flex justify-center container mt-20">
+    <div class="flex justify-center container mt-20">
 
-      @include('layouts.subviews.user-sidebar')
-
-      <div class="h-full w-3/5">
+        <div class="h-full  w-full px-16 pr-48">
 
             <h1 class="text-3xl font-semibold pb-6">กิจกรรมที่เข้าร่วม</h1>
 
-            @foreach ($events as $event)
+            <div class="grid grid-cols-2 gap-5">
+                @foreach ($events as $event)
+                    {{-- <h1>{{ $event }}</h1> --}}
+                    <x-event-post :event="$event"></x-event-post>
+                    {{-- <x-event-item event-name="{{ $event->activity_name }}" img-path="{{ $event->poster_path }}" /> --}}
+                @endforeach
+            </div>
 
 
-                  <div class="grid grid-cols-2 gap-5">
-                  <x-event-item event-name="{{ $event->activity_name }}" img-path="{{ $event->poster_path }}" />
-                  </div>
+
+        </div>
+
+    </div>
 
 
-            @endforeach
 
-
-        
-      </div>
-
-     
-      
-</div>
-
-
+    </div>
 @endsection
