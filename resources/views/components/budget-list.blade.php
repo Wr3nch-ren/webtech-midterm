@@ -8,8 +8,8 @@
     </div>
 
 
-    <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-xs text-white uppercase bg-gray-800 ">
+    <table class="w-full text-sm text-left shadow-md text-gray-500">
+        <thead class="text-xs text-slate-50 uppercase bg-gray-800 ">
             <tr>
                 <th scope="col" class="px-6 py-3 rounded-tl-md">
                     อุปกรณ์
@@ -25,65 +25,65 @@
         <tbody>
             <tr class="bg-white dark:bg-gray-800">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
+                    แพ็คดินสอไม้
                 </th>
                 <td class="px-6 py-4">
-                    1
+                    5
                 </td>
                 <td class="px-6 py-4">
-                    $2999
+                    250
                 </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
+                    สก็อตเทป
                 </th>
                 <td class="px-6 py-4">
-                    1
+                    3
                 </td>
                 <td class="px-6 py-4">
-                    $1999
+                    60
                 </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
+                    แพ็คถุงขยะ
                 </th>
                 <td class="px-6 py-4">
-                    1
+                    2
                 </td>
                 <td class="px-6 py-4">
-                    $99
+                    100
                 </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
+                    แพ็คกระดาษ
                 </th>
                 <td class="px-6 py-4">
-                    1
+                    3
                 </td>
                 <td class="px-6 py-4">
-                    $99
+                    360
                 </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
+                    อาหารว่าง
                 </th>
                 <td class="px-6 py-4">
-                    1
+                    35
                 </td>
                 <td class="px-6 py-4">
-                    $99
+                    1400
                 </td>
             </tr>
         </tbody>
         <tfoot>
             <tr class="font-semibold text-gray-900 dark:text-white">
                 <th scope="row" class="px-6 py-3 text-base">Total</th>
-                <td class="px-6 py-3">3</td>
-                <td class="px-6 py-3">21,000</td>
+                <td class="px-6 py-3">48</td>
+                <td class="px-6 py-3">2,170</td>
             </tr>
         </tfoot>
     </table>

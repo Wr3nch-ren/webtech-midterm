@@ -66,6 +66,8 @@ Route::get('/volunteers', [SortController::class, 'volunteers'])->name('events.v
 Route::get('/technical', [SortController::class, 'technical'])->name('events.technical');
 Route::get('/recreations', [SortController::class, 'recreations'])->name('events.recreations');
 
+Route::put('/events/{event}', [StaffController::class, 'update'])->name('event.update');
+
 Route::resource('/events', EventController::class);
 Route::post('/events/{event}/registerEvent', [EventController::class, 'registerEvent'])->name('events.register-event');
 // Route::post('/events', [EventController::class, ''] );

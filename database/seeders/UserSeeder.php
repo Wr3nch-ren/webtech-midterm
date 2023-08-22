@@ -57,8 +57,7 @@ class UserSeeder extends Seeder
                 $user->facebook = 'user01';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
-                $user->image_path = 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80';
-                $user->role = RoleAccessibility::NORMAL;
+                $user->role = RoleAccessibility::STAFF;
                 $user->save();
 
                 $user = new User();

@@ -92,6 +92,29 @@
                             </p>
 
                         </div>
+{{--                        ปุ่มอนุมัติกิจกรรม ให้เปลี่ยนค่า verify ให้เป็น true--}}
+                        <div class="flex item-center">
+                            <div class="item-center">
+                                <form action="{{ route('event.update', $event->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" name="approve"
+                                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                        อนุมัติ
+                                    </button>
+                                </form>
+                            </div>
+                            {{--ปุ่มไม่อนุมัติ ให้เปลี่ยนค่า verify ให้เป็น false--}}
+                            <div class="item-center">
+                                <form action="{{ route('event.update', $event->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" name="disapprove"
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                        ไม่อนุมัติ
+                                    </button>
+                                </form>
+                        </div>
                     </div>
                     <div class="flex item-center">
 

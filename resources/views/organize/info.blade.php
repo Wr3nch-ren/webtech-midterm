@@ -47,8 +47,8 @@
 
                         <form method="POST" action="{{ route('organize.addUser', ['event' => $event]) }}">
                             @csrf
-                            <input type="text" class="" placeholder="email" name="e-mail">
-                            <input type="text" class="" placeholder="หน้าที่" name="role">
+                            <input required type="text" class="" placeholder="email" name="e-mail">
+                            {{-- <input type="text" class="" placeholder="หน้าที่" name="role"> --}}
                             <button type="submit" class="bg-black text-white rounded-md p-4 py-2">เพิ่มสมาชิก</button>
                         </form>
 

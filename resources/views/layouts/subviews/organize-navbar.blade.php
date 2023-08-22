@@ -5,7 +5,7 @@
             @if (Auth::check())
                 <div class="flex gap-2">
                     <div class="mx-4">
-                        <a href="{{ route('user.profile') }}">{{ Auth::user()->name }}</a>
+                        <a href="{{ route('organizer.index') }}">{{ Auth::user()->name }}</a>
 
                     </div>
                     <div>
