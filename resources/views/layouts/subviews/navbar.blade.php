@@ -60,9 +60,17 @@
                         aria-current="page">หน้าหลัก</a>
                 </li>
                 <li>
-                    <a href="{{ route('events.index') }}"
-                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
-                        aria-current="page">กิจกรรมทั้งหมด</a>
+                    @auth()
+                    @if(auth()->user()->isStaff())
+                        <a href="{{ route('staff.index') }}"
+                            class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                            aria-current="page">กิจกรรมทั้งหมด</a>
+                        @endauth
+                    @else
+                        <a href="{{ route('events.index') }}"
+                           class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                           aria-current="page">กิจกรรมทั้งหมด</a>
+                    @endif
                 </li>
                 <li>
                     @auth()
@@ -71,7 +79,7 @@
                                class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
                                aria-current="page">สร้างกิจกรรม</a>
                         @endif
-                    @endauth()
+                    @endauth
                 </li>
 
                 {{-- <li>

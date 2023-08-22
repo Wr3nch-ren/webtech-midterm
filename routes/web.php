@@ -5,6 +5,7 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventOrganizeController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteredController;
@@ -61,6 +62,7 @@ Route::delete('organize/{event}/{user}', [EventOrganizeController::class, 'delet
 Route::get('user/verify', [UserController::class, 'verify'])->name("user.verify");
 
 Route::resource('/events', EventController::class);
+Route::resource('/staff', StaffController::class);
 Route::resource('/account', AccountController::class);
 Route::resource('/certificate', CertificateController::class);
 Route::resource('/registered', RegisteredController::class);
@@ -87,12 +89,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('/activities', PlaylistController::class);
-});
-
-Route::middleware(['role:staff'])->group(function () {
-    Route::get('staff/index', [UserController::class, 'index'])->name("staff.index");
-    Route::resource('/activities', ActivityController::class);
 });
 
 require __DIR__ . '/auth.php';

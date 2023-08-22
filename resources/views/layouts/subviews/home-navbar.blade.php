@@ -1,4 +1,4 @@
-<nav class=" bg-white shadow-none pb-1">
+<nav class=" bg-white shadow-xl border-b-2 pb-1">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
 
         {{-- <div class="md:order-2 w-2/4">
@@ -34,12 +34,12 @@
                 </div>
             @else
                 <button type="button" onclick="window.location.href='{{ route('login') }}'"
-                    class="text-black hover:text-gray-600  bg-transparent focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log
+                        class="text-black hover:text-gray-600  bg-transparent focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log
                     in
                 </button>
 
                 <button type="button" onclick="window.location.href='{{ route('register') }}'"
-                    class="text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        class="text-white bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Sign up</button>
             @endif
         </div>
@@ -56,30 +56,32 @@
                 </li>
                 <li>
                     <a href="/"
-                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
-                        aria-current="page">หน้าหลัก</a>
+                       class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                       aria-current="page">หน้าหลัก</a>
                 </li>
                 <li>
-                    <a href="{{ route('events.index') }}"
-                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
-                        aria-current="page">กิจกรรมทั้งหมด</a>
+                    @auth()
+                        @if(auth()->user()->isStaff())
+                            <a href="{{ route('staff.index') }}"
+                               class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                               aria-current="page">กิจกรรมทั้งหมด</a>
+                        @endauth
+                    @else
+                        <a href="{{ route('events.index') }}"
+                           class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                           aria-current="page">กิจกรรมทั้งหมด</a>
+                    @endif
                 </li>
                 <li>
                     @auth()
                         @if(auth()->user()->isOrganizer())
-                        <a href="{{ route('organize.create') }}"
-                            class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
-                            aria-current="page">สร้างกิจกรรม</a>
+                            <a href="{{ route('organize.create') }}"
+                               class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                               aria-current="page">สร้างกิจกรรม</a>
                         @endif
-                    @endauth()
+                    @endauth
                 </li>
-                {{-- @if(Auth::user()->role == App\Models\Enum\RoleAccessibility::ADMIN)
-                <li>
-                        <a href="{{ route('user.verify') }}"
-                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
-                        aria-current="page">ยืนยันโพสต์</a>
-                </li>
-                @endif --}}
+
                 {{-- <li>
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
                         class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Faculty

@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class StaffController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $event_verified = Activity::get()->where('verify', '1');
-        return view('activities.index', ['events' => $event_verified]);
+        $events = Activity::get();
+        return view('staff.index', ['events' => $events]);
     }
 
     /**
@@ -37,7 +37,7 @@ class EventController extends Controller
      */
     public function show(Activity $event)
     {
-        return view('activities.detail', compact('event'));
+        return view('staff.detail', ['event' => $event]);
     }
 
     /**
@@ -53,7 +53,11 @@ class EventController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //Verify the event
+        $event = Activity::find($id);
+        $event->verified = true;
+        $event->save();
+
     }
 
     /**
@@ -61,7 +65,10 @@ class EventController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //Delete the event
+        $event = Activity::find($id);
+        $event->delete();
+
     }
 
 }

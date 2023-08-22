@@ -17,19 +17,18 @@
     <div class="mx-auto max-w-screen-xl px-4 pt-12 pb-5 lg:flex lg:h-auto lg:items-center">
         <div class="mx-auto max-w-xl text-center">
             <h1 class="text-3xl font-extrabold sm:text-5xl">
-                Understand User Flow.
+                รวมกิจกรรมไว้ในที่เดียว
                 <strong class="font-extrabold text-cyan-400 sm:block">
-                    Increase Conversion.
+                    ค้นหากิจกรรมที่ใช่
                 </strong>
             </h1>
 
             <p class="mt-4 sm:text-xl/relaxed">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
-                tenetur fuga ducimus numquam ea!
+                มองหากิจกรรมที่จะเข้าร่วมอยู่รึเปล่า <br>ที่นี่รวมไว้ให้คุณแล้ว เลือกได้เลย !
             </p>
 
             <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <a class="block w-full rounded-full bg-transparent border-black border hover:border-transparent px-10 py-3 text-base font-semibold text-black shadow hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+                <a class="block w-full rounded-full bg-transparent border-black border hover:border-transparent px-10 py-3 text-base font-semibold text-black shadow hover:bg-black hover:text-white focus:outline-none focus:ring active:bg-cyan-500 sm:w-auto"
                     href="{{ route('events.index') }}">
                     กิจกรรมทั้งหมด
                 </a>
@@ -248,17 +247,14 @@
                 <h2 class="text-3xl text-black font-bold sm:text-4xl">เลือกหมวดหมู่กิจกรรม</h2>
 
                 <p class="mt-4 text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero
-                    aliquid sint distinctio iure ipsum cupiditate? Quis, odit assumenda?
-                    Deleniti quasi inventore, libero reiciendis minima aliquid tempora.
-                    Obcaecati, autem.
+                    
                 </p>
 
 
             </div>
 
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-gray-800 hover:ring-1 hover:ring-gray-800  hover:bg-white hover:shadow-2xl focus:outline-none focus:ring"
+                <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-cyan-400 hover:ring-1 hover:ring-cyan-400  hover:bg-white hover:shadow-xl focus:outline-none focus:ring"
                     href="/accountant">
                     <span class="inline-block rounded-lg p-3">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -279,7 +275,7 @@
                         Lorem ipsum dolor sit amet consectetur.
                     </p>
                 </a>
-                <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-gray-800 hover:ring-1 hover:ring-gray-800  hover:bg-white hover:shadow-2xl focus:outline-none focus:ring"
+                <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-cyan-400 hover:ring-1 hover:ring-cyan-400  hover:bg-white hover:shadow-xl focus:outline-none focus:ring"
                     href="/accountant">
                     <span class="inline-block rounded-lg p-3">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -300,7 +296,7 @@
                         Lorem ipsum dolor sit amet consectetur.
                     </p>
                 </a>
-                <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-gray-800 hover:ring-1 hover:ring-gray-800  hover:bg-white hover:shadow-2xl focus:outline-none focus:ring"
+                <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-cyan-400 hover:ring-1 hover:ring-cyan-400  hover:bg-white hover:shadow-xl focus:outline-none focus:ring"
                     href="/accountant">
                     <span class="inline-block rounded-lg p-3">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"

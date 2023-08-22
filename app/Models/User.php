@@ -132,4 +132,9 @@ class User extends Authenticatable
     {
         return  $this->role === RoleAccessibility::STAFF;
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === RoleAccessibility::ADMIN;
+    }
 }
