@@ -9,7 +9,7 @@
 
         <div class="flex flex-1 flex-col justify-between">
             <div class="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-                <a href="{{ route('events.show', $event) }}">
+                <a href="{{ route('organize.home', ['event' => $event]) }}">
                     <h3 class="font-bold text-lg uppercase text-gray-900">
                         {{ $event->activity_name }}
                     </h3>
