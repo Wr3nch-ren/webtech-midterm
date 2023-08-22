@@ -83,7 +83,7 @@ class ActivitySeeder extends Seeder
             $activity->activity_place = 'เขาใหญ่';
             $activity->description = 'ทำประโยชน์กันเถอะ';
             $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
+            $activity->poster_path = 'storage/1.jpg';
             $activity->budget = 1000;
             $activity->is_posted = false;
             $activity->working_team_number = 3;
@@ -107,7 +107,7 @@ class ActivitySeeder extends Seeder
             $activity->activity_place = 'เขาใหญ่';
             $activity->description = 'ทำประโยชน์กันเถอะ';
             $activity->contact = '0812345678';
-            $activity->poster_path = 'ทดสอบ';
+            $activity->poster_path = 'storage/2.jpg';
             $activity->budget = 1000;
             $activity->is_posted = false;
             $activity->working_team_number = 3;

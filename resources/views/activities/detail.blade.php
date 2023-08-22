@@ -12,8 +12,8 @@
 
         <div class="flex justify-between">
             <div class="mr-10 w-11/12">
-                <img src="https://images.unsplash.com/photo-1543487945-139a97f387d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=680&q=80"
-                    alt="">
+                <img src="{{ asset($event->poster_path) }}"
+                    alt="{{ $event->poster_path }}">
             </div>
             <div>
                 {{-- <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt=""> --}}
