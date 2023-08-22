@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
     {
 
         $activity = new Activity();         //id = 1
-        $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
+        $activity->activity_name = 'ค่ายอาสาเขาใหญ่';
         $activity->deadline = '30-02-2024';
         $activity->activity_type = 'ค่ายอาสา';
         $activity->activity_category = 'ค้างคืน';
