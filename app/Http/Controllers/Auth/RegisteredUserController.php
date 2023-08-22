@@ -19,6 +19,8 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
+
+
     public function create(): View
     {
         $education = array(
@@ -101,8 +103,8 @@ class RegisteredUserController extends Controller
             'date_of_birth' => $request->date_of_birth,
             'student_code' => $request->student_code,
             'faculty' => $request->faculty,
-            'department' => $request->department,
-            'year' => $year,
+            'major' => $request->department,
+            'year' => $request->year,
             'phone' => $request->phone,
             'line_id' => $request->line_id,
             'facebook' => $request->facebook,
