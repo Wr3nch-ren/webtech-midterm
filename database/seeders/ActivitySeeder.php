@@ -74,8 +74,8 @@ class ActivitySeeder extends Seeder
             $activity->activity_type = 'อาสา';
             $activity->activity_category = 'อาสา';
             $activity->activity_hours = 3;
-            // $activity->activity_start = '2015-01-23';
-            // $activity->activity_end = '2015-01-23';
+            $activity->activity_start = '2015-01-23';
+            $activity->activity_end = '2015-01-23';
             $activity->participant_number = 30;
             $activity->activity_fee = 100;
             $activity->organizer_name = 'ชมรมทำดี';
@@ -99,7 +99,82 @@ class ActivitySeeder extends Seeder
             $activity->activity_type = 'อาสา';
             $activity->activity_category = 'อาสา';
             $activity->activity_hours = 3;
-            // $activity->activity_start = '2015-01-23';
+            $activity->activity_start = '2015-01-23';
+            $activity->activity_end = '2015-01-23';
+            $activity->participant_number = 30;
+            $activity->activity_fee = 100;
+            $activity->organizer_name = 'ชมรมทำดี';
+            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+            $activity->activity_place = 'เขาใหญ่';
+            $activity->description = 'ทำประโยชน์กันเถอะ';
+            $activity->contact = '0812345678';
+            $activity->poster_path = 'ทดสอบ';
+            $activity->budget = 1000;
+            $activity->budget = 1000;
+            $activity->is_posted = false;
+            // $activity->working_team_number = 3;
+            $activity->verify = true;
+            $activity->user_id = '2';
+            $activity->save();
+
+            $activity = new Activity();  //id = 1
+            $activity->id = '4';
+            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ4';
+            $activity->deadline = '2015-01-23';
+            $activity->activity_type = 'วิชาการ';
+            $activity->activity_category = 'ค้างคืน';
+            $activity->activity_hours = 3;
+            $activity->activity_start = '30-03-2024';
+            $activity->activity_end = '2015-01-23';
+            $activity->participant_number = 30;
+            $activity->activity_fee = 100;
+            $activity->organizer_name = 'ชมรมทำดี';
+            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+            $activity->activity_place = 'เขาใหญ่';
+            $activity->description = 'ทำประโยชน์กันเถอะ';
+            $activity->contact = '0812345678';
+            $activity->poster_path = 'ทดสอบ';
+            $activity->budget = 1000;
+            $activity->budget = 1000;
+            $activity->is_posted = false;
+            // $activity->working_team_number = 3;
+            $activity->verify = true;
+            $activity->user_id = '2';
+
+            $activity->save();
+            $activity = new Activity();  //id = 1
+            $activity->id = '5';
+            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ5';
+            $activity->deadline = '2015-01-23';
+            $activity->activity_type = 'วิชาการ';
+            $activity->activity_category = 'อาสา';
+            $activity->activity_hours = 3;
+            $activity->activity_start = '30-03-2024';
+            $activity->activity_end = '2015-01-23';
+            $activity->participant_number = 30;
+            $activity->activity_fee = 100;
+            $activity->organizer_name = 'ชมรมทำดี';
+            // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+            $activity->activity_place = 'เขาใหญ่';
+            $activity->description = 'ทำประโยชน์กันเถอะ';
+            $activity->contact = '0812345678';
+            $activity->poster_path = 'ทดสอบ';
+            $activity->budget = 1000;
+            $activity->budget = 1000;
+            $activity->is_posted = false;
+            // $activity->working_team_number = 3;
+            $activity->verify = true;
+            $activity->user_id = '2';
+            $activity->save();
+
+            $activity = new Activity();  //id = 1
+            $activity->id = '6';
+            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ6';
+            $activity->deadline = '2015-01-23';
+            $activity->activity_type = 'สันทนาการ';
+            $activity->activity_category = 'อาสา';
+            $activity->activity_hours = 3;
+            // $activity->activity_start = '30-03-2024';
             // $activity->activity_end = '2015-01-23';
             $activity->participant_number = 30;
             $activity->activity_fee = 100;
@@ -118,10 +193,10 @@ class ActivitySeeder extends Seeder
             $activity->save();
 
             $activity = new Activity();  //id = 1
-            $activity->id = '3';
-            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ2';
+            $activity->id = '7';
+            $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ7';
             $activity->deadline = '2015-01-23';
-            $activity->activity_type = 'อาสา';
+            $activity->activity_type = 'สันทนาการ';
             $activity->activity_category = 'อาสา';
             $activity->activity_hours = 3;
             // $activity->activity_start = '30-03-2024';
@@ -136,7 +211,7 @@ class ActivitySeeder extends Seeder
             $activity->poster_path = 'ทดสอบ';
             $activity->budget = 1000;
             $activity->budget = 1000;
-            $activity->is_posted = false;
+            $activity->is_posted = true;
             // $activity->working_team_number = 3;
             $activity->verify = true;
             $activity->user_id = '2';

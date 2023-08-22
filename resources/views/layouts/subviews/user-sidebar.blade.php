@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('user.organize') }}"
+                <a href="{{ route('organizer.index') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg hover:text-cyan-400 hover:translate-x-1 transition-all duration-300 ease-in-out"
                     {{ Route::is('user.organize') ? 'font-semibold' : 'font-medium' }}">
                     <span class="ml-3">กิจกรรมที่ดูแล</span>

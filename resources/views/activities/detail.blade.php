@@ -12,20 +12,42 @@
 
         <div class="flex justify-between">
             <div class="mr-10 w-11/12">
-                <img src="https://images.unsplash.com/photo-1543487945-139a97f387d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=680&q=80"
-                    alt="">
+                <img src="{{ asset($event->poster_path) }}" alt="">
             </div>
+            {{-- <div class="grid w-full gap-3 mt-7 sm:inline-flex">
+                <form name="join-event-form"
+                    action="{{ route('events.join-event', ['event' => $event]) }}" method="POST">
+                    @csrf
+                    <button id="join-btn"
+                        @if (auth()->check()) type="button" onclick="fadeIn(joinModal)" @else type="submit" @endif
+                        class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white transition bg-blue-600 border border-transparent rounded-md gap-x-3 lg:text-base hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
+                        href="#">
+                        Join event
+                        <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16"
+                            fill="none">
+                            <path
+                                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </form>
+            </div> --}}
             <div>
                 {{-- <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt=""> --}}
-                <div class="flex justify-center mb-6">
-                    <form action="{{ route('registered.add', ['activity' => $event]) }}" class="grid grid-cols-2 gap-x-5"
-                        method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <button type="submit"
-                            classs="bg-black rounded-md text-white p-2 px-12 self-center">สมัครเข้าร่วม</button>
-                    </form>
-                </div>
+                @if ($is_registered != true)
+                    <div class="flex justify-center mb-6">
+                        <form name="register-event-form" action="{{ route('events.register-event', ['event' => $event]) }}"
+                            method="POST">
+                            @csrf
+                            <button id="join-btn" type="submit"
+                                class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-center text-white transition bg-gray-800 border border-transparent rounded-md gap-x-3 lg:text-base hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-white">
+                                สมัครเข้าร่วม
+                            </button>
+                        </form>
+                    </div>
+                @endif
+                {{-- {{$is_registered}} --}}
+
                 <div class="flow-root rounded-lg border border-gray-100 py-3 shadow-sm w-full">
                     <dl class="-my-3 divide-y divide-gray-100 text-sm">
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
@@ -33,6 +55,10 @@
                             <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_name }}</dd>
                         </div>
 
+                        <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+                            <dt class="font-medium text-gray-900">หมวดหมู่</dt>
+                            <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_category }}</dd>
+                        </div>
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
                             <dt class="font-medium text-gray-900">รูปแบบ</dt>
                             <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_type }}</dd>

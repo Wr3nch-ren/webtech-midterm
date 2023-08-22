@@ -18,27 +18,27 @@ class UserSeeder extends Seeder
         public function run(): void
         {
 
-        $activity = new Activity();         //id = 1
-        $activity->activity_name = 'ค่ายอาสาเขาใหญ่';
-        $activity->deadline = '30-02-2024';
-        $activity->activity_type = 'ค่ายอาสา';
-        $activity->activity_category = 'ค้างคืน';
-        $activity->organizer_id = 1;
-        $activity->organizer_name = "comsci";
-        $activity->activity_hours = 3;
-        $activity->activity_start = '2024-03-3';
-        $activity->activity_end = '2024-03-3';
-        $activity->participant_number = 30;
-        $activity->activity_fee = 100;
-        // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-        $activity->activity_place = 'เขาใหญ่';
-        $activity->description = 'ทำประโยชน์กันเถอะ';
-        $activity->contact = '0812345678';
-        $activity->poster_path = 'ทดสอบ';
-        $activity->budget = 1000;
-        $activity->working_team_number = 3;
-        $activity->verify = false;
-        $activity->save();
+        // $activity = new Activity();         //id = 1
+        // $activity->activity_name = 'ค่ายอาสาเขาใหญ่';
+        // $activity->deadline = '30-02-2024';
+        // $activity->activity_type = 'ค่ายอาสา';
+        // $activity->activity_category = 'ค้างคืน';
+        // $activity->organizer_id = 1;
+        // $activity->organizer_name = "comsci";
+        // $activity->activity_hours = 3;
+        // $activity->activity_start = '2024-03-3';
+        // $activity->activity_end = '2024-03-3';
+        // $activity->participant_number = 30;
+        // $activity->activity_fee = 100;
+        // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+        // $activity->activity_place = 'เขาใหญ่';
+        // $activity->description = 'ทำประโยชน์กันเถอะ';
+        // $activity->contact = '0812345678';
+        // $activity->poster_path = 'ทดสอบ';
+        // $activity->budget = 1000;
+        // $activity->working_team_number = 3;
+        // $activity->verify = false;
+        // $activity->save();
 
                 // $activity = new Activity();         //id = 1
                 // $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
@@ -61,27 +61,27 @@ class UserSeeder extends Seeder
                 // $activity->working_team_number = 3;
                 // $activity->verify = false;
                 // $activity->save();
-                $activity = new Activity();         //id = 1
-                $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
-                $activity->deadline = '30-02-2024';
-                $activity->activity_type = 'ค่ายอาสา';
-                $activity->activity_category = 'ค้างคืน';
-                $activity->organizer_id = 1;
-                $activity->organizer_name = "comsci";
-                $activity->activity_hours = 3;
-                $activity->activity_start = '2024-03-3';
-                $activity->activity_end = '2024-03-3';
-                $activity->participant_number = 30;
-                $activity->activity_fee = 100;
-                // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
-                $activity->activity_place = 'เขาใหญ่';
-                $activity->description = 'ทำประโยชน์กันเถอะ';
-                $activity->contact = '0812345678';
-                $activity->poster_path = 'ทดสอบ';
-                $activity->budget = 1000;
-                $activity->working_team_number = 3;
-                $activity->verify = false;
-                $activity->save();
+                // $activity = new Activity();         //id = 1
+                // $activity->activity_name = 'ค่ายอาสาเพื่อการทดสอบ1';
+                // $activity->deadline = '30-02-2024';
+                // $activity->activity_type = 'ค่ายอาสา';
+                // $activity->activity_category = 'ค้างคืน';
+                // $activity->organizer_id = 1;
+                // $activity->organizer_name = "comsci";
+                // $activity->activity_hours = 3;
+                // $activity->activity_start = '2024-03-3';
+                // $activity->activity_end = '2024-03-3';
+                // $activity->participant_number = 30;
+                // $activity->activity_fee = 100;
+                // // $activity->organizer_id = 1;          // เอามาจาก id ของuser ที่เป็นคนสร้างactivityนั้นๆ ที่มีroleเป็นORGANIZER
+                // $activity->activity_place = 'เขาใหญ่';
+                // $activity->description = 'ทำประโยชน์กันเถอะ';
+                // $activity->contact = '0812345678';
+                // $activity->poster_path = 'ทดสอบ';
+                // $activity->budget = 1000;
+                // $activity->working_team_number = 3;
+                // $activity->verify = false;
+                // $activity->save();
 
                 $user = new User();
                 $user->name_title = 'นาย';

@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activity;
-use App\Models\RegisteredList;
+use App\Models\OrganizerList;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class EventController extends Controller
+class OrganizerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $event_verified = Activity::get()->where('verify', '1');
-        return view('activities.index', ['events' => $event_verified]);
+        $user = Auth::user();
+        // $events = RegisteredList::with('activities')->whereBelongsTo($user)->get();
+        $registered_list  = OrganizerList::with('activities')->where('user_id', $user->id)->get();
+
+        $events = $registered_list[0]->activities;
+        return view('user.organize', ['events' => $events]);
     }
 
     /**
@@ -36,10 +40,9 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Activity $event)
+    public function show(string $id)
     {
-        $is_registered = false;
-        return view('activities.detail', ['event' => $event, 'is_registered' => $is_registered]);
+        //
     }
 
     /**
@@ -56,14 +59,6 @@ class EventController extends Controller
     public function update(Request $request, string $id)
     {
         //
-    }
-
-    public function registerEvent(Request $request, Activity $event)
-    {
-        $user = $request->user();
-        $registered_list = RegisteredList::with('activities')->where('user_id', $user->id)->get();
-        $registered_list[0]->activities()->attach($event);
-        return redirect()->route('registered.index');
     }
 
     /**

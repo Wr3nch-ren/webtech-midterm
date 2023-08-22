@@ -6,9 +6,28 @@
 
         <div class="font-normal text-sm">
             <div class="flex flex-col gap-2">
-                <h1 class="text-2xl">กิจกรรมทั้งหมด</h1>
+                <a href="{{ route('events.index') }}">
+                    <h1 class="text-2xl">กิจกรรมทั้งหมด</h1>
+                </a>
                 <h3 class="pt-5">หมวดหมู่</h3>
-                <div>
+                <a href="{{ route('events.volunteers') }}">
+                    <li>
+                        <h3>อาสา</h3>
+                    </li>
+                </a>
+                <a href="{{ route('events.technical') }}">
+                    <li>
+                        <h3>วิชาการ</h3>
+                    </li>
+                </a>
+                <a href="{{ route('events.recreations') }}">
+                    <li>
+                        <h3>สันทนาการ</h3>
+                    </li>
+                </a>
+
+
+                {{-- <div>
                     <input class="focus:ring-yellow-300 text-yellow-300" type="checkbox" id="coding" name="interest"
                         value="coding" />
                     <label for="coding" class="px-2">วิชาการ</label>
@@ -22,9 +41,9 @@
                     <input class="focus:ring-yellow-300 text-yellow-300" type="checkbox" id="coding" name="interest"
                         value="coding" />
                     <label for="coding" class="px-2">สันทนาการ</label>
-                </div>
+                </div> --}}
             </div>
-            <div class="flex flex-col gap-2">
+            {{-- <div class="flex flex-col gap-2">
                 <h3 class="pt-5">คณะ</h3>
                 <div>
                     <input class="focus:ring-yellow-300 text-yellow-300" type="checkbox" id="coding" name="interest"
@@ -85,7 +104,7 @@
                     <label for="coding" class="px-2">ระยะยาว</label>
                 </div>
             </div>
+        </div> --}}
         </div>
-    </div>
 
 </aside>

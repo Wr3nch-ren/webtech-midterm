@@ -9,8 +9,7 @@
 
             <div class="grid grid-cols-2 gap-5">
                 @foreach ($events as $event)
-                    <x-organize-event-item event-name="{{ $event->activity_name }}" img-path="{{ $event->poster_path }}"
-                        id="{{ $event->id }}" />
+                    <x-organize-event-item :event=$event/>
                 @endforeach
 
             </div>

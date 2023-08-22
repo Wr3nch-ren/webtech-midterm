@@ -16,10 +16,11 @@ class RegisteredController extends Controller
     {
         $user = Auth::user();
         // $events = RegisteredList::with('activities')->whereBelongsTo($user)->get();
-        $events = Activity::get();
-        return view('user.events', [
-            'events' => $events
-        ]);
+        $registered_list  = RegisteredList::with('activities')->where('user_id', $user->id)->get();
+
+        $events = $registered_list[0]->activities;
+        $is_registered = true;
+        return view('user.events', ['events' => $events, 'is_registered' => $is_registered]);
     }
 
     /**
@@ -73,6 +74,7 @@ class RegisteredController extends Controller
     {
         $registered_list = RegisteredList::with('activities')->whereBelongsTo(Auth::user());
         $registered_list->activities()->attach($event->id);
-        return redirect()->route('registered.index');
+        $is_registered = true;
+        return redirect()->route('registered.index', ['is_registered' => $is_registered]);
     }
 }

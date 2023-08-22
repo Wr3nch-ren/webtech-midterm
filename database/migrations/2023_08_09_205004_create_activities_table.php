@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('activity_type'); //รูปแบบจัดกิจกรรม
             $table->string('activity_category'); //ประเภทจัดกิจกรรม
             $table->unsignedInteger('activity_hours')->default(1);
-            // $table->date('activity_start'); // วันที่เริ่มจัดกิจกรรม
-            // $table->date('activity_end'); // วันที่สิ้นสุดจัดกิจกรรม
+            $table->date('activity_start'); // วันที่เริ่มจัดกิจกรรม
+            $table->date('activity_end'); // วันที่สิ้นสุดจัดกิจกรรม
             $table->unsignedInteger('participant_number');
             $table->double('activity_fee'); // ค่าลงทะเบียน
             $table->string('activity_place');

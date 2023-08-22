@@ -40,23 +40,25 @@
 
             <div id="myTabContent">
                 <div class="hidden flex-col space-y-3"" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <x-event-info-org :event="$event" :team="$team"></x-event-info-org>
+                    <x-event-info-org :event="$event"></x-event-info-org>
                 </div>
                 <div class="hidden flex-col space-y-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="flex flex-col w-full">
-                        
-                        <form method="POST" action="{{ route('organize.addUser',['event' => $event]) }}">
+
+                        <form method="POST" action="{{ route('organize.addUser', ['event' => $event]) }}">
                             @csrf
                             <input type="text" class="" placeholder="email" name="e-mail">
                             <input type="text" class="" placeholder="หน้าที่" name="role">
                             <button type="submit" class="bg-black text-white rounded-md p-4 py-2">เพิ่มสมาชิก</button>
                         </form>
-                        
-                            <div class="flex flex-col w-full gap-5 pt-10">
-                                 <x-register-event-list nameTitle="{{ Auth::user()->name_title }}" name="{{ Auth::user()->name }}" surname="{{ Auth::user()->surname }}" role="HOST" :event="$event" />
-                            
-                            @if(sizeof($team) != 1)
-                                 @for ($i = 0;$i < sizeof($team);$i++)
+
+                        <div class="flex flex-col w-full gap-5 pt-10">
+                            <x-register-event-list nameTitle="{{ Auth::user()->name_title }}"
+                                name="{{ Auth::user()->name }}" surname="{{ Auth::user()->surname }}" role="HOST"
+                                :event="$event" />
+
+                            {{-- @if (sizeof($team) != 1)
+                                 @for ($i = 0; $i < sizeof($team); $i++)
                                     <x-register-event-list 
                                         nameTitle="{{ $team[$i]->name_title }}" 
                                         name="{{ $team[$i]->name }}" 
@@ -64,12 +66,12 @@
                                         role="{{ $team_member[$i]->role_in_team }}" 
                                         :event="$event"
                                     ></x-register-event-list>
-                                @endfor
-                            </div>
-                        @endif
-                            
+                                @endfor --}}
+                        </div>
+                        {{-- @endif --}}
+
                     </div>
-                    
+
                 </div>
                 <div class="hidden flex-col space-y-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                     <x-budget-list></x-budget-list>

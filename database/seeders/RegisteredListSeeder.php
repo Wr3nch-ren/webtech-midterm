@@ -19,7 +19,7 @@ class RegisteredListSeeder extends Seeder
 
         $registered_list = RegisteredList::find(1);
         $registered_list->activities()->attach(3);
-        $registered_list->activities()->attach(1);
-
+        $registered_list->activities()->attach(2);
+        $registered_list->activities()->attach(4);
     }
 }

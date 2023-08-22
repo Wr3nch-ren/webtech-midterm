@@ -5,9 +5,11 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventOrganizeController;
+use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteredController;
+use App\Http\Controllers\SortController;
 use App\Models\RegisteredList;
 use Illuminate\Support\Facades\Route;
 
@@ -60,10 +62,17 @@ Route::post('organize/{event}', [EventOrganizeController::class, 'addUser'])->na
 Route::delete('organize/{event}/{user}', [EventOrganizeController::class, 'deleteUser'])->name("organize.deleteUser");
 Route::get('user/verify', [UserController::class, 'verify'])->name("user.verify");
 
+Route::get('/volunteers', [SortController::class, 'volunteers'])->name('events.volunteers');
+Route::get('/technical', [SortController::class, 'technical'])->name('events.technical');
+Route::get('/recreations', [SortController::class, 'recreations'])->name('events.recreations');
+
 Route::resource('/events', EventController::class);
+Route::post('/events/{event}/registerEvent', [EventController::class, 'registerEvent'])->name('events.register-event');
+// Route::post('/events', [EventController::class, ''] );
 Route::resource('/account', AccountController::class);
 Route::resource('/certificate', CertificateController::class);
 Route::resource('/registered', RegisteredController::class);
+Route::resource('/organizer', OrganizerController::class);
 Route::put('/add', [RegisteredController::class, 'addEvent'])->name('registered.add');
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -15,18 +15,6 @@
                     @foreach ($events as $event)
                         <x-event-post :event="$event"></x-event-post>
                     @endforeach
-                    @foreach ($events as $event)
-                        <x-event-post :event="$event"></x-event-post>
-                    @endforeach
-                    @foreach ($events as $event)
-                        <x-event-post :event="$event"></x-event-post>
-                    @endforeach
-                    @foreach ($events as $event)
-                        <x-event-post :event="$event"></x-event-post>
-                    @endforeach
-                    @foreach ($events as $event)
-                        <x-event-post :event="$event"></x-event-post>
-                    @endforeach
                 </div>
                 {{-- </div> --}}
                 {{-- <a href="#"

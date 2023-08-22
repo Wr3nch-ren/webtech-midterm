@@ -65,13 +65,9 @@
                         aria-current="page">กิจกรรมทั้งหมด</a>
                 </li>
                 <li>
-                    @auth()
-                        @if(auth()->user()->isOrganizer())
-                            <a href="{{ route('organize.create') }}"
-                               class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
-                               aria-current="page">สร้างกิจกรรม</a>
-                        @endif
-                    @endauth
+                    <a href="{{ route('organize.create') }}"
+                        class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                        aria-current="page">สร้างกิจกรรม</a>
                 </li>
 
                 {{-- <li>

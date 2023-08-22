@@ -90,7 +90,7 @@
     </div>
 
     {{-- monthly event --}}
-    <div class="bg-gray-100 pt-10 pb-3">
+    {{-- <div class="bg-gray-100 pt-10 pb-3">
 
         <div class="justify-center">
             <h1 class=" text-black text-2xl font-bold text-center pb-10">
@@ -103,7 +103,7 @@
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                         src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+    {{-- <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
 
                     </div>
                     <div class="flex flex-col justify-between p-4 leading-normal">
@@ -128,13 +128,13 @@
                         </div>
                     </div>
                 </a>
-            </div>
-            <div>
+            </div> --}}
+    {{-- <div>
                 <a href="#"
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                         src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+    {{-- <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
 
                     </div>
                     <div class="flex flex-col justify-between p-4 leading-normal">
@@ -159,71 +159,71 @@
                         </div>
                     </div>
                 </a>
-            </div>
-            <div>
+            </div> --}}
+    {{-- <div>
                 <a href="#"
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                     {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
                         src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+    {{-- <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
 
-                    </div>
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <div>
-                            <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                                technology acquisitions 2021</h5>
-                            <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">Here are the biggest
-                                enterprise
-                                technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        </div>
-
-                        <div>
-                            <span
-                                class="bg-transparent text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
-                                <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z" />
-                                </svg>
-                                register 3 days left
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a href="#"
-                    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                    {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                        src="/docs/images/blog/image-4.jpg" alt=""> --}}
-                    <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
-
-                    </div>
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <div>
-                            <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                                technology acquisitions 2021</h5>
-                            <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">Here are the biggest
-                                enterprise
-                                technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        </div>
-
-                        <div>
-                            <span
-                                class="bg-transparent text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
-                                <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z" />
-                                </svg>
-                                register 3 days left
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
+    </div>
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <div>
+            <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
+                technology acquisitions 2021</h5>
+            <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">Here are the biggest
+                enterprise
+                technology acquisitions of 2021 so far, in reverse chronological order.</p>
         </div>
+
+        <div>
+            <span
+                class="bg-transparent text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
+                <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z" />
+                </svg>
+                register 3 days left
+            </span>
+        </div>
+    </div>
+    </a> --}}
+    {{-- </div> --}}
+    {{-- <div>
+                <a href="#"
+                    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    {{-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                        src="/docs/images/blog/image-4.jpg" alt=""> --}}
+    {{-- <div class="bg-gray-400 w-full rounded-t-lg h-96 md:h-48 md:w-48 md:rounded-none md:rounded-l-lg">
+
+                    </div>
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <div>
+                            <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
+                                technology acquisitions 2021</h5>
+                            <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">Here are the biggest
+                                enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        </div>
+
+                        <div>
+                            <span
+                                class="bg-transparent text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
+                                <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z" />
+                                </svg>
+                                register 3 days left
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div> --}}
+
+    {{-- </div>
 
         <div class="flex justify-end p-8 pr-32">
             <button type="button"
@@ -237,17 +237,17 @@
             </button>
         </div>
 
-    </div>
+    </div> --}}
 
 
     {{-- cat block --}}
     <div class="flex px-16 py-4 sm:px-16 sm:py-12 lg:px-32 lg:py-32 bg-gray-100">
-        <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
+        <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 pr-16">
             <div class="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
                 <h2 class="text-3xl text-black font-bold sm:text-4xl">เลือกหมวดหมู่กิจกรรม</h2>
 
                 <p class="mt-4 text-gray-600">
-                    
+
                 </p>
 
 
@@ -255,7 +255,7 @@
 
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
                 <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-cyan-400 hover:ring-1 hover:ring-cyan-400  hover:bg-white hover:shadow-xl focus:outline-none focus:ring"
-                    href="/accountant">
+                    href="{{ route('events.recreations') }}">
                     <span class="inline-block rounded-lg p-3">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -272,11 +272,11 @@
                     <h2 class="mt-2 font-bold">อาสา</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur.
+                        เช่น ค่ายอาสาปลูกป่า กิจกรรมกวาดลานวัด
                     </p>
                 </a>
                 <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-cyan-400 hover:ring-1 hover:ring-cyan-400  hover:bg-white hover:shadow-xl focus:outline-none focus:ring"
-                    href="/accountant">
+                    href="{{ route('events.recreations') }}">
                     <span class="inline-block rounded-lg p-3">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -293,11 +293,11 @@
                     <h2 class="mt-2 font-bold">วิชาการ</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur.
+                        เช่น ฟังบรรยายจากนักกิจกรรม เสริมทักษะ
                     </p>
                 </a>
                 <a class="block rounded-xl border-gray-900 bg-white p-4 shadow-md hover:border hover:border-cyan-400 hover:ring-1 hover:ring-cyan-400  hover:bg-white hover:shadow-xl focus:outline-none focus:ring"
-                    href="/accountant">
+                    href="{{ route('events.recreations') }}">
                     <span class="inline-block rounded-lg p-3">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -314,7 +314,7 @@
                     <h2 class="mt-2 font-bold">สันทนาการ</h2>
 
                     <p class="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur.
+                        เช่น คอนเสิร์ต งานเฟรชชี่
                     </p>
                 </a>
             </div>
