@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
                 $user->facebook = 'user01';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
-                $user->role = RoleAccessibility::NORMAL;
+                $user->role = RoleAccessibility::STAFF;
                 $user->save();
 
                 $user = new User();

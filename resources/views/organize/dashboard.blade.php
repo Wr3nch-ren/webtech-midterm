@@ -37,27 +37,15 @@
 
             <div id="myTabContent">
                 <div class="hidden flex-col space-y-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    {{-- @foreach ($users_registereds as $user) --}}
-
-                        <x-register-event-list nametitle="{{ $user->name_title }}" name="{{ $user->name }}"
-                            surname="{{ $user->surname }}"></x-register-event-list>
-                        
-                        
-                    {{-- @endforeach --}}
+                    
+                    <x-register-event-list :user=$user></x-register-event-list>
                 </div>
                 <div class="hidden flex-col space-y-3" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    {{-- {{-- @foreach ($users_confirms as $user) --}}
-                        <x-accept-decline-register-event nametitle="{{ $user->name_title }}"
-                            name="{{ $user->name }}"
-                            surname="{{ $user->surname }}"></x-accept-decline-register-event>
-                    {{-- @endforeach --}} --}}
+                    {{-- <x-accept-decline-register-event :user=$user"></x-accept-decline-register-event> --}}
                 </div>
                 <div class="hidden flex-col space-y-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-                    {{-- {{-- @foreach ($users_declines as $user) --}}
-                        <x-accept-decline-register-event nametitle="{{ $user->name_title }}"
-                            name="{{ $user->name }}"
-                            surname="{{ $user->surname }}"></x-accept-decline-register-event>
-                    {{-- @endforeach --}} --}}
+                    {{-- <x-accept-decline-register-event :user=$user></x-accept-decline-register-event> --}}
+
                 </div>
             </div>
         </div>

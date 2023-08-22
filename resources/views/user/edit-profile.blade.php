@@ -11,7 +11,7 @@
                 @method('PUT')
                 <h3 class="block mb-2">แก้ไขรูปโปรไฟล์</h3>
                 <div class="col-span-2 mb-4 bg-white p-3 border-gray-800 border rounded-md">
-                    <input type="file" name="image" id="image_path">
+                    <input required type="file" name="image" id="image_path">
                 </div>
                 <div class="col-span-2 my-4">
                     <h2 class="text-xl font-semibold">ข้อมูลส่วนตัว</h1>
@@ -28,21 +28,21 @@
 
                 <div class="my-2 flex flex-col ">
                     <label for="surname" class="block mb-2">ชื่อ</label>
-                    <input type="text" name="name" id="name" placeholder="Name"
+                    <input required type="text" name="name" id="name" placeholder="Name"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->name }}">
                 </div>
 
                 <div class="my-2 flex flex-col ">
                     <label for="surname" class="block mb-2">นามสกุล</label>
-                    <input type="text" name="surname" id="surname" placeholder="Surname"
+                    <input required type="text" name="surname" id="surname" placeholder="Surname"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->surname }}">
                 </div>
 
                 <div class="my-2 flex flex-col ">
                     <label for="nickname" class="block mb-2">ชื่อเล่น</label>
-                    <input type="text" name="nickname" id="nickname" placeholder="Nickname"
+                    <input required type="text" name="nickname" id="nickname" placeholder="Nickname"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->nickname }}">
                 </div>
@@ -57,7 +57,7 @@
 
                 <div class="my-2 flex flex-col ">
                     <label for="" class="block mb-2">รหัสนิสิต</label>
-                    <input type="text" name="student_code" id="student_code" placeholder="64xxxxxxxx"
+                    <input required type="text" name="student_code" id="student_code" placeholder="64xxxxxxxx"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->student_code }}">
                 </div>
@@ -122,21 +122,21 @@
 
                 <div class="my-2 flex flex-col">
                     <label for="phone" class="block mb-2">เบอร์โทร</label>
-                    <input type="text" name="phone" id="phone" placeholder="โปรดกรอก (ไม่มี  -)"
+                    <input required type="text" name="phone" id="phone" placeholder="โปรดกรอก (ไม่มี  -)"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->phone }}">
                 </div>
 
                 <div class="my-2 flex flex-col ">
                     <label for="line_id" class="block mb-2">ไลน์</label>
-                    <input type="text" name="line_id" id="line_id" placeholder="โปรดกรอก (ไม่มี  -)"
+                    <input required type="text" name="line_id" id="line_id" placeholder="โปรดกรอก (ไม่มี  -)"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->line_id }}">
                 </div>
 
                 <div class="my-2 flex flex-col ">
                     <label for="facebook" class="block mb-2">เฟสบุ๊ค</label>
-                    <input type="text" name="facebook" id="facebook" placeholder="โปรดกรอก (ไม่มี  -)"
+                    <input required type="text" name="facebook" id="facebook" placeholder="โปรดกรอก (ไม่มี  -)"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->facebook }}">
                 </div>
@@ -147,7 +147,7 @@
 
                 <div class="my-2 flex flex-col">
                     <label for="congenital_disease" class="block mb-2">โรคประจำตัว</label>
-                    <input type="text" name="congenital_disease" id="congenital_disease"
+                    <input required type="text" name="congenital_disease" id="congenital_disease"
                         placeholder="โปรดกรอก (ไม่มี  -)"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->congenital_disease }}">
@@ -155,7 +155,7 @@
 
                 <div class="my-2 flex flex-col ">
                     <label for="allergy" class="block mb-2">อาหารที่แพ้</label>
-                    <input type="text" name="allergy" id="allerg" placeholder="โปรดกรอก (ไม่มี  -)"
+                    <input required type="text" name="allergy" id="allerg" placeholder="โปรดกรอก (ไม่มี  -)"
                         class="rounded-md focus:ring-transparent focus:border-2 focus:border-gray-700"
                         value="{{ $user->allergy }}">
                 </div>

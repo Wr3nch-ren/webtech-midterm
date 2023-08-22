@@ -34,8 +34,10 @@
         </div>
         <div>
             <h3 class="font-normal text-blue-600">วันที่จัดกิจกรรม</h3>
-            <p>{{ $event->activity_start }} - {{ $event->activity_end }}</p>
+            <p>{{ date('d/n/Y', strtotime($event->activity_start)) }} -
+                {{ date('d/n/Y', strtotime($event->activity_end)) }}</p>
         </div>
+
         <div>
             <h3 class="font-normal text-blue-600">วันที่รับสมัครวันสุดท้าย</h3>
             <p>{{ $event->deadline }}</p>

@@ -70,6 +70,20 @@
                         class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
                         aria-current="page">สร้างกิจกรรม</a>
                 </li>
+                <li>
+                    @php
+                        use App\Models\Enum\RoleAccessibility;
+                    @endphp
+
+                    @auth
+                        @if (auth()->user()->role === RoleAccessibility::STAFF)
+                            <a href="{{ route('staff.index') }}"
+                                class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
+                                aria-current="page">สตาฟ</a>
+                        @endif
+                    @endauth
+                </li>
+
 
                 {{-- <li>
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"

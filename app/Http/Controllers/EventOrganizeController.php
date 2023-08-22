@@ -29,9 +29,11 @@ class EventOrganizeController extends Controller
     }
     public function dashboard()
     {
-        $user = Auth::user();
+        // $user = Auth::user();
+        $user = User::find(2);
         // $events = $user->Activities->where('is_organizer', true);
         $event = Activity::first();
+
         // $event = Activity::whereHas('user', function ($query) use ($user) {
         //     $query->where('is_organizer', true);
         // })->first();        //หา activity ที่ คนนี้จัดการอยู่
@@ -58,7 +60,7 @@ class EventOrganizeController extends Controller
         return view(
             'organize.dashboard',
             [
-                // 'event' => $event,
+                'event' => $event,
                 'user' => $user
                 // 'team' => $team,
                 // 'registry' => $registry,
