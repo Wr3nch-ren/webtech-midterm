@@ -33,7 +33,12 @@ sail npm install -D flowbite
 sail yarn dev
 ```
 
-3.6 เปิดไปที่เว็บ Browser ที่ URL Address bar พิมพ์ localhost 
+3.6 เมื่อทำคำสั่งข้างบนเสร็จแล้ว ให้ใช้คำสั่ง
+```
+sail artisan migrate:fresh --seed
+```
+
+3.7 เปิดไปที่เว็บ Browser ที่ URL Address bar พิมพ์ localhost 
 
 ## User Example Data
 
