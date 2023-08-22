@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class EventOrganizeController extends Controller
 {
@@ -22,6 +23,8 @@ class EventOrganizeController extends Controller
 
     public function home(Activity $event)
     {
+        // Gate::authorize('viewAny', Activity::class); //ไม่ใช่ organizer ไม่ให้เข้า
+
         return view('organize.index', ['event' => $event]);
     }
     public function dashboard()
@@ -44,7 +47,7 @@ class EventOrganizeController extends Controller
         // $users_registered_ids = DB::table('registries')->pluck('user_id')->where('status', 'REGISTERED');
         // $users_confirm_ids = DB::table('registries')->pluck('user_id')->where('status', 'CONFIRM');
         // $users_decline_ids = DB::table('registries')->pluck('user_id')->where('status', 'DECLINE');
-        
+
         $users_registereds = User::whereIn('id', $users_registered_ids)->get();
         $users_confirms = User::whereIn('id', $users_confirm_ids)->get();
         $users_declines = User::whereIn('id', $users_decline_ids)->get();
@@ -61,10 +64,14 @@ class EventOrganizeController extends Controller
     }
     public function tasks()
     {
+        // Gate::authorize('viewAny', Activity::class); //ไม่ใช่ organizer ไม่ให้เข้า
+
         return view('organize.tasks');
     }
     public function info(Activity $event)
-    {   
+    {
+        // Gate::authorize('viewAny', Activity::class); //ไม่ใช่ organizer ไม่ให้เข้า
+
         $team = Team::get()->where('activity_id', $event->id)->first();
         $team_members = TeamMember::get()->where('team_id', $team->id);
         $user = array();
@@ -120,13 +127,14 @@ class EventOrganizeController extends Controller
     }
 
     public function destroy(Activity $event) {
+        // Gate::authorize('delete', Auth::user(), $event); //ไม่ใช่ organizer ไม่ให้เข้าไปลบ
         $event->delete();
         $events = Activity::get()->where('organizer_id', Auth::user()->id);
                 return redirect()->route('user.organize', ['events' => $events]);
     }
 
     public function addUser(Request $request, Activity $event) {
-        $user = User::get()->where('user_email', $request->email)->first();
+        $user = User::get()->where('email', $request->get("e-mail"))->first();
         $user->role = RoleAccessibility::ORGANIZER;
         $team = Team::get()->where('activity_id', $event->id)->first();
         $team_member = new TeamMember();
@@ -134,7 +142,14 @@ class EventOrganizeController extends Controller
         $team_member->user_id = $user->id;
         $team_member->role_in_team = $request->role;
         $team_member->save();
-        
         return redirect()->route('organize.info', ['event' => $event]);
     }
+
+    public function deleteUser(Activity $event, string $name) {
+        $user = User::get()->where('name', $name)->first();
+        $team_mem = $event->team->team_members->where('user_id', $user->id)->first();
+        $team_mem->delete();
+        return redirect()->route('organize.info', ['event' => $event]);
+    }
+    
 }

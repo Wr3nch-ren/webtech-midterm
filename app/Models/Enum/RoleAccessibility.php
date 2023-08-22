@@ -9,4 +9,6 @@ enum RoleAccessibility : string
     case HOST = "HOST";
     case ORGANIZER = "ORGANIZER";
     case STAFF = "STAFF";
+    case ADMIN = "ADMIN";
+
 }

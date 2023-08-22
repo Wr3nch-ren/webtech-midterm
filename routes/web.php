@@ -57,6 +57,8 @@ Route::get('organize/create', [EventOrganizeController::class, 'create'])->name(
 Route::post('organize', [EventOrganizeController::class, 'store'])->name("organize.store");
 Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->name("organize.destroy");
 Route::post('organize/{event}', [EventOrganizeController::class, 'addUser'])->name("organize.addUser");
+Route::delete('organize/{event}/{user}', [EventOrganizeController::class, 'deleteUser'])->name("organize.deleteUser");
+Route::get('user/verify', [UserController::class, 'verify'])->name("user.verify");
 
 Route::resource('/events', EventController::class);
 Route::resource('/account', AccountController::class);
@@ -85,6 +87,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('/activities', PlaylistController::class);
+});
+
+Route::middleware(['role:staff'])->group(function () {
+    Route::get('staff/index', [UserController::class, 'index'])->name("staff.index");
+    Route::resource('/activities', ActivityController::class);
 });
 
 require __DIR__ . '/auth.php';

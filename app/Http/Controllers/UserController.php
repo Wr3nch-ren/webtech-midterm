@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\Certificate;
+use App\Models\Enum\RoleAccessibility;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -189,5 +190,12 @@ class UserController extends Controller
     {
         $events = Activity::get()->where('organizer_id', Auth::user()->id);
         return view('user.organize', ['events' => $events]);
+    }
+
+    public function verify() {
+        if(Auth::user()->role != RoleAccessibility::ADMIN){
+            return redirect()->route('/');
+        }
+        return view('user.verify');
     }
 }

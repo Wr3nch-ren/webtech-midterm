@@ -6,6 +6,10 @@
         <div class="flex flex-col">
 
             <img class="rounded w-48 h-48 mb-4 border-black border-2" src="{{ $user->image_path }}" alt="profile pics">
+            {{-- <img class="rounded mb-4 border-black border-2" width="200px"
+                src="{{ asset(Auth::user()->img_path) }}"
+                alt="Extra large avatar"> --}}
+
             <h2 class="text-2xl py-2 font-semibold">{{ Auth::user()->name }} {{ Auth::user()->surname }}</h2>
             <h4 class="text-xl py-2">{{ Auth::user()->email }}</h4>
             <button type="button"
