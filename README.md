@@ -64,3 +64,36 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Project Setup
+1. Clone the repository
+2. Copy ".env.example" data to ".env"
+3. Run these scripts in your terminal
+
+3.1
+```
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install --ignore-platform-reqs
+```
+3.2
+```
+sail up -d
+```
+3.3
+```
+sail yarn install
+```
+3.4
+```
+sail npm install -D flowbite
+```
+3.5
+```
+sail yarn dev
+```
+
+## User Example Data

@@ -53,10 +53,6 @@ class StaffController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //Verify the event
-        $event = Activity::find($id);
-        $event->verified = true;
-        $event->save();
 
     }
 
