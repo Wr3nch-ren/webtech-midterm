@@ -71,7 +71,7 @@
                             class="block py-2 pl-3 pr-4 text-black hover:text-gray-600 rounded md:bg-transparent md:text-black md:p-0"
                             aria-current="page">สร้างกิจกรรม</a>
                         @endif
-                    @endauth()
+                    @endauth
                 </li>
                 {{-- @if(Auth::user()->role == App\Models\Enum\RoleAccessibility::ADMIN)
                 <li>
