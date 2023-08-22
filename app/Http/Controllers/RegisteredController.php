@@ -15,7 +15,8 @@ class RegisteredController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $events = RegisteredList::with('activities')->whereBelongsTo($user)->get();
+        // $events = RegisteredList::with('activities')->whereBelongsTo($user)->get();
+        $events = Activity::get();
         return view('user.events', [
             'events' => $events
         ]);
