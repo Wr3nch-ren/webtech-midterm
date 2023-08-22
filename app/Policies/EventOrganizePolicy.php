@@ -62,6 +62,6 @@ class EventOrganizePolicy
      */
     public function forceDelete(User $user, Activity $activity): bool
     {
-        return $user->isStaff();
+        return false;
     }
 }
