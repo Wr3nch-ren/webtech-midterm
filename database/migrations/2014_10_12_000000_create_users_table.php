@@ -22,12 +22,12 @@ return new class extends Migration
             $table->string('name_title');
             $table->string('name');
             $table->string('surname');
-            $table->string('student_code');
+            $table->string('student_code')->nullable();
             $table->string('nickname');
             // $table->foreignIdFor(\App\Models\Activity::class)->nullable();
             // $table->string('notification')->nullable(); // ยังไม่แน่ใจ
-            $table->string('faculty');
-            $table->string('major');
+            $table->string('faculty')->nullable();
+            $table->string('major')->nullable();
             $table->string('year');
             $table->string('phone');
             $table->string('line_id');

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('activity_type'); //รูปแบบจัดกิจกรรม
             $table->string('activity_category'); //ประเภทจัดกิจกรรม
             $table->unsignedInteger('activity_hours')->default(1);
-            // $table->date('activity_start'); // วันที่เริ่มจัดกิจกรรม
-            // $table->date('activity_end'); // วันที่สิ้นสุดจัดกิจกรรม
+            $table->date('activity_start'); // วันที่เริ่มจัดกิจกรรม
+            $table->date('activity_end'); // วันที่สิ้นสุดจัดกิจกรรม
             $table->unsignedInteger('participant_number');
             $table->double('activity_fee'); // ค่าลงทะเบียน
             $table->string('activity_place');
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('poster_path'); // ผู้โพสต์ (host)
             $table->boolean('is_posted')->default(false); // โพสต์แล้วหรือยัง (ป้องกันการโพสต์ซ้ำ)
             $table->double('budget')->default(1000.0); // งบประมาณของกิจกรรม
-            // $table->unsignedInteger('working_team_number')->default(1);
+            $table->unsignedInteger('working_team_number')->default(1);
             $table->boolean('verify')->default(false);
             $table->foreignIdFor(User::class)->comment('user creator');
 
