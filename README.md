@@ -43,12 +43,17 @@ sail artisan migrate:fresh --seed
 ## User Example Data
 
 ตัวอย่างข้อมูลผู้ใช้
+```
 Email:  user01@test.com
 Password:   password
+
 ตัวอย่างข้อมูลสตาฟ
+```
 Email:  user03@test.com
 Password:   password
+
 ตัวอย่างข้อมูลแอดมิน
+```
 Email:  user04@test.com
 Password:   password
 
