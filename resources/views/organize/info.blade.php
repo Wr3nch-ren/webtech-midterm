@@ -56,19 +56,7 @@
                             <x-register-event-list nameTitle="{{ Auth::user()->name_title }}"
                                 name="{{ Auth::user()->name }}" surname="{{ Auth::user()->surname }}" role="HOST"
                                 :event="$event" />
-
-                            {{-- @if (sizeof($team) != 1)
-                                 @for ($i = 0; $i < sizeof($team); $i++)
-                                    <x-register-event-list 
-                                        nameTitle="{{ $team[$i]->name_title }}" 
-                                        name="{{ $team[$i]->name }}" 
-                                        surname="{{ $team[$i]->surname }}" 
-                                        role="{{ $team_member[$i]->role_in_team }}" 
-                                        :event="$event"
-                                    ></x-register-event-list>
-                                @endfor --}}
                         </div>
-                        {{-- @endif --}}
 
                     </div>
 

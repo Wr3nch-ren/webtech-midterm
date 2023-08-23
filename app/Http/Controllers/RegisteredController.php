@@ -17,7 +17,6 @@ class RegisteredController extends Controller
         $user = Auth::user();
         // $events = RegisteredList::with('activities')->whereBelongsTo($user)->get();
         $registered_list  = RegisteredList::with('activities')->where('user_id', $user->id)->get();
-
         $events = $registered_list[0]->activities;
         $is_registered = true;
         return view('user.events', ['events' => $events, 'is_registered' => $is_registered]);

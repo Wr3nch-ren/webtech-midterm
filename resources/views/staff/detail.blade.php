@@ -5,25 +5,24 @@
         <h1 class="mb-1 text-2xl font-bold">{{ $event->activity_name }}</h1>
         <hr class="h-px bg-gray-800 border-0 w-4/5">
 
-        {{-- <div>
-            <span
-                class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full border border-gray-800">อาสา</span>
-        </div> --}}
-
-        <div class="flex justify-between">
-            <div class="mr-10 w-11/12">
-                <img src="{{ asset($event->poster_path) }}"
-                    alt="{{ $event->poster_path }}">
+        <div class="flex w-full px-12 py-6">
+            <div class="mr-10 w-11/12 bg-black">
+                <img src="{{ asset($event->poster_path) }}" alt="">
+                {{-- <img src="{{ asset($event->poster_path) }}"
+                    alt="{{ $event->poster_path }}"> --}}
             </div>
-            <div>
-                {{-- <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt=""> --}}
+            <div class="w-full">
+
                 <div class="flow-root rounded-lg border border-gray-100 py-3 shadow-sm w-full">
                     <dl class="-my-3 divide-y divide-gray-100 text-sm">
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                            <dt class="font-medium text-gray-900">ชื่อ</dt>
-                            <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_name }}</dd>
+                            <dt class="font-medium text-gray-900">งบประมาณที่ใช้</dt>
+                            <dd class="text-gray-700 sm:col-span-2">{{ $event->budget }}</dd>
                         </div>
-
+                        <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+                            <dt class="font-medium text-gray-900">หมวดหมู่</dt>
+                            <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_category }}</dd>
+                        </div>
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
                             <dt class="font-medium text-gray-900">รูปแบบ</dt>
                             <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_type }}</dd>
@@ -52,24 +51,14 @@
                             <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_place }}</dd>
                         </div>
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                            <dt class="font-medium text-gray-900">ค่าใช้จ่ายในการเข้าร่วมกิจกรรม</dt>
+                            <dt class="font-medium text-gray-900">ค่าใช้จ่ายในการเข้าร่วม</dt>
                             <dd class="text-gray-700 sm:col-span-2">{{ $event->activity_fee }} บาท</dd>
-                        </div>
-
-                        <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
-                            <dt class="font-medium text-gray-900">งบประมาณสำหรับกิจกรรม</dt>
-                            <dd class="text-gray-700 sm:col-span-2">{{ $event->budget }} บาท</dd>
                         </div>
 
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
                             <dt class="font-medium text-gray-900">คำอธิบาย</dt>
                             <dd class="text-gray-700 sm:col-span-2">
                                 {{ $event->description }}
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nostrum dolor natus! Tempora
-                                commodi
-                                omnis provident beatae id, illum impedit, ullam reprehenderit officiis adipisci iusto animi
-                                eius
-                                repudiandae nihil quaerat.
                             </dd>
                         </div>
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
@@ -92,29 +81,6 @@
                             </p>
 
                         </div>
-{{--                        ปุ่มอนุมัติกิจกรรม ให้เปลี่ยนค่า verify ให้เป็น true--}}
-                        <div class="flex item-center">
-                            <div class="item-center">
-                                <form action="{{ route('event.update', $event->id) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                    <button type="submit" name="approve"
-                                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                                        อนุมัติ
-                                    </button>
-                                </form>
-                            </div>
-                            {{--ปุ่มไม่อนุมัติ ให้เปลี่ยนค่า verify ให้เป็น false--}}
-                            <div class="item-center">
-                                <form action="{{ route('event.update', $event->id) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                    <button type="submit" name="disapprove"
-                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                        ไม่อนุมัติ
-                                    </button>
-                                </form>
-                        </div>
                     </div>
                     <div class="flex item-center">
 
@@ -133,7 +99,31 @@
                             </svg>
                         </div>
                     </div>
+                    <div class="flex item-center">
+                        <div class="item-center">
+                            {{-- <form action="{{ route('event.update', ['event' => $event]) }}" method="POST">
+                                @csrf
+                                @method('PUT') --}}
+                            <button type="submit" name="approve"
+                                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-1">
+                                อนุมัติ
+                            </button>
+                            {{-- </form> --}}
+                        </div>
+                        {{-- ปุ่มไม่อนุมัติ ให้เปลี่ยนค่า verify ให้เป็น false --}}
+                        <div class="item-center">
+                            {{-- <form action="{{ route('event.update', ['event' => $event]) }}" method="POST">
+                                @csrf
+                                @method('PUT') --}}
+                            <button type="submit" name="disapprove"
+                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                ไม่อนุมัติ
+                            </button>
+                            {{-- </form> --}}
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -40,7 +40,10 @@ class EventController extends Controller
     public function show(Activity $event)
     {
         $registered_list = RegisteredList::with('activities')->where('user_id', Auth::user()->id)->get();
+
+
         $exists = $registered_list[0]->activities->contains('id', $event->id);
+
 
         return view('activities.detail', ['event' => $event, 'is_registered' => $exists]);
     }

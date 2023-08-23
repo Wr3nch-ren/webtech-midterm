@@ -5,37 +5,14 @@
         <h1 class="mb-1 text-2xl font-bold">{{ $event->activity_name }}</h1>
         <hr class="h-px bg-gray-800 border-0 w-4/5">
 
-        {{-- <div>
-            <span
-                class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full border border-gray-800">อาสา</span>
-        </div> --}}
-
         <div class="flex w-full px-12 py-6">
             <div class="mr-10 w-11/12 bg-black">
                 <img src="{{ asset($event->poster_path) }}" alt="">
                 {{-- <img src="{{ asset($event->poster_path) }}"
                     alt="{{ $event->poster_path }}"> --}}
             </div>
-            {{-- <div class="grid w-full gap-3 mt-7 sm:inline-flex">
-                <form name="join-event-form"
-                    action="{{ route('events.join-event', ['event' => $event]) }}" method="POST">
-                    @csrf
-                    <button id="join-btn"
-                        @if (auth()->check()) type="button" onclick="fadeIn(joinModal)" @else type="submit" @endif
-                        class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white transition bg-blue-600 border border-transparent rounded-md gap-x-3 lg:text-base hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
-                        href="#">
-                        Join event
-                        <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path
-                                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </button>
-                </form>
-            </div> --}}
             <div class="w-full">
-                {{-- <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt=""> --}}
+
                 @if ($is_registered != true)
                     <div class="flex justify-center mb-6">
                         <form name="register-event-form" action="{{ route('events.register-event', ['event' => $event]) }}"
@@ -48,8 +25,6 @@
                         </form>
                     </div>
                 @endif
-                {{-- {{$is_registered}} --}}
-
 
                 <div class="flow-root rounded-lg border border-gray-100 py-3 shadow-sm w-full">
                     <dl class="-my-3 divide-y divide-gray-100 text-sm">
@@ -98,11 +73,6 @@
                             <dt class="font-medium text-gray-900">คำอธิบาย</dt>
                             <dd class="text-gray-700 sm:col-span-2">
                                 {{ $event->description }}
-                                {{-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nostrum dolor natus! Tempora
-                    commodi
-                    omnis provident beatae id, illum impedit, ullam reprehenderit officiis adipisci iusto animi
-                    eius
-                    repudiandae nihil quaerat. --}}
                             </dd>
                         </div>
                         <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">

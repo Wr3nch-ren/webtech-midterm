@@ -35,9 +35,9 @@ class StaffController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Activity $event)
+    public function show(Activity $staff)
     {
-        return view('staff.detail', ['event' => $event]);
+        return view('staff.detail', ['event' => $staff]);
     }
 
     /**
@@ -53,7 +53,6 @@ class StaffController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
     }
 
     /**
@@ -64,7 +63,5 @@ class StaffController extends Controller
         //Delete the event
         $event = Activity::find($id);
         $event->delete();
-
     }
-
 }

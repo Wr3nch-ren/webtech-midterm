@@ -17,6 +17,10 @@ class OrganizedListSeeder extends Seeder
         $organizer_list->user_id = '1';
         $organizer_list->save();
 
+        $organizer_list = new OrganizerList();
+        $organizer_list->user_id = '2';
+        $organizer_list->save();
+
         $organizer_list = OrganizerList::find(1);
         $organizer_list->activities()->attach(7);
         $organizer_list->activities()->attach(1);

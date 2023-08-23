@@ -21,5 +21,9 @@ class RegisteredListSeeder extends Seeder
         $registered_list->activities()->attach(3);
         $registered_list->activities()->attach(2);
         $registered_list->activities()->attach(4);
+
+        $registered_list = new RegisteredList();
+        $registered_list->user_id = '2';
+        $registered_list->save();
     }
 }
