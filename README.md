@@ -46,17 +46,17 @@ sail artisan migrate:fresh --seed
 ```
 Email:  user01@test.com
 Password:   password
-
+```
 ตัวอย่างข้อมูลสตาฟ
 ```
 Email:  user03@test.com
 Password:   password
-
+```
 ตัวอย่างข้อมูลแอดมิน
 ```
 Email:  user04@test.com
 Password:   password
-
+```
 4.1 สามารถกดที่ปุ่ม Log in พิมพ์ Email และ Password ตามช่องที่ระบุไว้ กด Log in เข้าใช้งานได้
 
 
