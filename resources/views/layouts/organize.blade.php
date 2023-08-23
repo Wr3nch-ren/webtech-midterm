@@ -22,6 +22,7 @@
             @endif
             <div class="flex h-fit bg-white">
 
+
                 @if (Route::is('organize.*'))
                     @include('layouts.subviews.organize-sidebar')
                 @else

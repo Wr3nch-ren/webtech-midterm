@@ -11,15 +11,15 @@
         </div>
 
         <div class="flex flex-row space-x-10 mt-10">
-            <x-tasks-checkbox title="ฝ่ายอุปกรณ์"></x-tasks-checkbox>
-            <x-tasks-checkbox title="ฝ่ายกิจกรรม"></x-tasks-checkbox>
-            <x-tasks-checkbox title="ฝ่ายกราฟฟิค"></x-tasks-checkbox>
+            <x-tasks-checkbox title="สิ่งที่ต้องทำ"></x-tasks-checkbox>
+            <x-tasks-checkbox title="กำลังทำ"></x-tasks-checkbox>
             <x-tasks-checkbox title="เสร็จสิ้น"></x-tasks-checkbox>
-        </div>
 
+        </div>
+{{-- 
         <div class="mt-8">
             <h1>สรุปผล</h1>
-        </div>
+        </div> --}}
 
     </div>
 @endsection

@@ -37,8 +37,8 @@
 
             <div id="myTabContent">
                 <div class="hidden flex-col space-y-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    
-                    <x-register-event-list :user=$user></x-register-event-list>
+
+                    {{-- <x-register-event-list :user=$user></x-register-event-list> --}}
                 </div>
                 <div class="hidden flex-col space-y-3" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                     {{-- <x-accept-decline-register-event :user=$user"></x-accept-decline-register-event> --}}

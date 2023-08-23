@@ -51,10 +51,10 @@ Route::put('user/profile/edit', [UserController::class, 'update'])->name("user.u
 Route::get('user/notification', [UserController::class, 'notification'])->name("user.notification");
 Route::get('user/organize', [UserController::class, 'organize'])->name("user.organize");
 
-Route::get('organize/{event}/home', [EventOrganizeController::class, 'home'])->name("organize.home");
+Route::get('organize/home', [EventOrganizeController::class, 'home'])->name("organize.home");
 Route::get('organize/dashboard', [EventOrganizeController::class, 'dashboard'])->name("organize.dashboard");
 Route::get('organize/tasks', [EventOrganizeController::class, 'tasks'])->name("organize.tasks");
-Route::get('organize/{event}/info', [EventOrganizeController::class, 'info'])->name("organize.info");
+Route::get('organize/info', [EventOrganizeController::class, 'info'])->name("organize.info");
 Route::get('organize/create', [EventOrganizeController::class, 'create'])->name("organize.create");
 Route::post('organize', [EventOrganizeController::class, 'store'])->name("organize.store");
 Route::delete('organize/{event}', [EventOrganizeController::class, 'destroy'])->name("organize.destroy");
@@ -70,16 +70,14 @@ Route::put('/events/{event}', [StaffController::class, 'update'])->name('event.u
 
 Route::resource('/events', EventController::class);
 Route::post('/events/{event}/registerEvent', [EventController::class, 'registerEvent'])->name('events.register-event');
-// Route::post('/events', [EventController::class, ''] );
+
 Route::resource('/staff', StaffController::class);
 Route::resource('/account', AccountController::class);
 Route::resource('/certificate', CertificateController::class);
 Route::resource('/registered', RegisteredController::class);
 Route::resource('/organizer', OrganizerController::class);
-Route::put('/add', [RegisteredController::class, 'addEvent'])->name('registered.add');
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::get('/activities', [ActivityController::class, 'index'])->name("activities.index");
 // รายละเอียด Route::get('/activities/{activity}/detail', [ActivityController::class, 'showDetail'])->name("activities.index");
@@ -87,13 +85,6 @@ Route::get('/activities/detail', [ActivityController::class, 'showDetail'])->nam
 // แบบฟอร์มสมัคร Route::get('/activities/{activity}/apply', [ActivityController::class, 'apply'])->name("activities.apply");
 Route::get('/activities/apply', [ActivityController::class, 'apply'])->name("activities.apply");
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// Route::get('/activities/{activity}/detail', [ActivityController::class, 'showDetail'])->name("activities.index");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

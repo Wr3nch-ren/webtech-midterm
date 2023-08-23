@@ -19,27 +19,6 @@ class UserSeeder extends Seeder
          */
         public function run(): void
         {
-            // $user = new User();
-            // $user->name_title = 'นาย';
-            // $user->name = 'สมชาย';
-            // $user->surname = 'ใจดี';
-            // $user->email = 'user01@test.com';
-            // $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
-            // $user->date_of_birth = '1999-01-01';
-            // $user->student_code = 'B6012345';
-            // $user->nickname = 'สมชาย';
-            // $user->faculty = 'วิทยาศาสตร์';
-            // $user->major = 'วิทยาการคอมพิวเตอร์';
-            // $user->year = 4;
-            // $user->phone = '0123456789';
-            // $user->line_id = 'user01';
-            // $user->facebook = 'user01';
-            // $user->congenital_disease = '-';
-            // $user->allergy = '-';
-            // $user->role = 'NORMAL';
-            // $user->save();
-
-
                 $user = new User();
                 $user->name_title = 'นาย';
                 $user->name = 'สมชาย';
@@ -47,21 +26,22 @@ class UserSeeder extends Seeder
                 $user->email = 'user01@test.com';
                 $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
                 $user->date_of_birth = '1999-01-01';
-                $user->student_code = 'B6012345345';
-                $user->nickname = 'สมชาย';
+                $user->student_code = 'B6412345345';
+                $user->nickname = 'ชาย';
                 $user->faculty = 'วิทยาศาสตร์';
                 $user->major = 'วิทยาการคอมพิวเตอร์';
-                $user->year = 4;
-                $user->phone = '0123456789';
+                $user->year = 3;
+                $user->phone = '0972359866';
                 $user->line_id = 'user01';
-                $user->facebook = 'user01';
+                $user->facebook = 'Somchai Jaidee';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
-                $user->role = RoleAccessibility::STAFF;
+                $user->role = RoleAccessibility::NORMAL;
+                $user->image_path = 'https://images.unsplash.com/photo-1590702841774-45166f031529?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGh1bWFuJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60';
                 $user->save();
 
                 $user = new User();
-                $user->name_title = 'นาง';
+                $user->name_title = 'นางสาว';
                 $user->name = 'สมหมาย';
                 $user->surname = 'ใจดีมาก';
                 $user->email = 'user02@test.com';
@@ -69,65 +49,63 @@ class UserSeeder extends Seeder
                 $user->date_of_birth = '2004-01-01';
                 $user->student_code = 'B60123456780';
                 $user->nickname = 'แบ้ง';
-                $user->faculty = 'วิทยาศาสตร์';
+                $user->faculty = 'เกษตร';
                 $user->major = 'วิทยาการคอมพิวเตอร์';
-                $user->year = 4;
+                $user->year = 1;
                 $user->phone = '0951236789';
                 $user->line_id = 'user02';
-                $user->facebook = 'user02';
-                $user->congenital_disease = '-';
-                $user->allergy = '-';
+                $user->facebook = 'Sommaii Jaideemak';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
                 $user->image_path = 'https://images.unsplash.com/photo-1590702841774-45166f031529?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGh1bWFuJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60';
                 $user->role = RoleAccessibility::NORMAL;
                 $user->save();
 
-
+                //staff
 
                 $user = new User();     //3
-                $user->name_title = 'นางสาว';
+                $user->name_title = 'นาง';
                 $user->name = 'สมหญิง';
                 $user->surname = 'คงดี';
                 $user->email = 'user03@test.com';
                 $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
                 $user->date_of_birth = '1995-01-01';
-                $user->student_code = 'B6312345345';
-                $user->nickname = 'สมหญิง';
-                $user->faculty = 'วิทยาศาสตร์';
-                $user->major = 'เคมี';
-                $user->year = 2;
-                $user->phone = '0123456789';
-                $user->line_id = 'user03';
-                $user->facebook = 'user03';
+                $user->student_code = '-';
+                $user->nickname = '-';
+                $user->faculty = '-';
+                $user->major = '-';
+                $user->year = '-';
+                $user->phone = '-';
+                $user->line_id = '-';
+                $user->facebook = '-';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
                 $user->image_path = 'https://images.unsplash.com/photo-1555524554-0fdb51cd5020?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGh1bWFuJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60';
-                $user->role = RoleAccessibility::NORMAL;
+                $user->role = RoleAccessibility::STAFF;
                 $user->save();
 
-
+                //admin
 
 
                 $user = new User();
-                $user->name_title = 'นาง';
-                $user->name = 'สุชาดา';
-                $user->surname = 'คุ้มดี';
+                $user->name_title = 'นาย';
+                $user->name = 'พฤกษ์';
+                $user->surname = 'พงไพร';
                 $user->email = 'user04@test.com';
                 $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
                 $user->date_of_birth = '1985-01-01';
-                $user->student_code = 'B6066677709';
-                $user->nickname = 'สวย';
-                $user->faculty = 'วิทยาศาสตร์';
-                $user->major = 'วิทยาการคอมพิวเตอร์';
-                $user->year = 4;
-                $user->phone = '0823675555';
-                $user->line_id = 'user04';
-                $user->facebook = 'user04';
+                $user->student_code = '-';
+                $user->nickname = '-';
+                $user->faculty = '-';
+                $user->major = '-';
+                $user->year = '-';
+                $user->phone = '-';
+                $user->line_id = '-';
+                $user->facebook = '-';
                 $user->congenital_disease = '-';
                 $user->allergy = '-';
                 $user->image_path = 'https://images.unsplash.com/photo-1621012649112-d1724740b0da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80';
-                $user->role = RoleAccessibility::NORMAL;
+                $user->role = RoleAccessibility::ADMIN;
                 $user->save();
 
 

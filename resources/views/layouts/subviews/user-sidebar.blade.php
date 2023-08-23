@@ -14,28 +14,38 @@
                     <span class="ml-3">ข้อมูลส่วนตัว</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('certificate.index') }}"
-                    class="flex items-center p-2 text-gray-900 rounded-lg  hover:text-cyan-400 hover:translate-x-1 transition-all duration-300 ease-in-out
-                    {{ Route::is('user.certificates') ? 'font-semibold' : 'font-medium' }}">
-                    <span class="ml-3">เกียรติบัตร</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('registered.index') }}"
-                    class="flex items-center p-2 text-gray-900 rounded-lg  hover:text-cyan-400 hover:translate-x-1 transition-all duration-300 ease-in-out
-                    {{ Route::is('user.participants') ? 'font-semibold' : 'font-medium' }}">
-                    <span class="ml-3">กิจกรรมที่เข้าร่วม</span>
+            @php
+                use App\Models\Enum\RoleAccessibility;
+            @endphp
 
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('organizer.index') }}"
-                    class="flex items-center p-2 text-gray-900 rounded-lg hover:text-cyan-400 hover:translate-x-1 transition-all duration-300 ease-in-out"
-                    {{ Route::is('user.organize') ? 'font-semibold' : 'font-medium' }}">
-                    <span class="ml-3">กิจกรรมที่ดูแล</span>
-                </a>
-            </li>
+            @auth
+                @if (auth()->user()->role === RoleAccessibility::NORMAL)
+                    <li>
+                        <a href="{{ route('certificate.index') }}"
+                            class="flex items-center p-2 text-gray-900 rounded-lg  hover:text-cyan-400 hover:translate-x-1 transition-all duration-300 ease-in-out
+                                {{ Route::is('user.certificates') ? 'font-semibold' : 'font-medium' }}">
+                            <span class="ml-3">เกียรติบัตร</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('registered.index') }}"
+                            class="flex items-center p-2 text-gray-900 rounded-lg  hover:text-cyan-400 hover:translate-x-1 transition-all duration-300 ease-in-out
+                                {{ Route::is('user.participants') ? 'font-semibold' : 'font-medium' }}">
+                            <span class="ml-3">กิจกรรมที่เข้าร่วม</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('organizer.index') }}"
+                            class="flex items-center p-2 text-gray-900 rounded-lg hover:text-cyan-400 hover:translate-x-1 transition-all duration-300 ease-in-out"
+                            {{ Route::is('user.organize') ? 'font-semibold' : 'font-medium' }}">
+                            <span class="ml-3">กิจกรรมที่ดูแล</span>
+                        </a>
+                    </li>
+                @else
+                @endif
+            @endauth
+
 
         </ul>
     </div>

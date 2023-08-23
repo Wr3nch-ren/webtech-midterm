@@ -14,7 +14,7 @@ class SortController extends Controller
     }
     public function technical()
     {
-        $events = Activity::get()->where('activity_type', 'วชาการ');
+        $events = Activity::get()->where('activity_type', ' วิชาการ');
         return view('activities.index', ['events' => $events]);
     }
     public function recreations()
