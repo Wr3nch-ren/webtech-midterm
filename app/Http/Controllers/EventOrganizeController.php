@@ -16,22 +16,22 @@ use Illuminate\Support\Facades\Gate;
 
 class EventOrganizeController extends Controller
 {
-    public function home()
+    public function home(Activity $event)
     {
-        return view('organize.index');
+        return view('organize.index', ['event' => $event]);
     }
-    public function dashboard()
+    public function dashboard(Activity $event)
     {
-        return view('organize.dashboard');
+        return view('organize.dashboard', ['event' => $event]);
     }
-    public function tasks()
+    public function tasks(Activity $event)
     {
-        return view('organize.tasks');
+        return view('organize.tasks', ['event' => $event]);
     }
 
-    public function info()
+    public function info(Activity $event)
     {
-        return view('organize.info');
+        return view('organize.info', ['event' => $event]);
     }
     public function create()
     {

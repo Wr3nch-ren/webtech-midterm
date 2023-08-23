@@ -1,7 +1,6 @@
 @props(['event'])
 <!-- sidebar -->
-<div class="hidden md:flex flex-col w-1/5 shadow-md">
-
+<div class="hidden md:flex flex-col w-1/5 shadow-md ">
     <div class="flex h-fit justify-between items-center  px-7 py-4 bg-white border-b-2 border-gray-200">
         <span class="text-black font-bold uppercase">ค่ายอาสาพัฒนาชุมชนหนองจอก</span>
         {{-- <svg xmlns="http://www.w3.org/2000/svg" height="1em"
@@ -10,9 +9,10 @@
                 d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
         </svg> --}}
     </div>
-    <div class="flex flex-col flex-1 overflow-y-auto">
+    <div class="flex flex-col flex-1 overflow-y-auto min-h-screen">
         <nav class="flex-1 px-2 py-4 bg-slate-50">
-            <a href="{{ route('organize.home') }}" class="flex items-center px-4 py-2 text-black hover:bg-gray-100">
+            <a href="{{ route('organize.home', ['event' => $event]) }}"
+                class="flex items-center px-4 py-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
                     viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                     <path
@@ -20,7 +20,7 @@
                 </svg>
                 ประกาศ
             </a>
-            <a href="{{ route('organize.info') }}"
+            <a href="{{ route('organize.info', ['event' => $event]) }}"
                 class="flex items-center px-4 py-2 mt-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
                     viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -29,7 +29,7 @@
                 </svg>
                 ข้อมูลงาน
             </a>
-            <a href="{{ route('organize.dashboard') }}"
+            <a href="{{ route('organize.dashboard', ['event' => $event]) }}"
                 class="flex items-center px-4 py-2 mt-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
                     viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -38,7 +38,7 @@
                 </svg>
                 การรับสมัคร
             </a>
-            <a href="{{ route('organize.tasks') }}"
+            <a href="{{ route('organize.tasks', ['event' => $event]) }}"
                 class="flex items-center px-4 py-2 mt-2 text-black hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="h-5 w-5 mr-2"
                     viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->

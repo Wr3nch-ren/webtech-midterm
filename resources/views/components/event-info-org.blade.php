@@ -1,10 +1,8 @@
+@props(['event'])
 <div class="float float-right justify-end">
     <button class="bg-black text-white rounded-md p-4 py-2">Post</button>
 </div>
 
-<div>
-
-</div>
 <div>
     <div class="grid grid-cols-3 gap-y-4">
         <img src="{{ asset($event->poster_path) }}" class="row-span-5 w-3/4" alt="">

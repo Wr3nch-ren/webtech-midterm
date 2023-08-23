@@ -16,7 +16,7 @@
         <!-- Main content -->
         <div class="flex flex-col flex-1 overflow-y-auto">
             @if (Route::is('organize.*'))
-                @include('layouts.subviews.organize-navbar')
+                {{-- @include('layouts.subviews.organize-navbar') --}}
             @else
                 @include('layouts.subviews.navbar')
             @endif
@@ -24,7 +24,7 @@
 
 
                 @if (Route::is('organize.*'))
-                    @include('layouts.subviews.organize-sidebar')
+                    {{-- @include('layouts.subviews.organize-sidebar') --}}
                 @else
                     @include('layouts.subviews.user-sidebar')
                 @endif
