@@ -46,6 +46,9 @@ sail artisan migrate:fresh --seed
 ```
 Email:  user01@test.com
 Password:   password
+
+Email:  user02@test.com
+Password:   password
 ```
 ตัวอย่างข้อมูลสตาฟ
 ```
