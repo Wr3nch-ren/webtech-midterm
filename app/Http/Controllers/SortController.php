@@ -9,17 +9,20 @@ class SortController extends Controller
 {
     public function volunteers()
     {
-        $events = Activity::get()->where('activity_type', 'อาสา');
+        $events_verify = Activity::where('verify', 1)->get();
+        $events = $events_verify->where('activity_type', 'อาสา');
         return view('activities.index', ['events' => $events]);
     }
     public function technical()
     {
-        $events = Activity::get()->where('activity_type', ' วิชาการ');
+        $events_verify = Activity::where('verify', 1)->get();
+        $events = $events_verify->where('activity_type', 'วิชาการ');
         return view('activities.index', ['events' => $events]);
     }
     public function recreations()
     {
-        $events = Activity::get()->where('activity_type', 'สันทนาการ');
+        $events_verify = Activity::where('verify', 1)->get();
+        $events = $events_verify->where('activity_type', 'สันทนาการ');
         return view('activities.index', ['events' => $events]);
     }
 }
